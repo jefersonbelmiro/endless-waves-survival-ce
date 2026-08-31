@@ -1,0 +1,19 @@
+{
+  "id": "consumable_elixir_of_risky_trade",
+  "uid": "consumable_elixir_of_risky_trade",
+  "label": "CONSUMABLE_ELIXIR_OF_RISKY_TRADE_LABEL",
+  "description": "CONSUMABLE_ELIXIR_OF_RISKY_TRADE_DESC",
+  "toast_used": "CONSUMABLE_ELIXIR_OF_RISKY_TRADE_TOAST_USED",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/elixir_of_risky_trade/texture/elixir_of_risky_trade_icon.png",
+  "class": "res://src/consumables/elixir_of_risky_trade/elixir_of_risky_trade_data.gd",
+  "type": "item",
+  "tier": 3,
+  "max_health": "50%",
+  "health_regen": 1.5,
+  "modifier_duration": 30,
+  "cost": 75,
+  "stack": true,
+  "stack_max": 3,
+  "sort_order": 7
+}

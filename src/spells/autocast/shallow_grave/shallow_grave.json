@@ -1,0 +1,37 @@
+{
+  "id": "shallow_grave",
+  "label": "SPELL_SHALLOW_GRAVE_LABEL",
+  "description": "SPELL_SHALLOW_GRAVE_DESC",
+  "icon": "res://src/spells/autocast/shallow_grave/texture/spell_shallow_grave_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "cooldown": 60.0,
+  "duration": 1.0,
+  "sort_order": 18,
+  "upgrades_data": {
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 40 },
+        { "cooldown": 30 },
+        { "cooldown": 20 },
+        { "cooldown": 10 },
+        { "cooldown": 5 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 1.5 },
+        { "duration": 2.0 },
+        { "duration": 2.5 },
+        { "duration": 3.5 },
+        { "duration": 5.0 }
+      ]
+    }
+  }
+}

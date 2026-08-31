@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=2]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/popup/score_detail_popup/score_detail_popup.gd" type="Script" id=4]
+[ext_resource path="res://assets/components/simple_border_box_fg.png" type="Texture" id=5]
+
+[node name="score_detail_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 0.807843 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="container" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -177.0
+margin_top = -122.0
+margin_right = 182.0
+margin_bottom = 99.0
+
+[node name="bg_border" type="NinePatchRect" parent="container"]
+modulate = Color( 0.419608, 0.243137, 0.458824, 0.168627 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="bg_color" type="NinePatchRect" parent="container"]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="scroll_container" type="ScrollContainer" parent="container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="content" type="VBoxContainer" parent="container/scroll_container"]
+margin_right = 339.0
+margin_bottom = 201.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="content_label" type="Label" parent="container/scroll_container/content"]
+unique_name_in_owner = true
+margin_right = 339.0
+margin_bottom = 13.0
+text = "SCORE_DETAIL"
+align = 1
+
+[node name="text_rows" type="VBoxContainer" parent="container/scroll_container/content"]
+unique_name_in_owner = true
+margin_top = 21.0
+margin_right = 339.0
+margin_bottom = 201.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="actions" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -173.5
+margin_top = -24.0
+margin_right = 173.5
+rect_min_size = Vector2( 0, 24 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="cancel_button" parent="actions" instance=ExtResource( 3 )]
+margin_left = 133.0
+margin_right = 213.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text_label = "CANCEL"
+
+[connection signal="hide" from="." to="." method="_on_confirm_popup_hide"]
+[connection signal="pressed" from="actions/cancel_button" to="." method="_on_cancel_button_pressed"]

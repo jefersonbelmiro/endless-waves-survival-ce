@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="Gradient" id=15]
+offsets = PoolRealArray( 0, 0.76875, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.890196, 0.603922, 0.0509804, 1, 1, 0.772549, 0, 0.533333 )
+
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 15 )
+
+[sub_resource type="Curve" id=16]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.51895, 0.722727 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.168182 ), 0.64096, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 16 )
+
+[sub_resource type="ParticlesMaterial" id=17]
+lifetime_randomness = 0.02
+emission_shape = 2
+emission_box_extents = Vector3( 10, 10, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -10, 0 )
+angular_velocity = 31.48
+angular_velocity_random = 0.13
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 1.09
+radial_accel = 5.0
+radial_accel_random = 0.11
+damping = 7.1
+damping_random = 0.28
+angle = 125.9
+angle_random = 0.19
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 14 )
+color_ramp = SubResource( 11 )
+
+[node name="debuff_burn_effect" type="Node2D"]
+
+[node name="particles_2d" type="Particles2D" parent="."]
+amount = 30
+lifetime = 2.0
+speed_scale = 2.01
+process_material = SubResource( 17 )

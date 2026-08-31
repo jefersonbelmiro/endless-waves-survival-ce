@@ -1,0 +1,11 @@
+{
+  "id": "double_damage",
+  "label": "SPELL_DOUBLE_DAMAGE_LABEL",
+  "description": "SPELL_DOUBLE_DAMAGE_DESC",
+  "icon": "res://src/spells/passive/double_damage/texture/double_damage_icon.png",
+  "class": "res://src/spells/passive/double_damage/double_damage_data.gd",
+  "cast_type": "passive",
+  "proc_chance": 0.05,
+  "sort_order": 14,
+  "upgrades": [{ "proc_chance": 0.1 }, { "proc_chance": 0.15 }]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ring_of_evasion",
+  "label": "ITEM_RING_OF_EVASION_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/ring_of_evasion/texture/ring_of_evasion_icon.png",
+  "cast_type": "passive",
+  "evasion": 0.05,
+  "sort_order": 5,
+  "upgrades": [
+    { "evasion": 0.10 },
+    { "evasion": 0.15 },
+    { "evasion": 0.20 },
+    { "evasion": 0.25 },
+    { "evasion": 0.30 },
+    { "evasion": 0.35 },
+    { "evasion": 0.40 },
+    { "evasion": 0.45 },
+    { "evasion": 0.50 }
+  ]
+}

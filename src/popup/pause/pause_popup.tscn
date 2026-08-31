@@ -1,0 +1,126 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/popup/pause/pause_popup.gd" type="Script" id=3]
+[ext_resource path="res://src/res/fonts/monogram_40.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/components/book_button/book_button_container.gd" type="Script" id=5]
+[ext_resource path="res://src/popup/pause/sfx_pause_open.wav" type="AudioStream" id=6]
+[ext_resource path="res://src/popup/pause/sfx_pause_close.wav" type="AudioStream" id=7]
+[ext_resource path="res://src/popup/settings/settings_popup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/popup/help/help_popup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/components/player_cards/player_cards.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/components/player_stats/player_stats.tscn" type="PackedScene" id=11]
+
+[node name="pause_popup" type="Popup"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="bg_dark" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.121569, 0.121569, 0.121569, 0.835294 )
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0666667, 0.0666667, 0.0666667, 0.870588 )
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -240.0
+margin_right = 240.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.776471, 0.745098, 0.745098, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "GAME_PAUSED"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="button_container" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -46.0
+margin_right = 44.0
+margin_bottom = 46.0
+script = ExtResource( 5 )
+
+[node name="resume_button" parent="button_container" instance=ExtResource( 2 )]
+margin_right = 88.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 88, 20 )
+text_label = "RESUME"
+
+[node name="settings_button" parent="button_container" instance=ExtResource( 2 )]
+margin_top = 24.0
+margin_right = 88.0
+margin_bottom = 44.0
+text_label = "SETTINGS"
+
+[node name="help_button" parent="button_container" instance=ExtResource( 2 )]
+margin_top = 48.0
+margin_right = 88.0
+margin_bottom = 68.0
+text_label = "HELP"
+
+[node name="menu_button" parent="button_container" instance=ExtResource( 2 )]
+margin_top = 72.0
+margin_right = 88.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 88, 20 )
+text_label = "QUIT"
+
+[node name="container" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 40.0
+mouse_filter = 2
+alignment = 1
+
+[node name="player_cards" parent="container" instance=ExtResource( 10 )]
+focus_neighbour_right = NodePath("../../button_container/resume_button")
+size_flags_vertical = 3
+
+[node name="separator" type="Control" parent="container"]
+margin_left = 154.0
+margin_right = 356.0
+margin_bottom = 220.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="player_stats" parent="container" instance=ExtResource( 11 )]
+margin_left = 360.0
+margin_right = 480.0
+margin_bottom = 220.0
+size_flags_vertical = 3
+
+[node name="sfx_open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.0
+bus = "SFX"
+
+[node name="sfx_close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+bus = "SFX"
+
+[node name="settings_popup" parent="." instance=ExtResource( 8 )]
+
+[node name="help_popup" parent="." instance=ExtResource( 9 )]
+
+[connection signal="popup_hide" from="." to="." method="_on_pause_popup_popup_hide"]
+[connection signal="pressed" from="button_container/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="button_container/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="button_container/help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="button_container/menu_button" to="." method="_on_menu_button_pressed"]

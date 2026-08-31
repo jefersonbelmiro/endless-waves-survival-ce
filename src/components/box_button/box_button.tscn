@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/components/box_button/box_button.gd" type="Script" id=1]
+[ext_resource path="res://assets/components/selected-box.png" type="Texture" id=2]
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=3]
+[ext_resource path="res://src/res/fonts/monogram_8.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/components/simple_border_box_fg.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="box_button" type="Button"]
+rect_min_size = Vector2( 20, 20 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/focus = SubResource( 1 )
+flat = true
+script = ExtResource( 1 )
+bg_color = Color( 0.12549, 0.12549, 0.12549, 0.458824 )
+border_color = Color( 0.47451, 0.47451, 0.47451, 0.168627 )
+selected_color = Color( 0.701961, 0.701961, 0.701961, 1 )
+pressed_color = Color( 0.329412, 0.329412, 0.329412, 1 )
+hover_color = Color( 0, 0, 0, 1 )
+
+[node name="bg_color" type="NinePatchRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="border" type="NinePatchRect" parent="."]
+modulate = Color( 0.419608, 0.243137, 0.458824, 0.168627 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="bg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+
+[node name="bg_pressed" type="NinePatchRect" parent="."]
+modulate = Color( 0.419608, 0.243137, 0.458824, 0.168627 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="fg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+mouse_filter = 2
+expand = true
+stretch_mode = 7
+
+[node name="selected" type="NinePatchRect" parent="."]
+visible = false
+modulate = Color( 0.369608, 0.193137, 0.408824, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="label" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "label"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="hide" from="." to="." method="_on_hide"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_button_resized"]

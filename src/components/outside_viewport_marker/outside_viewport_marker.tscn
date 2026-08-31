@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/components/outside_viewport_marker/outside_viewport_marker.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/objective_icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/components/dir-arrow.png" type="Texture" id=3]
+[ext_resource path="res://assets/components/target_marker_fill.png" type="Texture" id=4]
+
+[node name="outside_viewport_marker" type="Node"]
+script = ExtResource( 1 )
+
+[node name="container" type="Node2D" parent="."]
+
+[node name="texture" type="Node2D" parent="container"]
+position = Vector2( -8, 0 )
+
+[node name="texture" type="Sprite" parent="container/texture"]
+modulate = Color( 0, 0, 0, 0.188235 )
+scale = Vector2( 0.05, 0.05 )
+z_index = 500
+texture = ExtResource( 4 )
+
+[node name="texture_2" type="Sprite" parent="container/texture"]
+modulate = Color( 1, 1, 1, 0.509804 )
+scale = Vector2( 0.175, 0.175 )
+z_index = 500
+texture = ExtResource( 2 )
+
+[node name="pointer" type="Position2D" parent="container"]
+position = Vector2( 0, 0.25 )
+
+[node name="sprite" type="Sprite" parent="container/pointer"]
+modulate = Color( 0, 0, 0, 0.188235 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+z_index = 500
+texture = ExtResource( 3 )
+
+[node name="canvas_layer" type="CanvasLayer" parent="."]

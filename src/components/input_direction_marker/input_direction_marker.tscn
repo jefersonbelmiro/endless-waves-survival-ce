@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/components/dir-arrow.png" type="Texture" id=1]
+[ext_resource path="res://src/components/input_direction_marker/input_direction_marker.gd" type="Script" id=2]
+
+[node name="input_direction_marker" type="Node2D"]
+z_index = 1000
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+modulate = Color( 0.807843, 0.843137, 0.847059, 1 )
+position = Vector2( 30, 0.25 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )

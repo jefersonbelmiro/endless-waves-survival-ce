@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/spells/autocast/fire_ball/fire_ball_caster.gd" type="Script" id=1]
+
+[node name="fire_ball_caster" type="Node"]
+script = ExtResource( 1 )

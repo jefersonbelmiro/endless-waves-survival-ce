@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/icons/coin.png" type="Texture" id=1]
+[ext_resource path="res://src/components/meta_bar/meta_bar.gd" type="Script" id=2]
+
+[node name="meta_bar" type="HBoxContainer"]
+rect_min_size = Vector2( 200, 20 )
+alignment = 2
+script = ExtResource( 2 )
+
+[node name="coins" type="HBoxContainer" parent="."]
+margin_left = 174.0
+margin_right = 200.0
+margin_bottom = 20.0
+hint_tooltip = "Coins avaliable"
+
+[node name="icon" type="TextureRect" parent="coins"]
+modulate = Color( 1, 0.780392, 0.192157, 1 )
+margin_right = 14.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="label" type="Label" parent="coins"]
+margin_left = 18.0
+margin_top = 3.0
+margin_right = 26.0
+margin_bottom = 17.0
+text = "0"

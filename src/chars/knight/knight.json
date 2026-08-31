@@ -1,0 +1,20 @@
+{
+  "id": "knight",
+  "label": "KNIGHT",
+  "main_card": "abyssal_sword",
+  "sort_order": 1,
+  "stats": {
+    "max_health": 80,
+    "pick_area": 60,
+    "move_speed": 75,
+    "attack_speed": 30,
+    "attack_range": 80,
+    "base_damage": 12,
+    "health_regen": 0.5,
+    "healing_effectiveness": 0.5,
+    "defense_reduction": 0.2,
+    "magic_damage_factor": -0.3,
+    "physical_damage_factor": 0.3,
+    "status_resistance": 0.5
+  }
+}

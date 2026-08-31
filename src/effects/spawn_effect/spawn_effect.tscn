@@ -1,0 +1,32 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect3.png" type="Texture" id=1]
+[ext_resource path="res://src/effects/spawn_effect/spawn_effect.gd" type="Script" id=2]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect1.png" type="Texture" id=3]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect5.png" type="Texture" id=4]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect4.png" type="Texture" id=5]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect8.png" type="Texture" id=6]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect7.png" type="Texture" id=7]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect6.png" type="Texture" id=8]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect2.png" type="Texture" id=9]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect9.png" type="Texture" id=10]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect12.png" type="Texture" id=11]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect10.png" type="Texture" id=12]
+[ext_resource path="res://src/effects/spawn_effect/texture/spawn_effect11.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="spawn_effect" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[connection signal="animation_finished" from="animated_sprite" to="." method="_on_animated_sprite_animation_finished"]

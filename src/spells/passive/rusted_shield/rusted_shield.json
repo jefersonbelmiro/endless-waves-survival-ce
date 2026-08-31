@@ -1,0 +1,15 @@
+{
+  "id": "rusted_shield",
+  "label": "RUSTED_SHIELD",
+  "description": "",
+  "icon": "res://src/spells/passive/rusted_shield/texture/spell_rusted_shield_icon.png",
+  "cast_type": "passive",
+  "sort_order": 12,
+  "damage_block": 1,
+  "upgrades": [
+    { "damage_block": 2 },
+    { "damage_block": 3 },
+    { "damage_block": 4 },
+    { "damage_block": 5 }
+  ]
+}

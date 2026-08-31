@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/systems/screenshot/screenshot_system.gd" type="Script" id=1]
+
+[node name="screenshot_system" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/components/book-icon-box.png" type="Texture" id=1]
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=2]
+[ext_resource path="res://assets/icons/coin.png" type="Texture" id=3]
+[ext_resource path="res://assets/components/deck_bg.png" type="Texture" id=4]
+[ext_resource path="res://src/components/cost_button/cost_button.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/add_color = true
+shader_param/color = Color( 0.113725, 0.0666667, 0.12549, 1 )
+shader_param/color_modifier = 1.0
+shader_param/add_border = true
+shader_param/border_color = Color( 0, 0, 0, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 0
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[node name="cost_button" type="Button"]
+margin_right = 59.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 55, 26 )
+custom_styles/focus = SubResource( 2 )
+flat = true
+script = ExtResource( 5 )
+bg_color = Color( 0.12549, 0.12549, 0.12549, 1 )
+bg_hover_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+
+[node name="bg" type="NinePatchRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="bg_icon" type="TextureRect" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -15.0
+margin_right = 31.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 32, 30 )
+rect_rotation = -11.4
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="label" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 74.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "label"
+align = 2
+valign = 1
+
+[node name="icon" type="TextureRect" parent="."]
+modulate = Color( 1, 0.780392, 0.192157, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -15.0
+margin_top = -9.0
+margin_right = -1.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 14, 26 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="label_cost" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 10.0
+margin_right = 43.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 16, 16 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "0"
+align = 2
+valign = 3
+uppercase = true
+
+[connection signal="focus_entered" from="." to="." method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_button_mouse_entered"]

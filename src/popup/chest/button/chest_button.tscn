@@ -1,0 +1,197 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=1]
+[ext_resource path="res://assets/components/book-icon-box.png" type="Texture" id=2]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt_spell_icon.png" type="Texture" id=3]
+[ext_resource path="res://src/popup/chest/button/chest_button.gd" type="Script" id=4]
+[ext_resource path="res://src/res/fonts/monogram_8.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=6]
+[ext_resource path="res://assets/components/simple_border_box_fg.png" type="Texture" id=7]
+[ext_resource path="res://src/res/fonts/monogram_12.tres" type="DynamicFont" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/add_color = true
+shader_param/color = Color( 0.113725, 0.0666667, 0.12549, 1 )
+shader_param/color_modifier = 1.0
+shader_param/add_border = true
+shader_param/border_color = Color( 0, 0, 0, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 0
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[node name="chest_button" type="Button"]
+margin_right = 120.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 120, 200 )
+custom_styles/focus = SubResource( 1 )
+flat = true
+script = ExtResource( 4 )
+bg_color = Color( 0.113725, 0.0666667, 0.12549, 1 )
+bg_hover_color = Color( 0.0745098, 0.0431373, 0.0823529, 1 )
+bg_border_color = Color( 0, 0, 0, 1 )
+bg_hover_border_color = Color( 0.733333, 0.0588235, 0.772549, 1 )
+
+[node name="bg" type="NinePatchRect" parent="."]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="icon_container" type="Control" parent="container"]
+margin_right = 120.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="texture" type="TextureRect" parent="container/icon_container"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -23.0
+margin_top = -10.0
+margin_right = 23.0
+margin_bottom = 20.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="label_control" type="Control" parent="container"]
+margin_top = 30.0
+margin_right = 120.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 20 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="container/label_control"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -5.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "label"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="description_container" type="Control" parent="container"]
+margin_top = 54.0
+margin_right = 120.0
+margin_bottom = 164.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="description" type="RichTextLabel" parent="container/description_container"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -5.0
+rect_min_size = Vector2( 0, 110 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+
+[node name="details_container" type="Control" parent="container"]
+margin_top = 168.0
+margin_right = 120.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="details" type="Label" parent="container/details_container"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_right = -3.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="badges_container" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+rect_min_size = Vector2( 0, 12 )
+custom_constants/separation = 1
+alignment = 2
+
+[node name="upgrades_size_container" type="Control" parent="badges_container"]
+unique_name_in_owner = true
+margin_left = 98.0
+margin_right = 110.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 12, 12 )
+hint_tooltip = "UPGRADES_SIZE_HINT"
+
+[node name="upgrade_size_border" type="NinePatchRect" parent="badges_container/upgrades_size_container"]
+unique_name_in_owner = true
+modulate = Color( 0, 0, 0, 0.341176 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="bg" type="NinePatchRect" parent="badges_container/upgrades_size_container"]
+visible = false
+modulate = Color( 0.313726, 0.101961, 0.345098, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="upgrades_size_label" type="Label" parent="badges_container/upgrades_size_container"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_bottom = -1.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "0"
+align = 1
+valign = 1
+
+[connection signal="button_down" from="." to="." method="_on_upgrade_button_button_down"]
+[connection signal="focus_entered" from="." to="." method="_on_upgrade_button_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_upgrade_button_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_upgrade_button_mouse_entered"]

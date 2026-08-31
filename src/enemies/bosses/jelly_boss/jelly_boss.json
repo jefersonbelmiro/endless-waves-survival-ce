@@ -1,0 +1,27 @@
+{
+  "id": "jelly_boss",
+  "level": 1,
+  "stats": {
+    "move_speed": 20,
+    "max_health": 1000,
+    "base_damage": 10,
+    "status_resistance": 0.5,
+    "attack_speed": 40
+  },
+  "buff_per_level": {
+    "max_health": 0.8,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    "chase",
+    "knockback",
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 100
+      }
+    }
+  ],
+  "sort_order": 6
+}

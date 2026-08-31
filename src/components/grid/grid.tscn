@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/components/grid/grid.gd" type="Script" id=1]
+[ext_resource path="res://src/classes/scroll_helper.gd" type="Script" id=2]
+
+[node name="grid" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="scroll_container" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+script = ExtResource( 2 )
+
+[node name="margin_container" type="MarginContainer" parent="scroll_container"]
+margin_right = 480.0
+margin_bottom = 252.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="grid_container" type="GridContainer" parent="scroll_container/margin_container"]
+margin_right = 480.0
+margin_bottom = 252.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 4
+
+[connection signal="resized" from="scroll_container/margin_container/grid_container" to="." method="_on_grid_container_resized"]

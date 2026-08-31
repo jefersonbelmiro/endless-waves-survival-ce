@@ -1,0 +1,104 @@
+{
+  "uid": "map_dota",
+  "id": "dota",
+  "label": "DEFENSE_OF_THE_ANCIENT",
+  "sort_order": 4,
+  "objectives": [
+    {
+      "type": "survive_time",
+      "value": "05:00",
+      "label": "DOTA_OBJECTIVE_SURVIVE"
+    }
+  ],
+  "spawn_data": {
+    "jelly": {
+      "drops": {
+        "coin": { "proc_chance": 0.2 },
+        "experience": { "proc_chance": 0.8, "value": 10 },
+        "consumable": { "proc_chance": 0.01 }
+      },
+      "behaviours": [
+        {
+          "id": "chase",
+          "data": {
+            "targets": {
+              "player_unit": { "use_attack_range": false },
+              "player": { "use_attack_range": false }
+            }
+          }
+        },
+        {
+          "id": "melee_attack",
+          "data": { "damage_knockback": 50 }
+        },
+        "knockback"
+      ]
+    },
+    "jelly_king": {
+      "behaviours": [
+        {
+          "id": "chase",
+          "data": {
+            "targets": {
+              "player_unit": { "use_attack_range": false },
+              "player": { "use_attack_range": false }
+            }
+          }
+        },
+        {
+          "id": "melee_attack",
+          "data": { "damage_knockback": 50 }
+        },
+        "knockback"
+      ],
+      "drops": {
+        "coin": { "proc_chance": 0.7 },
+        "experience": { "proc_chance": 0.8, "value": 50 },
+        "consumable": { "proc_chance": 0.1 }
+      }
+    }
+  },
+  "spawn_mode": {
+    "mode": "circle",
+    "center_position": [230, 130],
+    "radius": 220
+  },
+  "events": [
+    {
+      "type": "spawn",
+      "interval": 1,
+      "data": { "spawns": [{ "id": "jelly", "size": 2, "max_alive": 5 }] }
+    },
+    {
+      "type": "spawn",
+      "start": "01:00",
+      "interval": 3,
+      "data": { "spawns": [{ "id": "jelly_king", "size": 1, "max_alive": 1 }] }
+    },
+    {
+      "type": "data_increment",
+      "start": "01:00",
+      "interval": "00:20",
+      "data": { "id": "jelly", "size": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "00:40",
+      "interval": "00:20",
+      "data": { "id": "jelly", "max_alive": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "01:00",
+      "interval": "00:20",
+      "timeout": "10:00",
+      "data": { "level": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "10:00",
+      "interval": "00:05",
+      "data": { "level": 1 }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "consumable_potion_of_damage",
+  "uid": "consumable_potion_of_damage",
+  "label": "CONSUMABLE_POTION_OF_DAMAGE_LABEL",
+  "description": "CONSUMABLE_POTION_OF_DAMAGE_DESC",
+  "toast_used": "CONSUMABLE_POTION_OF_DAMAGE_TOAST_USED",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/potion_of_damage/texture/potion_of_damage_icon.png",
+  "class": "res://src/classes/consumable_data.gd",
+  "type": "item",
+  "tier": 1,
+  "base_damage": 5,
+  "cost": 20,
+  "modifier_duration": 10,
+  "stack": true,
+  "stack_max": 10,
+  "sort_order": 1
+}

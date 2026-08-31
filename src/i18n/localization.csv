@@ -1,0 +1,482 @@
+keys,en,pt,zh
+NEW_GAME,New game,Novo jogo,新游戏
+CONTINUE,Continue,Continuar,继续
+SETTINGS,Settings,Definições,设置
+RESUME,Resume,Resumir,回到游戏
+SAVE_AND_QUIT,Save and quit,Salvar e sair,保存並退出
+MENU,Menu,Menu,菜单
+QUIT,Quit,Sair,退出
+MUSIC_VOLUME,Music volume,Volume da música,音乐
+SOUND_VOLUME,Sound volume,Volume do som,音效
+PARTICLE_EFFECT,Particle effect,Efeito de partículas,粒子效果
+FLOATING_TEXT,Floating texts,Textos flutuantes,浮動文本
+FULLSCREEN,Fullscreen,Tela cheia,全屏
+LANGUAGE,Language,Linguagem,语言
+GENERAL,General,Geral,一般的
+EFFECTS,Efects,Efeitos,效果
+AUDIO,Audio,Áudio,聲音的
+CONTROLLER,Controller,Controle,控制器
+DEVICE,Device,Dispositivo,設備
+EMPTY_DEVICE,No device connected,Nenhum dispositivo conectado,没有连接任何设备
+BACK,Back,Voltar,返回
+DONE,Done,Feito,完成
+SIZE,Size,Tamanho,尺寸
+COLOR,Color,Cor,顏色
+OUTLINE,Outline,Contorno,大綱
+OUTLINE_ADD_BORDER,Add border,Adicionar borda,添加邊框
+OUTLINE_BORDER_INSIDE,Border inside,Borda interna,內邊框
+OUTLINE_BORDER_WIDTH,Border width,Largura da borda,邊框寬度
+IMAGE,Image,Imagem,圖片
+PREVIEW,Preview,Pré-visualização,預習
+EASY,Easy,Fácil,簡單的
+NORMAL,Normal,Normal,普通的
+HARD,Hard,Difícil,難的
+ENGLISH,English,Inglês,英语
+PORTUGUESE,Portuguese,Português,葡萄牙语
+CHINESE,Chinese,Chinês,简体中文
+GAME_PAUSED,Game paused,Jogo pausado,暂停
+STATS,Stats,Stats,统计
+CARDS,Cards,Cartas,牌
+SPELLS,Spells,Feitiços,法术
+ITEMS,Items,Itens,道具
+ITEMS_PLURAL,Item(s),Item(ns),件商品
+BACKPACK,Backpack,Mochila,背包
+SHOP,Shop,Loja,店鋪
+CONSUMABLE,Consumable,Consumível,消耗品
+UPGRADE_POINTS,Upgrade points,Pontos de melhoria,升级点
+COINS,Coins,Moedas,金币
+UPGRADE,Upgrade,Melhorar,提升
+BUY,Buy,Comprar,购买
+SELL,Sell,Vender,賣
+BUY_OR_SELL,Buy / Sell,Vender / Comprar,買/賣
+LEARN,Learn,Aprender,學會
+USE,Use,Usar,使用
+COST,Cost,Custo,花费
+UPGRADED,Upgraded,Melhorado,升级
+ADDED,Added,Adicionado,新增
+COOLDOWN,Cooldown,Cooldown,冷却
+DURATION,Duration,Duração,期间
+CAST_TIME,Cast time,Tempo de lançamento,施法时间
+MAX_PROJECTILES,Max projectiles,Projéteis máximos,最大射弹
+SPREAD,Spread,Espalhar,傳播
+PASS_THROUGH,Pass through,Atravessar,通過
+SPEED,Speed,Velocidade,速度
+AREA,Area,Área,区域
+EXPLOSION_AREA,Explosion area,Área da explosão,爆炸區域
+HEALTH,Health,Vida,HP
+DAMAGE,Damage,Dano,伤害
+DAMAGE_TYPE,Damage type,Tipo de dano,傷害類型
+DAMAGE_TYPE_MAGIC,Magical,Mágico,神奇的
+DAMAGE_TYPE_PHYSICAL,Physical,Físico,身體的
+TARGET_UNIT,Target unit,Unidade-alvo,目標單位
+BASE_DAMAGE,Base damage,Dano base,基礎傷害
+MAGIC_DAMAGE,Magic damage,Dano mágico,魔法傷害
+RANGE_DAMAGE,Range damage,Dano de alcance,距离伤害
+PHYSICAL_DAMAGE,Physical damage,Dano físico,物理傷害
+CRITICAL_DAMAGE,Critical damage,Dano crítico,暴击伤害
+DAMAGE_KNOCKBACK,Knockback,Knockback,擊退
+DAMAGE_BLOCK,Damage block,Bloqueio de dano,傷害方塊
+PICK_AREA,Pick area,Área de coleta,选择区域
+HEALTH_REGEN,Health regen,Recuperação de vida,健康再生
+LEVEL,Level,Nível,等级
+LEVELUP,LEVELUP,+1 NÍVEL,升级
+LEVEL_UPGRADE,Level {level} upgrade,Atualização de nível {level},{level}级升级
+LEVEL_REACHED,Level reached,Nível atingido,最终等级
+GLOW_EFFECT,Glow effect,Efeito de brilho,發光效果
+AUTO_LEVELUP_LABEL,Auto level up,Passar de nível automaticamente,自動升級
+AUTO_LEVELUP_HINT,Open the upgrade popup when levelup,Abra o pop-up de melhorias ao subir de nível,升級時打開升級彈出窗口
+ENEMY_HEALTH_BAR,Displays enemy health bar,Exibe barra de saúde dos inimigos,顯示敵人的健康欄
+AUTOCAST_ICONS,Display autocast skill icons,Exibir ícones de habilidades de autocast,顯示自動施法技能圖標
+SUMMARY,Summary,Resumo,结果
+SURVIVED,Survived,Sobreviveu,幸存下来
+COINS_EARNED,Coins earned,Moedas ganhas,获得金币
+ENEMIES_DEFEATED,Enemies defeated,Inimigos derrotados,击败敌人
+DAMAGE_BLOCKED,Damage blocked,Dano bloqueado,伤害格挡
+RESTART,Restart,Reiniciar,重新开始
+DAMAGE_TAKEN,Damage taken,Dano recebido,承受伤害
+ATTACK_SPEED,Attack speed,Velocidade de ataque,攻速
+MOVE_SPEED,Move speed,Velocidade de movimento,运动速度
+MAX_HEALTH,Max health,Saúde máxima,最大生命值
+DEFENSE,Defense,Defesa,防禦
+HEALING_EFFECTIVENESS,Healing effectiveness,Eficácia de cura,治療效果
+MAGIC_DEFENSE,Magic defense,Defesa mágica,魔法防禦
+COOLDOWN_REDUCTION,Cooldown reduction,Redução de cooldown,冷卻縮減
+ATTACK_RANGE,Attack range,Alcance de ataque,攻擊範圍
+FLEE,Flee,Fuga,逃離
+ATTACK_SPEED_RATE,Attack speed rate,Taxa de velocidade de ataque,攻擊速度率
+EVASION,Evasion,Evasão,逃避
+DEFENSE_REDUCTION,Physical damage reduction,Redução de dano físico,物理傷害減免
+MAGIC_DEFENSE_REDUCTION,Magic damage reduction,Redução de dano mágico,魔法傷害減免
+STATUS_RESISTANCE,Status resistance,Resistência estática,狀態抗性
+STRENGTH,Strength,Força,力量
+VITALITY,Vitality,Vitalidade,活力
+INTELLIGENCE,Intelligence,Inteligência,智力
+AGILITY,Agility,Agilidade,敏捷性
+DEXTERITY,Dexterity,Destreza,靈巧
+LUCK,Luck,Sorte,運氣
+CHARACTER,Character,Personagem,字符
+MAP,Map,Mapa,地圖
+DECK,Deck,Deck,甲板
+NEW_DECK,New deck,Novo deck,新甲板
+OBJECTIVES,Objectives,Objetivos,目標
+OBJECTIVE_KILL_BOSS,Kill the boss,Matar o chefe,殺死老闆
+OBJECTIVE_KILL_ID,Kill {id_label} {value},Matar {id_label} {value},殺死 {id_label} {value}
+OBJECTIVE_KILL_ENEMIES,Kill {value} enemies,Matar {value} inimigos,殺死 {value} 個敵人
+OBJECTIVE_SURVIVE,Survive {value},Sobreviver {value},存活 {value}
+OBJECTIVE_FIND_EXIT,Find the way out,Encontre a saída,找到出路
+OBJECTIVE_KILL_ELITE,Kill the elites {value},Mate os elites {value},消滅 {value} 個菁英
+DOTA_OBJECTIVE_SURVIVE,Keep the Ancient crystal alive for {value},Mantenha o cristal Ancestral vivo por {value},讓古代水晶保持活力 {value}
+DEATHS,Deaths,Mortes,死亡
+BOUNCES,Bounces,Saltos,弹跳
+BOUNCE_DISTANCE,Bounce distance,Distância de salto,彈跳距離
+QUIT_CONFIRM,Are you sure you want to exit the game?,Tem certeza de que deseja sair do jogo?,您确定要退出游戏吗？
+YES,Yes,Sim,是的
+NO,No,Não,不
+EDIT,Edit,Editar,編輯
+WAVE,Wave,Onda,波
+REMOVE,Remove,Remover,去掉
+ADD,Add,Adicionar,加
+CROSSHAIR,Crosshair,Mira,十字準線
+SHORT_SECONDS,s,s, 秒
+MAX_STACK,Max stack,Stack máximo,最大堆栈
+PASSIVE,Passive,Passiva,被動的
+ACTIVATE,Activate,Ativar,啟用
+FRONTAL,Frontal,Frontal,正面
+AIM,Aim,Mira,瞄准
+SPELL_AREA,Spell area,Área de feitiço,法術區域
+SPELL_DURATION,Spell duration,Duração do feitiço,法術持續時間
+CONSUMABLE_COLLECTOR_ORB_LABEL,Collector orb,Orbe coletor,吸收灵珠
+CONSUMABLE_COLLECTOR_ORB_DESC,Collect all available items on the map,Colete todos os itens disponíveis no mapa,收集地图上所有可用的道具
+CONSUMABLE_COLLECTOR_ORB_TOAST_USED,Collector orb used,Orbe coletor usado,使用过的吸收灵珠
+CONSUMABLE_POTION_OF_DAMAGE_LABEL,Potion of damage,Poção de dano,增伤药水
+CONSUMABLE_POTION_OF_DAMAGE_DESC,Increases damage by {base_damage} for {modifier_duration},Aumenta o dano em {base_damage} por {modifier_duration},增加 {base_damage} 伤害，持续 {modifier_duration}
+CONSUMABLE_POTION_OF_DAMAGE_TOAST_USED,{base_damage} damage,{base_damage} de dano,{base_damage} 伤害
+CONSUMABLE_POTION_OF_HEALING_LABEL,Potion of healing,Poção de cura,治愈药水
+CONSUMABLE_POTION_OF_HEALING_DESC,Restores {current_health} health when used,Restaura {current_health} pontos de vida quando usado,使用时恢复 {current_health} 点生命值
+CONSUMABLE_POTION_OF_HEALING_TOAST_USED,{current_health} health,{current_health} de vida,{current_health} 生命值
+CONSUMABLE_POTION_OF_HEALING_TOAST_CANT_USE,HP is already at maximum,HP já está no máximo,健康已經達到最大值
+CONSUMABLE_POTION_OF_MOVE_SPEED_LABEL,Potion of move speed,Poção de velocidade de movimento,移动速度药水
+CONSUMABLE_POTION_OF_MOVE_SPEED_DESC,Increases move speed by {move_speed} for {modifier_duration},Aumente a velocidade de movimento em {move_speed} por {modifier_duration},移动速度提高 {move_speed} 持续 {modifier_duration}
+CONSUMABLE_POTION_OF_MOVE_SPEED_TOAST_USED,{move_speed} move speed,{move_speed} velocidade de movimento,{move_speed} 移动速度 
+CONSUMABLE_POTION_OF_ATTACK_SPEED_LABEL,Potion of attack speed,Poção de velocidade de ataque,攻速藥水
+CONSUMABLE_POTION_OF_ATTACK_SPEED_DESC,Increases attack speed by {attack_speed} for {modifier_duration},Aumenta a velocidade de ataque em {attack_speed} por {modifier_duration},在 {modifier_duration} 內將攻擊速度提高 {attack_speed}
+CONSUMABLE_POTION_OF_ATTACK_SPEED_TOAST_USED,{attack_speed} attack speed,{attack_speed} velocidade de ataque,{attack_speed} 攻擊速度
+CONSUMABLE_POTION_OF_COOLDOWN_LABEL,Potion of cooldown,Poção de cooldown,冷却药水
+CONSUMABLE_POTION_OF_COOLDOWN_DESC,Reduces cooldown by {cooldown_reduction} for {modifier_duration},Reduz cooldown em {cooldown_reduction} por {modifier_duration},冷却时间减少 {cooldown_reduction} 持续 {modifier_duration}
+CONSUMABLE_POTION_OF_COOLDOWN_TOAST_USED,{cooldown_reduction} cooldown reduction,{cooldown_reduction} redução de cooldown,{cooldown_reduction} 冷却缩减
+CONSUMABLE_MAX_STACK_TOAST_CANT_USE,Maximum stack reached,Stack máximo atingido,達到最大堆疊
+CONSUMABLE_ICE_TOWER_SCROLL_LABEL,Ice tower scroll,Pergaminho da torre de gelo,冰塔捲軸
+CONSUMABLE_ICE_TOWER_SCROLL_DESC,Summons an Ice tower,Invoca uma torre de gelo,召喚一座冰塔
+CONSUMABLE_ARROW_TOWER_SCROLL_LABEL,Arrow tower scroll,Pergaminho da torre de flecha,箭塔捲軸
+CONSUMABLE_ARROW_TOWER_SCROLL_DESC,Summons an Arrow tower,Invoca uma Torre de flechas,召喚一座箭塔
+CONSUMABLE_HEALING_TOWER_SCROLL_LABEL,Healing tower scroll,Pergaminho da torre de cura,治療塔捲軸
+CONSUMABLE_HEALING_TOWER_SCROLL_DESC,Summons an Healing tower,Invoca uma torre de cura,召喚治療塔
+CONSUMABLE_POTION_OF_EXPERIENCE_LABEL,Potion of experience,Poção de experiência,經驗藥水
+CONSUMABLE_POTION_OF_EXPERIENCE_DESC,Increases experience gain by {experience_factor} for {modifier_duration},Aumenta o ganho de experiência em {experience_factor} por {modifier_duration},在 {modifier_duration} 內增加 {experience_factor} 的經驗獲取
+CONSUMABLE_POTION_OF_EXPERIENCE_TOAST_USED,{experience_factor} experience modifier,{experience_factor} modificador de experiência,{experience_factor} 經驗修正
+CONSUMABLE_ELIXIR_OF_RISKY_TRADE_LABEL,Elixir of risky trade,Elixir do negócio arriscado,風險貿易的靈丹妙藥
+CONSUMABLE_ELIXIR_OF_RISKY_TRADE_DESC,Lose [color=red]50%[/color] of current health and gain {max_health} maximum HP and {health_regen} health regeneration for {modifier_duration},Perde [color=red]50%[/color] do HP atual e ganhe {max_health} HP máximo e {health_regen} regeneração de saúde por {modifier_duration},失去 [color=red]50%[/color] 當前生命值，並獲得{max_health} 最大生命值和{health_regen} 生命恢復，持續 {modifier_duration}
+CONSUMABLE_ELIXIR_OF_RISKY_TRADE_TOAST_USED,Elixir of risky trade used,Elixir do comércio arriscado usado,使用高風險貿易的靈丹妙藥
+CONSUMABLE_BAT_WING_LABEL,Bat wing,Asa de morcego,蝙蝠翼
+CONSUMABLE_BAT_WING_DESC,Lose [color=red]50%[/color] current health and gain {lifesteal_proc_chance} lifesteal for {modifier_duration},Perde [color=red]50%[/color] da saúde atual e ganhe {lifesteal_proc_chance} de roubo de vida por {modifier_duration},失去 [color=red]50%[/color] 當前生命值並在 {modifier_duration} 內獲得 {lifesteal_proc_chance} 吸血
+CONSUMABLE_BAT_WING_TOAST_USED,Bat wing used,Asa de morcego usado,使用蝙蝠翼
+ITEM_BOOTS_OF_SPEED_LABEL,Boots of speed,Botas de velocidade,速度之靴
+ITEM_BOOTS_OF_SPEED_DESC,{move_speed} movement speed,{move_speed} velocidade de movimento,{move_speed} 移动速度
+ITEM_BRACER_OF_DAMAGE_LABEL,Bracer of damage,Braçadeira de dano,增伤护腕
+ITEM_BRACER_OF_DAMAGE_DESC,{base_damage} base damage,{base_damage} dano base,{base_damage} 基礎傷害
+ITEM_HELMET_OF_ARMOR_LABEL,Helmet of armor,Capacete de armadura,盔甲之盔
+ITEM_PLATEMAIL_OF_HEALTH_LABEL,Platemail of health,Cota de malha de vida,生命的锁子甲
+ITEM_PLATEMAIL_OF_HEALTH_DESC,{max_health} max health,{max_health} de vida máxima,{max_health} 最大生命值
+ITEM_RING_OF_ATTACK_SPEED_LABEL,Ring of attack speed,Anel de velocidade de ataque,攻擊速度之環
+ITEM_RING_OF_ATTACK_SPEED_DESC,{attack_speed} attack speed,{attack_speed} velocidade de ataque,{attack_speed} 攻擊速度
+ITEM_RING_OF_EVASION_LABEL,Ring of evasion,Anel de evasão,迴避之戒
+ITEM_RING_OF_EVASION_DESC,{evasion} evasion,{evasion} evasão,{evasion} 閃避
+ITEM_MAGNET_LABEL,Magnet,Ímã,磁铁
+ITEM_MAGNET_DESC,{pick_area} pick area,{pick_area} área de coleta,{pick_area}拾取面积
+ITEM_RING_OF_AREA_LABEL,Ring of area,Anel de área,扩区戒指
+ITEM_RING_OF_AREA_DESC,{spell_area} spell area,{spell_area} de área de feitiço,{spell_area} 法术范围
+ITEM_RING_OF_REGENERATION_LABEL,Ring of regeneration,Anel de regeneração,回血戒指
+ITEM_RING_OF_REGENERATION_DESC,{health_regen} health regeneration,{health_regen} regeneração de vida,{health_regen} 生命恢复
+ITEM_BOOK_OF_COOLDOWN_LABEL,Book of cooldown,Livro de cooldown,冷却之书
+ITEM_BOOK_OF_COOLDOWN_DESC,{cooldown_reduction} cooldown reduction,{cooldown_reduction} redução de cooldown,{cooldown_reduction} 冷却缩减
+SPELL_COLD_BOLT_LABEL,Cold bolt,Lanças de gelo,冰矛
+SPELL_COLD_BOLT_DESC,Calls forth chunks of frigid ice from the skies to strike at a single target,Chama pedaços de gelo dos céus para atacar um único alvo,从天而降的大冰块攻击单个目标
+SPELL_CRYSTAL_RAIN_LABEL,Crystal rain,Chuva de cristal,冰雨
+SPELL_CRYSTAL_RAIN_DESC,Makes an ice rain fall around you,Faz uma chuva de gelo cair ao seu redor,冷冷的冰雨在你身边胡乱地拍
+SPELL_FIRE_BALL_LABEL,Fireball,Bola de fogo,火球
+SPELL_FIRE_BALL_DESC,Throw a fireball at random direction,Joga uma bola de fogo em uma direção aleatória,向随机方向投掷火球
+SPELL_LIGHT_BALL_LABEL,Luminar Staff,Cajado Luminar,光明法杖
+SPELL_LIGHT_BALL_DESC,Throw a light ball at closest enemy,Joga uma bola de luz no inimigo mais próximo,向最近的敌人投掷光球
+SPELL_LIGHT_BALL_BOUNCE,Light ball bounces,Bola de luz quica,光球反彈
+SPELL_LIGHT_BALL_BOUNCE_DESC,Bounces when colliding,Salta ao colidir,碰撞時反彈
+SPELL_SHIELD_LABEL,Shield,Escudo,吸收盾
+SPELL_SHIELD_DESC,Create shield that absorbs damage,Cria escudo que absorve dano,制造吸收伤害的盾
+SPELL_SHIELD_EXPLOSION_UPGRADE_DESC,Explodes when destroyed,Explode quando destruído,被摧毀時爆炸
+SPELL_SPIRAL_BALL_LABEL,Spiral ball,Bola espiral,螺旋球
+SPELL_SPIRAL_BALL_DESC,Creates a spiral ball around you,Cria uma bola espiral em torno de você,在你周围生成一个球，围着你旋转
+SPELL_SPIRAL_BALL_EXPLOSION_DESC,"Explodes at end of duration, throwing all projectiles","Explode no final da duração, arremessando todos os projéteis","在持續時間結束時爆炸，投擲所有投射物"
+SPELL_SPIRAL_BALL_EXPLOSION_UPGRADE_DESC,Explodes before finish,Explode antes de terminar,完成前爆炸
+SPELL_ICE_BALL_LABEL,Ice ball,Bola de gelo,冰球
+SPELL_ICE_BALL_DESC,Throw a ice ball at random enemy,Jogue uma bola de gelo em um inimigo aleatório,向隨機敵人投擲冰球
+SPELL_ICE_BALL_SLOWDOWN_DESC,Enemy movement speed {move_speed} for {modifier_duration},Velocidade de movimento do inimigo {move_speed} por {modifier_duration},敌人移动速度 {move_speed} 持续 {modifier_duration} 秒
+SPELL_LIGHTNING_BOLT_LABEL,Lightning bolt,Relâmpago,闪电
+SPELL_LIGHTNING_BOLT_DESC,Calls forth bolts of lightning from the skies to strike at a random enemies,Convoca relâmpagos dos céus para atacar inimigos aleatórios,从天空召唤闪电攻击随机敌人
+SPELL_ARC_LIGHTNING_LABEL,Arc lightning,Relâmpago de arco,電弧閃電
+SPELL_ARC_LIGHTNING_DESC,Hurls a bolt of lightning that leaps through nearby enemy units,Lança um relâmpago que salta através de unidades inimigas próximas,"投出一道閃電，穿過附近的敵方單位"
+SPELL_PROXIMITY_MINES_LABEL,Proximity mines,Minas de proximidade,鄰近地雷
+SPELL_PROXIMITY_MINES_DESC,"Throws a mine in the direction you're aiming, explodes when enemies pass","Lança uma mina na direção que você está mirando, explode quando os inimigos passam","向你瞄準的方向投擲地雷，當敵人經過時爆炸"
+SPELL_ABSOLUTE_CHAOS_LABEL,Absolute chaos,Caos absoluto,絕對的混亂
+SPELL_ABSOLUTE_CHAOS_DESC,Remove spells cooldown,Remova o tempo de espera de feitiços,移除法術冷卻時間
+SPELL_DASH_LABEL,Dash,Arranque,破折號
+SPELL_DASH_DESC,Rushes forward with a strong burst of speed,Avança com uma forte explosão de velocidade,以极强的速度前进
+SPELL_DASH_PASSING_THROUGH_DESC,Deals damage when passing through enemies,Causa dano ao passar por inimigos,穿過敵人時造成傷害
+SPELL_DASH_PASSING_THROUGH_LABEL,Damage when passing through,Dano ao atravessar,穿越时受到伤害
+SPELL_DASH_EXPLOSION_DESC,Explodes at end of duration,Explode no final da duração,在持續時間結束時爆炸
+SPELL_DASH_EXPLOSION_UPGRADE_DESC,Explodes at end of duration,Explode no final da duração,在持續時間結束時爆炸
+SPELL_DAGGER_LABEL,Dagger,Adaga,匕首
+SPELL_DAGGER_DESC,Throws a dagger at the nearest enemy,Lança uma adaga no inimigo mais próximo,向最近的敵人投擲匕首
+SPELL_ACCURATE_ICE_BALL_LABEL,Accurate ice ball,Bola de gelo precisa,準確的冰球
+SPELL_ACCURATE_ICE_BALL_DESC,Seeks a new target if the current one dies,Procura um novo alvo se o atual morrer,"如果當前目標死亡，則尋找新目標"
+SPELL_TIME_DILATION_LABEL,Time dilation,Dilatação do tempo,時間膨脹
+SPELL_TIME_DILATION_DESC,Dilates time causing slow motion effect,Dilata o tempo causando efeito de câmera lenta,擴張時間導致慢動作效果
+SPELL_SPELL_DURATION_DESC,Increases the duration of spells and debuffs,Aumenta a duração dos feitiços e debuffs,增加法術和減益的持續時間
+SPELL_KNOCKBACK_DESC,Increases the knockback of all attacks,Aumenta o knockback de todos os ataques,增加所有攻擊的擊退
+CARD_ICE_TOWER_LABEL,Ice tower,Torre de gelo,冰塔
+CARD_ICE_TOWER_DESC,Throws an ice ball at random enemy,Joga uma bola de gelo em um inimigo aleatório,向隨機敵人投擲冰球
+CARD_ICE_TOWER_REQUIRE_DESC,Requires a [color=#775e14]Ice tower scroll[/color] to summon,Requer um [color=#775e14]Pergaminho da torre de gelo[/color] para invocar,需要[color=#775e14]冰塔捲軸[/color]才能召喚
+CARD_ARROW_TOWER_LABEL,Arrow tower,Torre de flecha,箭塔
+CARD_ARROW_TOWER_REQUIRE_DESC,Requires a [color=#775e14]Arrow tower scroll[/color] to summon,Requer um [color=#775e14]Pergaminho da torre de flecha[/color] para invocar,需要[color=#775e14]箭塔捲軸[/color]才能召喚
+CARD_HEALING_TOWER_LABEL,Healing tower,Torre de cura,治療塔
+CARD_HEALING_TOWER_DESC,Heals allies in area,Cura aliados em área,治疗该地区的盟友
+CARD_HEALING_TOWER_REQUIRE_DESC,Requires a [color=#775e14]Healing tower scroll[/color] to summon,Requer um [color=#775e14]Pergaminho da torre de cura[/color] para invocar,需要[color=#775e14]治療塔捲軸[/color]才能召喚
+CARD_ARROW_TOWER_DESC,Fires an arrow at random enemy,Dispara uma flecha em um inimigo aleatório,向隨機敵人發射一支箭
+RUSTED_SHIELD,Rusted shield,Escudo enferrujado,生鏽的盾牌
+OBSERVER_WARD,Observer ward,Sentinela observadora,侦查守卫
+DEBUFF_FROZEN_DESC,freezes the enemy for {modifier_duration},congela o inimigo por {modifier_duration},凍結敵人{modifier_duration}
+DEBUFF_BURN_DESC,"Applies [color=#775e14]Burn[/color] to target, dealing {damage} damage per second for {modifier_duration}","Aplica [color=#775e14]Queimadura[/color] no alvo, causando {damage} de dano por segundo por {modifier_duration}","对目标施加 [color=#775e14]燃烧[/color]，每秒造成 {damage} 伤害，持续 {modifier_duration}"
+DAMAGE_FACTOR,Damage modifier,Modificador de dano,傷害修正
+EXPLOSION_DAMAGE,Explosion damage,Dano da explosão,爆炸傷害
+BASE_DAMAGE_FACTOR_PLACEHOLDER,{value} base damage,{value} dano base,{value} 基礎傷害
+BASE_DAMAGE_FACTOR,Base damage modifier,Modificador de dano base,基礎傷害修正
+MAGIC_DAMAGE_FACTOR,Magic damage modifier,Modificador de dano mágico,魔法傷害修正
+PHYSICAL_DAMAGE_FACTOR,Physical damage modifier,Modificador de dano físico,物理傷害修正
+EXPERIENCE_FACTOR,Experience modifier,Modificador de experiência,经验调整器
+DROP_PROC_CHANCE_FACTOR,Drop chance modifier,Modificador de chance de drop,掉落機率修正
+PROC_CHANCE,Chance,Chance,機會
+MODIFIER_DURATION,Duration,Duração,期间
+AUTOCAST,Autocast,Autocast,自動投射
+EXPERIENCE,Experience,Experiência,經驗
+CRITICAL_STRIKE,Critical strike,Ataque crítico,暴击
+CRITICAL,Critical,Golpe crítico,批判的
+LIFESTEAL,Lifesteal,Roubo de vida,吸血
+CHANCE,Chance,Chance,機會
+CRITICAL_HIT_CHANCE,Critical hit chance,Chance de golpe crítico,暴擊機率
+SPELL_ULTIMATE_HINT_TOUCHESCREEN,Ultimate: tap on spell to activate,Ultimate: toque no feitiço para ativar,終極：點擊咒語激活
+SPELL_ULTIMATE_HINT,Ultimate: use * to activate,Ultimate: use * para ativar,终极：使用*激活
+SPELL_DUPLICATOR_LABEL,Duplicator,Duplicador,复制器
+SPELL_DUPLICATOR_DESC,Increases the amount of projectiles,Aumenta a quantidade de projéteis,增加彈丸數量
+SPELL_FATEFUL_STRIKE_LABEL,Fateful strike,Golpe fatídico,致命一擊
+SPELL_FATEFUL_STRIKE_DESC,Increases chance of dealing a critical hit to enemies with full health,Aumenta a chance de causar um acerto crítico aos inimigos com vida cheia,增加对生命值满的敌人造成致命一击的几率
+WHIRLWIND_SLASH_LABEL,Whirlwind slash,Golpe redemoinho,旋風斬
+WHIRLWIND_SLASH_DESC,Spinning attack that deals damage to all enemies around you,Ataque giratório que causa dano a todos os inimigos ao seu redor,旋轉攻擊，對周圍所有敵人造成傷害
+ABYSSAL_SWORD_LABEL,Abyssal sword,Espada Abissal,深淵之劍
+ABYSSAL_SWORD_DESC,"Unleashes a sweeping area attack, targeting the nearest enemy","Lança um ataque em área abrangente, visando o inimigo mais próximo","釋放一個橫掃範圍攻擊，以最近的敵人為目標"
+MACE_LABEL,Mace,Clava,錘
+MACE_DESC,Spin a mace around you,Gire uma maça ao seu redor,在你周圍旋轉狼牙棒
+CLUB_LABEL,Club,Taco,棒槌
+CLUB_DESC,Swings a large wooden club,balança um grande taco de madeira,揮舞大木棍
+SPELL_ARROW_LABEL,Spreadshot Longbow,Arco de Dispersão,散射長弓
+SPELL_ARROW_DESC,Fires an arrow at the nearest enemy,Dispara uma flecha no inimigo mais próximo,向最近的敵人發射箭矢
+SPELL_FROST_ATTACK_LABEL,Frost attack,Ataque de gelo,霜凍攻擊
+SPELL_FROST_ATTACK_DESC,All your attacks have a chance to freeze the target,Todos os seus ataques têm chance de congelar o alvo,你的所有攻擊都有一定機率凍結目標。
+SPELL_VENOMOUS_LABEL,Venomous,Venenoso,有毒
+SPELL_VENOMOUS_DESC,All your attacks have a chance to apply [color=#775e14]Poison[/color] to the target,Todos os seus ataques têm  chance de aplicar [color=#775e14]Veneno[/color] no alvo,你的所有攻擊都有機率使目標[color=#775e14]中毒[/color]
+EARTHSHOCK_LABEL,Earthshock,Choque terrestre,地震
+EARTHSHOCK_DESC,"Slams the earth, causing a powerful shock to damage and slow all enemy units in a nearby area","Bate na terra, causando um choque poderoso para danificar e desacelerar todas as unidades inimigas em uma área próxima","猛擊大地，對附近區域的所有敵方單位造成強大的衝擊傷害並減速"
+EARTHSHOCK_SLOWDOWN_DESC,Enemy movement speed {move_speed} for {modifier_duration},Velocidade de movimento do inimigo {move_speed} por {modifier_duration},敌人移动速度 {move_speed} 持续 {modifier_duration} 秒
+PROJECTILE_SPEED,Projectile speed,Velocidade do projétil,彈丸速度
+SPELL_ICE_BLAST_LABEL,Ice blast,Explosão de gelo,冰爆
+SPELL_ICE_BLAST_DESC,Frozen enemies explode when killed,Inimigos congelados explodem quando mortos,被冰凍的敵人在被殺死時會爆炸
+SPELL_DOUBLE_DAMAGE_LABEL,Double damage,Dano duplo,雙倍傷害
+SPELL_DOUBLE_DAMAGE_DESC,All your attacks have a chance to deal double damage,Todos os seus ataques têm chance de causar dano duplo,你所有的攻擊都有機會造成雙倍傷害
+SPELL_BULLDOZE_LABEL,Bulldoze,Intimidar,強行
+SPELL_BULLDOZE_DESC,Gains physical defense to ram through enemies,Ganha defesa física para atropelar inimigos,獲得物理防禦以沖撞敵人
+SPELL_WRATH_OF_THUNDER_LABEL,Wrath of thunder,Ira do trovão,雷霆之怒 
+SPELL_WRATH_OF_THUNDER_DESC,"Attacks all enemies with lightning, no matter where they are","Ataca todos os inimigos com raios, não importa onde eles estejam","無論敵人身在何處，都用閃電攻擊所有敵人"
+SPELL_SUN_STRIKE_LABEL,Sun strike,Raio solar,太阳罢工
+SPELL_SUN_STRIKE_DESC,"Sends a ray of sunlight energy at a nearby target, incinerating all enemies below it","Envia um raio de energia solar em um alvo próximo, incinerando todos os inimigos abaixo dele","向附近目标发射一束阳光能量，焚烧其下方的所有敌人"
+SPELL_BOOMERANG_LABEL,Boomerang,Bumerangue,迴旋鏢
+SPELL_BOOMERANG_DESC,Throws a boomerang at a random enemy,Joga um bumerangue em um inimigo aleatório,向隨機敵人投擲迴旋鏢
+SPELL_SCORCH_LABEL,Scorch,Chamuscar,燒焦
+SPELL_SCORCH_DESC,Throws a continuous flame,Lança uma chama contínua,噴出連續的火焰
+SPELL_INVULNERABILITY_LABEL,Invulnerability,Invulnerabilidade,刀槍不入
+SPELL_INVULNERABILITY_DESC,"When taking damage, you become invulnerable for a few seconds","Ao receber dano, você se torna invulnerável por alguns segundos","當你受到傷害時，你會在幾秒鐘內變得無敵"
+SPELL_SHALLOW_GRAVE_LABEL,Shallow grave,Cova rasa,淺墳
+SPELL_SHALLOW_GRAVE_DESC,"Activates when health reaches zero, no matter how close to death, cannot die while under its protection","ativa quando vida chegar a zero, não importa quão perto da morte, não pode morrer enquanto estiver sob sua proteção","當生命值為零時被激活，無論多麼接近死亡，在其保護下都不會死亡"
+MOVE_SELECT,Move / select,Mover / selecionar,移動/選擇
+CANCEL_CLOSE,Cancel / close,Cancelar / fechar,取消/關閉
+CANCEL,Cancel,Cancelar,取消
+CLOSE,Close,Fechar,關
+PLAY,Play,Jogar,玩
+MOVE,Move,Mover,移動
+SELECT,Select,Selecionar,選擇
+KEYBOARD,Keyboard,Teclado,鍵盤
+ULTIMATE,Ultimate,Ultimate,終極
+UPGRADES,Upgrades,Melhorias,升級
+PAUSE,Pause,Pausar,暫停
+CONFIRM,Confirm,Confirmar,確認
+NEXT_TAB,Next tab,Próxima aba,下一個標籤
+PREVIOUS_TAB,Previous tab,Aba anterior,上一個標籤
+NEXT_PANEL,Next panel,Próximo painel,下一個面板
+PREVIOUS_PANEL,Previous panel,Painel anterior,上一個面板
+HELP,Help,Ajuda,幫助
+MODIFIER,Modifier,Modificador,修飾符
+GREEN_FIELD,Green field,Campo verde,绿色的田野
+SKELETAL_ARENA,Skeletal arena,Arena esquelética,骨骼競技場
+FLYING_ASSAULT,Flying assault,Assalto voador,飛行突擊
+DEFENSE_OF_THE_ANCIENT,Defense Of The Ancient,Defesa dos Anciões,古人的防禦
+TREACHEROUS_TOMBS,Treacherous tombs,Tumbas traiçoeiras,奸詐的墳墓
+DESERT,Desert,Deserto,沙漠
+MAGE,Mage,Mago,法師
+ROGUE,Rogue,Vampiro,流氓
+KNIGHT,Knight,Cavaleiro,騎士
+ARCHER,Archer,Arqueiro,阿切尔
+DRUID,Druid,Druida,德魯伊
+CAVEMAN,Caveman,Troglodita,穴居人
+SCALE_FACTOR,Size,Tamanho,尺寸
+DECK_NAME_REQUIRED,Set a deck name,Defina um nome ao deck,設置牌組名稱
+DECK_CARDS_REQUIRED,Add at least one card to the deck,Adicione pelo menos uma carta ao deck,將至少一張牌添加到牌組
+CONTROLLER_ULTIMATE_0,Dash / Ultimate #1,Arranque / Ultimate #1,破折號/終極#1
+CONTROLLER_ULTIMATE_1,Ultimate #2,Ultimate #2,終極#2
+KEYBOARD_ULTIMATE_0,Ultimate #1,Ultimate #1,終極#1
+KEYBOARD_ULTIMATE_1,Ultimate #2,Ultimate #2,終極#2
+ADD_REMOVE,Add / Remove,Adicionar / Remover,添加 / 移除
+SELECT_CARD_DISCARD,Select a card to discard,Selecione uma carta para descartar,選擇要丟棄的卡
+SELECT_CARD_LOCK,Select a card to lock,Selecione uma carta para travar,選擇要鎖定的卡
+CAMERA_ZOOM,Camera zoom,Zoom da câmera,相機變焦
+OBJECTIVES_COMPLETED,Objectives completed,Objetivos concluídos,目標完成
+DAMAGE_PER_SKILL,Damage per skill,Dano por habilidade,每技能傷害
+VICTORY,Victory,Vitória,勝利
+DEFEAT,Defeat,Derrota,打敗
+REROLL,Reroll,Reroll,重新滚动
+DISCARD,Discard,Descartar,丟棄
+LOCK,Lock,Trancar,要锁定
+BANISH,Banish,Banir,放逐
+UNLOCK,Unlock,Desbloquear,開鎖
+UNLOCK_LEVEL,Complete level {level} objectives,Complete os objetivos do nível {level},完成 {level} 級目標
+UNLOCKED_MAP_LEVEL,Level {level} map unlocked,Mapa nível {level} desbloqueado,{level} 级地图已解锁
+UNLOCKED,Unlocked,Desbloqueado,已解锁
+ACTIVATE_PORTAL,Activate portal,Ativar portal,激活門戶
+INSTANTLY,Instantly,Imediatamente,即刻
+ACTION,Action,Ação,行動
+CHANNELING,Channeling,Canalizando,渠道
+GAME,Game,Jogo,遊戲
+SURVIVE_AS_LONG_AS_YOU_CAN,Survive as long as you can,Sobreviva o máximo que puder,只要你能生存
+MODE,Mode,Modo,模式
+ENDLESS,Endless,Interminável,無盡的
+SWITCH_VERSION,Switch version,Trocar versão,套管針
+SWITCH_VERSION_CONFIRM,"Old Version Deprecated.\nTo access the old version, please use the following link:\n[url=https://jefersonbelmiro.itch.io/endless-waves-survival-old-v024]play / download v0.2.4[/url]","Versão antiga descontinuada.\nPara usar a versão antiga, por favor, utilize o seguinte link:\n[url=https://jefersonbelmiro.itch.io/endless-waves-survival-old-v024]play / download v0.2.4[/url]","旧版本已弃用\n要使用旧版本，请使用以下链接: \n[url=https://jefersonbelmiro.itch.io/endless-waves-survival-old-v024]play / download v0.2.4[/url]"
+SWITCH_VERSION_NEW,Current ({version}),Atual ({version}),當前 ({version})
+SWITCH_VERSION_OLD,Old ({version}),Antiga ({version}),舊 ({version})
+DELETE_DECK_CONFIRM,Are you sure you want to delete deck: {label}?,Tem certeza de que deseja deletar o deck: {label}?,您確定要刪除卡組：{label} 嗎？
+NOT_ENOUGH_COINS,Not enough coins,Não há moedas suficientes,沒有足夠的硬幣
+UNLOCK_NEXT_LEVEL,Unlock the next level,Desbloquear o próximo nível,解鎖一個新的水平
+SCALE_FACTOR_DESC,Increases the size,Aumente o tamanho,增加尺寸
+TOGGLE_VISIBILITY,Toggle visibility,Alternar visibilidade,切換可見性
+UPGRADES_SIZE_HINT,Number of levels to apply,Número de níveis a serem aplicados,要應用的級別數
+EXPLOSION,Explosion,Explosão,爆炸
+UPGRADE_PASS_THROUGH_DESC,Goes through the enemies,Atravessa os enemigos,通過敵人
+BONUS_COINS,Coin bonus,Bônus de moedas,硬幣獎金
+UNTOUCHABLE,Untouchable,Intocável,不可觸及的
+UNSTOPPABLE,Unstoppable,Imparável,勢不可擋
+SUMMON,Summon,Invocar,传召
+CARD_UPGRADE_EXPLOSION_DESC,Explodes when destroyed,Explode quando destruído,破壞時爆炸
+HEALTH_HEALING,Health healing,Cura da saúde,健康療愈
+CHEST_COLLECT_COINS,Collect {value} coins,Coletar {value} coins,收集 {value} 個硬幣
+CHEST_COLLECT_EXPERIENCE,Collect {value} experience points,Coletar {value} pontos de experiência,收集 {value} 點經驗值
+CHEST_COLLECT_CONSUMABLE,Collect {size} {label},Coletar {size} {label},收集 {size} 個 {label}
+ROOM,Room,Sala,房间
+ROOMS,Rooms,Salas,房间们
+EARN_100_COINS_AD,Earn +100 coins\n(watching ad),Ganhe +100 moedas\n(assistindo ad),賺取 +100 個金幣\n（觀看廣告）
+EARNED_100_COINS_AD,Earned +100 coins,Ganhou +100 moedas,獲得+100金幣
+AIM_MODE,Aiming mode,Modo de mira,瞄準模式
+AIM_MODE_HINT,Changes the behavior of cards with 'aim' tag,Altera o comportamento das cartas com tag 'aim',更改帶有'目標'標籤的卡片的行為
+AIM_MODE_AUTO,Auto,Automático,自動的
+AIM_MODE_CROSSHAIR,Crosshair,Mira,十字準線
+AIM_MODE_DIRECTION,Steering,Direção,操舵
+TRAITS,Traits,Características,特點
+POLITE_PERIL_LABEL,Polite Peril,Risco Amigável,友好危險
+POLITE_PERIL_ROW_1,Gain [color=green]+20%[/color] more experience,Ganha [color=green]+20%[/color] de 2xperiência,[color=green]+20%[/color] 經驗值
+POLITE_PERIL_ROW_2,Enemies inflict [color=red]+10%[/color] more damage,Inimigos dao [color=red]+10%[/color] de dano,[color=red]+10%[/color] 敵人傷害
+EXTENDED_HARVEST_LABEL,Extended harvest,Colheita estendida,擴大收穫
+EXTENDED_HARVEST_ROW_1,Gain [color=green]+50%[/color] pick area,Ganha [color=green]+50%[/color] de área de coleta,收穫範圍增加 [color=green]+50%[/color]
+EXTENDED_HARVEST_ROW_2,Enemies gain [color=red]+5%[/color] movement speed,Inimigos ganham [color=red]+5%[/color] de velocidade,敵人速度增加 [color=red]+5%[/color]
+TREASURE_HUNTER_LABEL,Treasure Hunter,Caçador de tesouros,尋寶獵人
+TREASURE_HUNTER_ROW_1,Gain [color=green]+50%[/color] loot from chests,Ganha [color=green]+50%[/color] saque em baús,宝箱战利品 [color=green]+50%[/color]
+TREASURE_HUNTER_ROW_2,Enemies gain [color=red]+10%[/color] movement speed,Inimigos ganham [color=red]+10%[/color] de velocidade,敵人速度增加 [color=red]+10%[/color]
+MAGNETIC_MAYHEM_LABEL,Magnetic Mayhem,Caos Magnético,磁力混亂
+MAGNETIC_MAYHEM_ROW_1,Gain [color=green]+50%[/color] pick area,Ganha [color=green]+50%[/color] de área de coleta,收集範圍增加 [color=green]+50%[/color]
+MAGNETIC_MAYHEM_ROW_2,Enemies spawn [color=red]+20%[/color] faster,Inimigos nascem [color=red]+20%[/color] mais rápido,敵人生成速度增加 [color=red]+20%[/color]
+GLASS_CANNON_LABEL,Glass Cannon,Canhão de Vidro,玻璃加農炮
+GLASS_CANNON_ROW_1,Gain [color=green]+10%[/color] base damage and [color=green]+10%[/color] attack speed,Ganha [color=green]+10%[/color] de dano base e [color=green]+10%[/color] de velocidade de ataque,基礎傷害增加 [color=green]+10%[/color] 且 攻擊速度 [color=green]+10%[/color]
+GLASS_CANNON_ROW_2,Lose [color=red]-5%[/color] max health,Perde [color=red]-5%[/color] de vida máxima,最大生命值下降 [color=red]-5%[/color]
+NATURES_PACT_LABEL,Nature's Pact,Pacto com a Natureza,自然契約
+NATURES_PACT_ROW_1,Regenerate [color=green]+1[/color] HP per second,Regenera [color=green]+1[/color] de vida por segundo,每秒回復 [color=green]+1[/color] 生命值
+NATURES_PACT_ROW_2,Enemies gain [color=red]+10%[/color] max HP,Inimigos ganham [color=red]+10%[/color] de vida máxima,敵人最大生命值增加 [color=red]+10%[/color]
+SLOW_TIME_BUBBLE_LABEL,Slow Time Bubble,Bolha de Tempo Lento,時間緩慢氣泡
+SLOW_TIME_BUBBLE_ROW_1,Reduce skill cooldown by [color=green]+5%[/color],Reduz recarga das habilidades em [color=green]+5%[/color],技能冷卻時間減少 [color=green]+5%[/color]
+SLOW_TIME_BUBBLE_ROW_2,Enemies gain [color=red]+20%[/color] status resistance,Inimigos ganham [color=red]+20%[/color] de resistência a status,敵人狀態抗性增加 [color=red]+20%[/color]
+BLOOD_BARGAIN_LABEL,Blood Bargain,Pacto de Sangue,血之契約
+BLOOD_BARGAIN_ROW_1,Gain [color=green]+5%[/color] lifesteal,Ganha [color=green]+5%[/color] de roubo de vida,吸血 [color=green]+5%[/color]
+BLOOD_BARGAIN_ROW_2,Enemies deal [color=red]+15%[/color] base damage,Inimigos causam [color=red]+15%[/color] de dano base,敵人基礎傷害增加 [color=red]+15%[/color]
+RISKY_RICHES_LABEL,Risky Riches,Riqueza Arriscada,危險財富
+RISKY_RICHES_ROW_1,Gain [color=green]+30%[/color] gold from all sources,Ganha [color=green]+30%[/color] de ouro de todas as fontes,獲得的金幣增加 [color=green]+30%[/color]
+RISKY_RICHES_ROW_2,Enemies gain [color=red]+5%[/color] critical chance,Inimigos ganham [color=red]+5%[/color] de chance de crítico,敵人暴擊率增加 [color=red]+5%[/color]
+BATTLE_SCHOLAR_LABEL,Battle Scholar,Estudioso de Batalha,戰鬥學者
+BATTLE_SCHOLAR_ROW_1,Gain [color=green]+20%[/color] experience,Ganha [color=green]+20%[/color] de experiência,經驗獲得增加 [color=green]+20%[/color]
+BATTLE_SCHOLAR_ROW_2,Lose [color=red]-5%[/color] movement speed,Perde [color=red]-5%[/color] de velocidade de movimento,移動速度降低 [color=red]-5%[/color]
+SKILL,Skill,Habilidade,技能
+WEAPON,Weapon,Arma,武器
+PROJECTILE,Projectile,Projétil,彈
+LEADERBOARD,Leaderboard,Leaderboard,排行榜
+SCORE,Score,Pontuação,分數
+NEW_HIGH_SCORE,New high score,Novo recorde,新高分
+COMMUNITY,Community,Comunidade,社群
+NOT_DEFINED,Not defined,Não definido,未定义
+SCORE_DISPLAY_NAME,Score display name,Nome de exibição da pontuação,分數顯示名稱
+LEADERBOARD_NOT_SENT_HINT,Score not sent. Set your name in settings to enable sending,Pontuação não enviada. Configure seu nome nas configurações para permitir o envio,分數未發送。請在設置中設定您的名稱以啟用發送
+YOU,You,Você,你
+CURRENT_TRAITS,Current traits,Características atuais,當前特性
+UPDATING,updating,atualizando,更新中
+LEADERBOARD_LOAD_ERROR,Error loading leaderboard,Erro ao carregar o leaderboard,加載排行榜錯誤
+LEADERBOARD_UPDATE_NAME_ERROR,Error updating score display name,Erro ao atualizar nome de exibição da pontuação,更新顯示名稱錯誤
+LEADERBOARD_UPDATE_NAME_ERROR_PROFANITY,Display names cannot contain profanity,Nomes não podem conter palavras de baixo calão,名稱不可包含粗話
+LEADERBOARD_SEND_SCORE_ERROR,Error sending score,Erro ao enviar pontuação,發送分數錯誤
+SCOREBOARD_INVALID_ENTRY,Unable to load entry details. The selected entry is invalid.,Não foi possível carregar os detalhes da entrada. A entrada selecionada é inválida.,无法加载条目详情。所选条目无效。
+SCOREBOARD_ENTRY_NAME,Player,Jogador,玩家  
+SCOREBOARD_ENTRY_RANK,Rank,Posição,排名 
+________________OLD_KEYS___________________________,OLD_KEYS,OLD_KEYS,OLD_KEYS
+ARMOR,Armor,Armadura,盔甲
+PHYSICAL_DAMAGE_REDUCTION,Physical damage reduction,Redução de dano físico,物理傷害減免
+MAGIC_DAMAGE_REDUCTION,Magic damage reduction,Redução de dano mágico,魔法傷害減免
+ITEM_BRACER_OF_DAMAGE_DESC_OLD,{magic_damage} damage,{magic_damage} dano,{magic_damage} 伤害
+ITEM_HELMET_OF_ARMOR_DESC,{armor} armor,{armor} armadura,{armor} 盔甲
+MAGIC_RESISTANCE,Magic resistance,Resistência mágica,魔法抗性
+WAVE_COMPLETED,Wave {wave_index} completed!,Onda {wave_index} concluída!,第 {wave_index} 波完成
+WAVES_COMPLETED,Waves completed,Ondas concluídas,完成波
+CONSUMABLE_POTION_OF_DAMAGE_DESC_OLD,Increase damage by {magic_damage} for {modifier_duration},Aumenta o dano em {magic_damage} por {modifier_duration},增加 {magic_damage} 伤害，持续 {modifier_duration}
+CONSUMABLE_POTION_OF_DAMAGE_TOAST_USED_OLD,{magic_damage} damage,{magic_damage} de dano,{magic_damage} 伤害
+SWITCHING_VERSION,Switching version...,Trocando de versão...,切換版本...
+LOADING,Loading,Carregando,加載中
+CONSUMABLE_UPGRADE_POINTS_LABEL,Upgrade points,Pontos de melhoria,升级积分
+CONSUMABLE_UPGRADE_POINTS_DESC,Get 10 upgrade points,Obtenha 10 pontos de melhoria,獲得10個升級點
+CONSUMABLE_UPGRADE_POINTS_TOAST_USED,+10 upgrade points,+10 pontos de melhoria,+10 升級點
+CONSUMABLE_STATS_REFRESHER_ORB_LABEL,Stats refresher orb,Orbe de atualização de stats,统计更新球
+CONSUMABLE_STATS_REFRESHER_ORB_DESC,"Reset all stats, recovering upgrade points","Redefina todos os stats, recuperando pontos de atualização","重置所有统计数据，恢复升级点"
+CONSUMABLE_STATS_REFRESHER_ORB_TOAST_USED,Stats fefresher orb used,Orbe de atualização de stats usado,使用的统计刷新球
+CONSUMABLE_ITEMS_REFRESHER_ORB_LABEL,Items refresher orb,Orbe de atualização de itens,物品刷新宝珠
+CONSUMABLE_ITEMS_REFRESHER_ORB_DESC,"Reset all items, recovering coins","Redefina todos os itens, recuperando moedas","重置所有物品，回收硬币"
+CONSUMABLE_ITEMS_REFRESHER_ORB_TOAST_USED,Items fefresher orb used,Orbe de atualização de itens usado,物品刷新球使用
+CONSUMABLE_SPELLS_REFRESHER_ORB_LABEL,Spells refresher orb,Orbe de atualização de itens,物品刷新宝珠
+CONSUMABLE_SPELLS_REFRESHER_ORB_DESC,"Reset all spells, recovering upgrade points","Redefina todos os feitiços, recuperando pontos de atualização","重置所有法术，恢复升级点"
+CONSUMABLE_SPELLS_REFRESHER_ORB_TOAST_USED,Spell refresher orb used,Orbe de atualização de feitiços usado,使用的法术刷新球

@@ -1,0 +1,15 @@
+{
+  "id": "boots_of_speed",
+  "label": "ITEM_BOOTS_OF_SPEED_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/boots_of_speed/texture/boots_of_speed_icon.png",
+  "cast_type": "passive",
+  "move_speed": 20,
+  "sort_order": 0,
+  "upgrades": [
+    { "move_speed": 40 },
+    { "move_speed": 60 },
+    { "move_speed": 80 },
+    { "move_speed": 100 }
+  ]
+}

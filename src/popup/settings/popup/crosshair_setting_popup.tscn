@@ -1,0 +1,356 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/components/crosshair/res/crosshair_shader.tres" type="Material" id=1]
+[ext_resource path="res://src/popup/settings/popup/crosshair_setting_popup.gd" type="Script" id=2]
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=3]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/input/crosshair/crosshair1.png" type="Texture" id=5]
+
+[node name="crosshair_setting_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -27.0
+margin_top = 2.0
+margin_right = 27.0
+margin_bottom = 16.0
+text = "CROSSHAIR"
+align = 1
+valign = 1
+
+[node name="container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 10.0
+margin_right = -20.0
+margin_bottom = -10.0
+
+[node name="content" type="Control" parent="container"]
+margin_right = 440.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="settings" type="VBoxContainer" parent="container/content"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="size_row" type="VBoxContainer" parent="container/content/settings"]
+margin_right = 440.0
+margin_bottom = 37.0
+
+[node name="label" type="Label" parent="container/content/settings/size_row"]
+margin_right = 440.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "SIZE"
+
+[node name="content" type="HBoxContainer" parent="container/content/settings/size_row"]
+margin_top = 17.0
+margin_right = 440.0
+margin_bottom = 37.0
+
+[node name="solid_button" parent="container/content/settings/size_row/content" instance=ExtResource( 4 )]
+margin_right = 20.0
+rect_min_size = Vector2( 20, 20 )
+text_label = "12"
+bg_color = Color( 0.345098, 0.0745098, 0.345098, 1 )
+
+[node name="solid_button_6" parent="container/content/settings/size_row/content" instance=ExtResource( 4 )]
+margin_left = 24.0
+margin_right = 44.0
+rect_min_size = Vector2( 20, 20 )
+text_label = "16"
+
+[node name="solid_button_2" parent="container/content/settings/size_row/content" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 68.0
+rect_min_size = Vector2( 20, 20 )
+text_label = "20"
+
+[node name="solid_button_3" parent="container/content/settings/size_row/content" instance=ExtResource( 4 )]
+margin_left = 72.0
+margin_right = 92.0
+rect_min_size = Vector2( 20, 20 )
+text_label = "24"
+
+[node name="solid_button_4" parent="container/content/settings/size_row/content" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 116.0
+rect_min_size = Vector2( 20, 20 )
+text_label = "28"
+
+[node name="solid_button_5" parent="container/content/settings/size_row/content" instance=ExtResource( 4 )]
+margin_left = 120.0
+margin_right = 140.0
+rect_min_size = Vector2( 20, 20 )
+text_label = "32"
+
+[node name="color_row" type="VBoxContainer" parent="container/content/settings"]
+margin_top = 41.0
+margin_right = 440.0
+margin_bottom = 78.0
+
+[node name="label" type="Label" parent="container/content/settings/color_row"]
+margin_right = 440.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "COLOR"
+
+[node name="content" type="HBoxContainer" parent="container/content/settings/color_row"]
+margin_top = 17.0
+margin_right = 440.0
+margin_bottom = 37.0
+
+[node name="solid_button" parent="container/content/settings/color_row/content" instance=ExtResource( 4 )]
+margin_right = 20.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_6" parent="container/content/settings/color_row/content" instance=ExtResource( 4 )]
+margin_left = 24.0
+margin_right = 44.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_2" parent="container/content/settings/color_row/content" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 68.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_3" parent="container/content/settings/color_row/content" instance=ExtResource( 4 )]
+margin_left = 72.0
+margin_right = 92.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_4" parent="container/content/settings/color_row/content" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 116.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_5" parent="container/content/settings/color_row/content" instance=ExtResource( 4 )]
+margin_left = 120.0
+margin_right = 140.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="outline_row" type="VBoxContainer" parent="container/content/settings"]
+margin_top = 82.0
+margin_right = 440.0
+margin_bottom = 123.0
+
+[node name="label" type="Label" parent="container/content/settings/outline_row"]
+margin_right = 440.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "OUTLINE"
+
+[node name="content" type="HBoxContainer" parent="container/content/settings/outline_row"]
+margin_top = 17.0
+margin_right = 440.0
+margin_bottom = 41.0
+
+[node name="outline" type="Control" parent="container/content/settings/outline_row/content"]
+margin_right = 144.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="outline_border_control" type="CheckBox" parent="container/content/settings/outline_row/content/outline"]
+unique_name_in_owner = true
+margin_left = 4.0
+margin_right = 145.0
+margin_bottom = 24.0
+text = "OUTLINE_ADD_BORDER"
+
+[node name="border_inside" type="Control" parent="container/content/settings/outline_row/content"]
+margin_left = 148.0
+margin_right = 292.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="outline_border_inside_control" type="CheckBox" parent="container/content/settings/outline_row/content/border_inside"]
+unique_name_in_owner = true
+margin_left = 4.0
+margin_right = 145.0
+margin_bottom = 24.0
+text = "OUTLINE_BORDER_INSIDE"
+flat = true
+
+[node name="control" type="Control" parent="container/content/settings/outline_row/content"]
+margin_left = 296.0
+margin_right = 440.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="outline_boder_size_control" type="HSlider" parent="container/content/settings/outline_row/content/control"]
+unique_name_in_owner = true
+margin_left = 4.0
+margin_right = 74.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 70, 0 )
+size_flags_vertical = 1
+max_value = 1.8
+step = 0.01
+
+[node name="label" type="Label" parent="container/content/settings/outline_row/content/control"]
+margin_left = 78.0
+margin_top = 1.0
+margin_right = 150.0
+margin_bottom = 14.0
+text = "OUTLINE_BORDER_WIDTH"
+
+[node name="image_row" type="VBoxContainer" parent="container/content/settings"]
+margin_top = 127.0
+margin_right = 440.0
+margin_bottom = 164.0
+
+[node name="label" type="Label" parent="container/content/settings/image_row"]
+margin_right = 440.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "IMAGE"
+
+[node name="content" type="GridContainer" parent="container/content/settings/image_row"]
+margin_top = 17.0
+margin_right = 440.0
+margin_bottom = 37.0
+columns = 18
+
+[node name="solid_button" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_right = 20.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_6" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 24.0
+margin_right = 44.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_2" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 48.0
+margin_right = 68.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_3" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 72.0
+margin_right = 92.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_4" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 96.0
+margin_right = 116.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_5" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 120.0
+margin_right = 140.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_7" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 144.0
+margin_right = 164.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_8" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 168.0
+margin_right = 188.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_9" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 192.0
+margin_right = 212.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_10" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 216.0
+margin_right = 236.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_11" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 240.0
+margin_right = 260.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_12" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 264.0
+margin_right = 284.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_13" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 288.0
+margin_right = 308.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_14" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 312.0
+margin_right = 332.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_15" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 336.0
+margin_right = 356.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_16" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 360.0
+margin_right = 380.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_17" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 384.0
+margin_right = 404.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="solid_button_18" parent="container/content/settings/image_row/content" instance=ExtResource( 4 )]
+margin_left = 408.0
+margin_right = 428.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="preview" type="Control" parent="container/content"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="label" type="Label" parent="container/content/preview"]
+margin_right = 42.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "PREVIEW"
+
+[node name="sprite" type="Sprite" parent="container/content/preview"]
+material = ExtResource( 1 )
+position = Vector2( 21, 33 )
+texture = ExtResource( 5 )
+
+[node name="actions" type="HBoxContainer" parent="container"]
+margin_top = 220.0
+margin_right = 440.0
+margin_bottom = 240.0
+alignment = 1
+
+[node name="done_button" parent="container/actions" instance=ExtResource( 4 )]
+margin_left = 180.0
+margin_right = 260.0
+text_label = "DONE"
+
+[connection signal="toggled" from="container/content/settings/outline_row/content/outline/outline_border_control" to="." method="_on_outline_border_control_toggled"]
+[connection signal="toggled" from="container/content/settings/outline_row/content/border_inside/outline_border_inside_control" to="." method="_on_outline_border_inside_control_toggled"]
+[connection signal="value_changed" from="container/content/settings/outline_row/content/control/outline_boder_size_control" to="." method="_on_outline_boder_size_control_value_changed"]
+[connection signal="pressed" from="container/actions/done_button" to="." method="_on_done_button_pressed"]

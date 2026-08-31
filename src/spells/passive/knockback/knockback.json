@@ -1,0 +1,21 @@
+{
+  "id": "knockback",
+  "label": "DAMAGE_KNOCKBACK",
+  "description": "SPELL_KNOCKBACK_DESC",
+  "icon": "res://src/spells/passive/knockback/texture/knockback_icon.png",
+  "class": "res://src/spells/passive/knockback/knockback_data.gd",
+  "cast_type": "passive",
+  "sort_order": 16,
+  "damage_knockback": 10,
+  "upgrades": [
+    { "damage_knockback": 20 },
+    { "damage_knockback": 30 },
+    { "damage_knockback": 40 },
+    { "damage_knockback": 50 },
+    { "damage_knockback": 60 },
+    { "damage_knockback": 70 },
+    { "damage_knockback": 80 },
+    { "damage_knockback": 90 },
+    { "damage_knockback": 100 }
+  ]
+}

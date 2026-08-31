@@ -1,0 +1,144 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/popup/upgrade/upgrade_popup.gd" type="Script" id=2]
+[ext_resource path="res://assets/components/discard_bg.png" type="Texture" id=3]
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=4]
+[ext_resource path="res://src/components/cost_button/cost_button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/components/deck_card_bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/icons/pin_solid.png" type="Texture" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/add_color = true
+shader_param/color = Color( 0.113725, 0.0666667, 0.12549, 1 )
+shader_param/color_modifier = 1.0
+shader_param/add_border = true
+shader_param/border_color = Color( 0, 0, 0, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 0
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/add_color = true
+shader_param/color = Color( 0.113725, 0.0666667, 0.12549, 1 )
+shader_param/color_modifier = 1.0
+shader_param/add_border = true
+shader_param/border_color = Color( 0, 0, 0, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 0
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[node name="upgrade_popup" type="Popup"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+popup_exclusive = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 125.0 ]
+}
+
+[node name="bg_dark" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.121569, 0.121569, 0.121569, 0.835294 )
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.027451, 0.027451, 0.027451, 0.113725 )
+
+[node name="container" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 10.0
+margin_right = -20.0
+margin_bottom = -5.0
+
+[node name="rows" type="VBoxContainer" parent="container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+custom_constants/separation = 7
+
+[node name="buttons_container" type="Control" parent="container/rows"]
+unique_name_in_owner = true
+margin_right = 440.0
+margin_bottom = 212.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="actions_container" type="HBoxContainer" parent="container/rows"]
+margin_top = 219.0
+margin_right = 440.0
+margin_bottom = 245.0
+alignment = 1
+
+[node name="reroll_button" parent="container/rows/actions_container" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+margin_left = 133.0
+margin_right = 188.0
+label_text = "REROLL"
+
+[node name="discard_button" parent="container/rows/actions_container" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+margin_left = 192.0
+margin_right = 247.0
+cost = 5
+label_text = "DISCARD"
+bg_icon = ExtResource( 3 )
+
+[node name="bg" parent="container/rows/actions_container/discard_button" index="0"]
+material = SubResource( 1 )
+
+[node name="bg_icon" parent="container/rows/actions_container/discard_button" index="1"]
+margin_top = -13.0
+margin_right = 22.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="lock_button" parent="container/rows/actions_container" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+margin_left = 251.0
+margin_right = 306.0
+label_text = "LOCK"
+
+[node name="bg" parent="container/rows/actions_container/lock_button" index="0"]
+material = SubResource( 2 )
+
+[node name="bg_icon" parent="container/rows/actions_container/lock_button" index="1"]
+texture = ExtResource( 6 )
+
+[node name="lock_icon" type="TextureRect" parent="container/rows/actions_container/lock_button"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 1.0
+margin_right = 23.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 16, 16 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="open_timer" type="Timer" parent="."]
+pause_mode = 1
+wait_time = 1.2
+one_shot = true
+
+[connection signal="popup_hide" from="." to="." method="_on_upgrade_popup_popup_hide"]
+[connection signal="child_exiting_tree" from="container/rows/buttons_container" to="." method="_on_buttons_container_child_exiting_tree" flags=3]
+[connection signal="pressed" from="container/rows/actions_container/reroll_button" to="." method="_on_reroll_button_pressed"]
+[connection signal="pressed" from="container/rows/actions_container/discard_button" to="." method="_on_discard_button_pressed"]
+[connection signal="pressed" from="container/rows/actions_container/lock_button" to="." method="_on_lock_button_pressed"]
+[connection signal="timeout" from="open_timer" to="." method="_on_open_timer_timeout"]
+
+[editable path="container/rows/actions_container/discard_button"]
+[editable path="container/rows/actions_container/lock_button"]

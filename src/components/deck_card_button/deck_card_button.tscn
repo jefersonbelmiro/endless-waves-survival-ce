@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/components/deck_card_button/deck_card_button.gd" type="Script" id=1]
+[ext_resource path="res://src/components/box_button/box_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/res/desaturation_shader.tres" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/saturation = 0.2
+
+[node name="deck_card_button" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0.403922, 0.403922, 0.403922, 0.168627 )
+selected_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+pressed_color = Color( 0.623529, 0.623529, 0.623529, 0.701961 )
+hover_color = Color( 0.282353, 0.282353, 0.282353, 1 )
+cast_type = 0
+
+[node name="bg_color" parent="." index="0"]
+modulate = Color( 0, 0, 0, 0.207843 )
+
+[node name="fg" parent="." index="4"]
+material = SubResource( 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.0
+margin_top = -12.0
+margin_right = 12.0
+margin_bottom = 12.0

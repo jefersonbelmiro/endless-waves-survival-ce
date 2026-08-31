@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/spells/summon/healing_tower/healing_tower_caster.gd" type="Script" id=1]
+
+[node name="ice_tower_caster" type="Node"]
+script = ExtResource( 1 )

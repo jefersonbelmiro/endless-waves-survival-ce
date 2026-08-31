@@ -1,0 +1,11 @@
+{
+  "id": "merchant",
+  "level": 1,
+  "stats": {
+    "move_speed": 60,
+    "max_health": 200,
+    "base_damage": 0,
+    "health_regen": 5
+  },
+  "sort_order": 5
+}

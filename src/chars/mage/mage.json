@@ -1,0 +1,19 @@
+{
+  "id": "mage",
+  "label": "MAGE",
+  "main_card": "light_ball",
+  "sort_order": 0,
+  "stats": {
+    "max_health": 50,
+    "pick_area": 70,
+    "move_speed": 80,
+    "attack_speed": 30,
+    "attack_range": 150,
+    "base_damage": 10,
+    "critical_factor": 2,
+    "cooldown_reduction": 0.3,
+    "magic_defense_reduction": 0.4,
+    "magic_damage_factor": 0.3,
+    "physical_damage_factor": -0.3
+  }
+}

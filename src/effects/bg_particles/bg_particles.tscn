@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/effects/bg_particles/bg_particles.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.678431, 0.321569, 0.752941, 0.513726, 0.776471, 0.552941, 0.823529, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+max_value = 3.0
+_data = [ Vector2( 0.0112782, 0 ), 0.0, 12.4364, 0, 0, Vector2( 0.977444, 2.91818 ), 21.1591, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, -5, 0 )
+initial_velocity = 4.17
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 1.38
+radial_accel_random = 0.28
+tangential_accel = 12.41
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 4 )
+
+[node name="bg_particles" type="Particles2D"]
+position = Vector2( 251, 159 )
+amount = 100
+lifetime = 5.0
+speed_scale = 0.5
+process_material = SubResource( 6 )
+script = ExtResource( 1 )
+
+[connection signal="visibility_changed" from="." to="." method="_on_bg_particles_visibility_changed"]

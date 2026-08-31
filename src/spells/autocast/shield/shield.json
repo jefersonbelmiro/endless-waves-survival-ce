@@ -1,0 +1,76 @@
+{
+  "id": "shield",
+  "label": "SPELL_SHIELD_LABEL",
+  "description": "SPELL_SHIELD_DESC",
+  "icon": "res://src/spells/autocast/shield/texture/shield_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "cooldown": 4.0,
+  "cast_time": 0.5,
+  "damage_block": 5,
+  "damage_knockback": 30,
+  "area": 36,
+  "sort_order": 4,
+  "value_private_keys": ["explosion"],
+  "value_format_keys": {
+    "explosion_damage": { "tr": "EXPLOSION_DAMAGE" }
+  },
+  "upgrades_data": {
+    "damage_block": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_block": 6 },
+        { "damage_block": 8 },
+        { "damage_block": 10 },
+        { "damage_block": 15 },
+        { "damage_block": 20 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 3.8 },
+        { "cooldown": 3.6 },
+        { "cooldown": 3.4 },
+        { "cooldown": 3.2 },
+        { "cooldown": 3.0 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 50 },
+        { "damage_knockback": 70 },
+        { "damage_knockback": 90 },
+        { "damage_knockback": 150 },
+        { "damage_knockback": 200 }
+      ]
+    },
+    "explosion": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "label": "EXPLOSION",
+      "description": "CARD_UPGRADE_EXPLOSION_DESC",
+      "new_upgrade_description": "SPELL_SHIELD_EXPLOSION_UPGRADE_DESC",
+      "upgrade_description": "SPELL_SHIELD_EXPLOSION_UPGRADE_DESC",
+      "value": [
+        {
+          "explosion": true,
+          "explosion_damage": 10,
+          "damage_type": "magic"
+        },
+        { "explosion_damage": 20 },
+        { "explosion_damage": 30 },
+        { "explosion_damage": 40 },
+        { "explosion_damage": 50 }
+      ]
+    }
+  }
+}

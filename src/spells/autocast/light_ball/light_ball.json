@@ -1,0 +1,49 @@
+{
+  "id": "light_ball",
+  "label": "SPELL_LIGHT_BALL_LABEL",
+  "description": "SPELL_LIGHT_BALL_DESC",
+  "icon": "res://src/spells/autocast/light_ball/texture/light_ball_spell_icon.png",
+  "type": "weapon",
+  "cast_type": "autocast",
+  "target_type": "closest_target",
+  "damage_type": "magic",
+  "base_damage_factor": 1,
+  "damage_knockback": 0,
+  "projectile_speed": 350,
+  "sort_order": 0,
+  "bounces": 0,
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.2 },
+        { "base_damage_factor": 1.4 },
+        { "base_damage_factor": 1.6 },
+        { "base_damage_factor": 2.0 },
+        { "base_damage_factor": 2.4 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 10 },
+        { "damage_knockback": 20 },
+        { "damage_knockback": 30 },
+        { "damage_knockback": 40 },
+        { "damage_knockback": 50 }
+      ]
+    },
+    "bounces": {
+      "active": true,
+      "unlock_index": 2,
+      "max_index": 2,
+      "label": "SPELL_LIGHT_BALL_BOUNCE",
+      "description": "SPELL_LIGHT_BALL_BOUNCE_DESC",
+      "value": [{ "bounces": 1 }, { "bounces": 2 }, { "bounces": 3 }]
+    }
+  }
+}

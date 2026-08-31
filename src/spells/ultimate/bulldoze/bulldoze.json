@@ -1,0 +1,91 @@
+{
+  "id": "bulldoze",
+  "label": "SPELL_BULLDOZE_LABEL",
+  "description": "SPELL_BULLDOZE_DESC",
+  "icon": "res://src/spells/ultimate/bulldoze/texture/bulldoze_spell_icon.png",
+  "type": "skill",
+  "cast_type": "ultimate",
+  "damage_type": "physical",
+  "cooldown": 11,
+  "duration": 2,
+  "move_speed": 25,
+  "defense": 70,
+  "base_damage_factor": 1,
+  "damage_knockback": 50,
+  "status_resistance": 1,
+  "sort_order": 10,
+  "upgrades_data": {
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 10 },
+        { "cooldown": 9 },
+        { "cooldown": 8 },
+        { "cooldown": 6 },
+        { "cooldown": 4 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 2.5 },
+        { "duration": 3.0 },
+        { "duration": 3.5 },
+        { "duration": 4.0 },
+        { "duration": 4.5 }
+      ]
+    },
+    "defense": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "defense": 100 },
+        { "defense": 150 },
+        { "defense": 200 },
+        { "defense": 300 },
+        { "defense": 400 }
+      ]
+    },
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 2 },
+        { "base_damage_factor": 3 },
+        { "base_damage_factor": 4 },
+        { "base_damage_factor": 6 },
+        { "base_damage_factor": 8 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 80 },
+        { "damage_knockback": 100 },
+        { "damage_knockback": 150 },
+        { "damage_knockback": 200 },
+        { "damage_knockback": 300 }
+      ]
+    },
+    "move_speed": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "move_speed": 35 },
+        { "move_speed": 45 },
+        { "move_speed": 55 },
+        { "move_speed": 75 },
+        { "move_speed": 95 }
+      ]
+    }
+  }
+}

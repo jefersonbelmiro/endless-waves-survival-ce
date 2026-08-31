@@ -1,0 +1,210 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/components/book-icon-box.png" type="Texture" id=1]
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=2]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt_spell_icon.png" type="Texture" id=3]
+[ext_resource path="res://src/popup/card_info/card_info_popup.gd" type="Script" id=4]
+[ext_resource path="res://src/res/fonts/monogram_8.tres" type="DynamicFont" id=5]
+[ext_resource path="res://src/res/fonts/monogram_12.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/icons/upgrade.png" type="Texture" id=7]
+[ext_resource path="res://assets/icons/close.png" type="Texture" id=8]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/add_color = true
+shader_param/color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+shader_param/color_modifier = 1.0
+shader_param/add_border = true
+shader_param/border_color = Color( 0, 0, 0, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 0
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[node name="card_info_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0980392, 0.0980392, 0.0980392, 0.788235 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+mouse_filter = 2
+alignment = 1
+
+[node name="card_row" type="HBoxContainer" parent="container"]
+margin_top = 8.0
+margin_right = 480.0
+margin_bottom = 208.0
+mouse_filter = 2
+alignment = 1
+
+[node name="card_container" type="Control" parent="container/card_row"]
+margin_left = 180.0
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 120, 200 )
+
+[node name="bg" type="NinePatchRect" parent="container/card_row/card_container"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="content" type="VBoxContainer" parent="container/card_row/card_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="icon_container" type="Control" parent="container/card_row/card_container/content"]
+margin_right = 120.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="texture" type="TextureRect" parent="container/card_row/card_container/content/icon_container"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -23.0
+margin_top = -10.0
+margin_right = 23.0
+margin_bottom = 20.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="label_control" type="Control" parent="container/card_row/card_container/content"]
+margin_top = 30.0
+margin_right = 120.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 20 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="label" type="RichTextLabel" parent="container/card_row/card_container/content/label_control"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_right = -3.0
+mouse_filter = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+custom_fonts/normal_font = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]label[/center]"
+text = "label"
+fit_content_height = true
+scroll_active = false
+
+[node name="description_container" type="Control" parent="container/card_row/card_container/content"]
+margin_top = 54.0
+margin_right = 120.0
+margin_bottom = 166.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="description" type="RichTextLabel" parent="container/card_row/card_container/content/description_container"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+rect_min_size = Vector2( 0, 110 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center]description here[/center]"
+text = "description here"
+
+[node name="details_container" type="Control" parent="container/card_row/card_container/content"]
+margin_top = 170.0
+margin_right = 120.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 30 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="details" type="RichTextLabel" parent="container/card_row/card_container/content/details_container"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center]description here[/center]"
+text = "description here"
+fit_content_height = true
+scroll_active = false
+
+[node name="actions_row" type="Control" parent="container"]
+margin_top = 212.0
+margin_right = 480.0
+margin_bottom = 242.0
+rect_min_size = Vector2( 0, 30 )
+mouse_filter = 2
+
+[node name="actions" type="HBoxContainer" parent="container/actions_row"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -15.0
+margin_right = 240.0
+margin_bottom = 15.0
+size_flags_vertical = 3
+custom_constants/separation = 4
+alignment = 1
+
+[node name="close_button" parent="container/actions_row/actions" instance=ExtResource( 9 )]
+unique_name_in_owner = true
+margin_left = 230.0
+margin_right = 250.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon_texture = ExtResource( 8 )
+icon_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="upgrades_button" parent="container/actions_row/actions" instance=ExtResource( 9 )]
+unique_name_in_owner = true
+visible = false
+margin_left = 242.0
+margin_right = 262.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon_texture = ExtResource( 7 )
+icon_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[connection signal="hide" from="." to="." method="_on_card_info_popup_hide"]
+[connection signal="gui_input" from="bg" to="." method="_on_bg_gui_input"]
+[connection signal="pressed" from="container/actions_row/actions/close_button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="container/actions_row/actions/upgrades_button" to="." method="_on_upgrades_button_pressed"]

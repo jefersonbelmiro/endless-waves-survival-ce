@@ -1,0 +1,18 @@
+{
+  "id": "archer",
+  "label": "ARCHER",
+  "main_card": "arrow",
+  "sort_order": 3,
+  "stats": {
+    "max_health": 30,
+    "pick_area": 70,
+    "move_speed": 80,
+    "attack_speed": 45,
+    "attack_range": 200,
+    "base_damage": 6,
+    "physical_damage_factor": 0.2,
+    "critical_proc_chance": 0.2,
+    "critical_factor": 3.0,
+    "evasion": 0.1
+  }
+}

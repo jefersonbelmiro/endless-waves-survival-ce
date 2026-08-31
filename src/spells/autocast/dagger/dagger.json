@@ -1,0 +1,51 @@
+{
+  "id": "dagger",
+  "label": "SPELL_DAGGER_LABEL",
+  "description": "SPELL_DAGGER_DESC",
+  "icon": "res://src/spells/autocast/dagger/texture/spell_dagger_icon.png",
+  "type": "weapon",
+  "cast_type": "autocast",
+  "damage_type": "physical",
+  "target_type": "closest_target",
+  "base_damage_factor": 1,
+  "damage_knockback": 0,
+  "projectile_speed": 350,
+  "sort_order": 10,
+  "value_private_keys": ["pass_through"],
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.2 },
+        { "base_damage_factor": 1.4 },
+        { "base_damage_factor": 1.6 },
+        { "base_damage_factor": 2.1 },
+        { "base_damage_factor": 2.5 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 10 },
+        { "damage_knockback": 20 },
+        { "damage_knockback": 30 },
+        { "damage_knockback": 40 },
+        { "damage_knockback": 50 }
+      ]
+    },
+    "pass_through": {
+      "active": true,
+      "unlock_index": 0,
+      "max_index": 0,
+      "label": "PASS_THROUGH",
+      "description": "UPGRADE_PASS_THROUGH_DESC",
+      "new_upgrade_description": "UPGRADE_PASS_THROUGH_DESC",
+      "upgrade_description": "UPGRADE_PASS_THROUGH_DESC",
+      "value": [{ "pass_through": true }]
+    }
+  }
+}

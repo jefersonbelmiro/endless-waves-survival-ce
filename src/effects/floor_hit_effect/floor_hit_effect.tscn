@@ -1,0 +1,33 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/effects/glow/glow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/effects/floor_hit_effect/texture/floor_hit_effect5.png" type="Texture" id=2]
+[ext_resource path="res://src/effects/floor_hit_effect/texture/floor_hit_effect3.png" type="Texture" id=3]
+[ext_resource path="res://src/effects/floor_hit_effect/texture/floor_hit_effect2.png" type="Texture" id=4]
+[ext_resource path="res://src/effects/floor_hit_effect/texture/floor_hit_effect4.png" type="Texture" id=6]
+[ext_resource path="res://src/effects/floor_hit_effect/texture/floor_hit_effect6.png" type="Texture" id=7]
+[ext_resource path="res://src/effects/floor_hit_effect/texture/floor_hit_effect1.png" type="Texture" id=8]
+[ext_resource path="res://src/effects/floor_hit_effect/floor_hit_effect.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[node name="floor_hit_effect" type="Node2D"]
+modulate = Color( 2, 2, 2, 1 )
+script = ExtResource( 10 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1.5, 1.5, 1.5, 0.33 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+
+[node name="glow" parent="." instance=ExtResource( 1 )]
+visible = false
+scale = Vector2( 0.7, 0.7 )
+
+[connection signal="animation_finished" from="animated_sprite" to="." method="_on_animated_sprite_animation_finished"]

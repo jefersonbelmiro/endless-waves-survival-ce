@@ -1,0 +1,80 @@
+{
+  "id": "crystal_rain",
+  "label": "SPELL_CRYSTAL_RAIN_LABEL",
+  "description": "SPELL_CRYSTAL_RAIN_DESC",
+  "icon": "res://src/spells/autocast/crystal_rain/texture/crystal_rain_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "target_type": "randon_position",
+  "damage_type": "magic",
+  "base_damage_factor": 1,
+  "damage_knockback": 50,
+  "cooldown": 5,
+  "cast_time": 0.3,
+  "max_projectiles": 1,
+  "area": 50,
+  "projectile_speed": 300,
+  "sort_order": 6,
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.3 },
+        { "base_damage_factor": 1.6 },
+        { "base_damage_factor": 1.9 },
+        { "base_damage_factor": 2.2 },
+        { "base_damage_factor": 2.5 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 4.8 },
+        { "cooldown": 4.6 },
+        { "cooldown": 4.4 },
+        { "cooldown": 4.0 },
+        { "cooldown": 3.5 }
+      ]
+    },
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 4 },
+        { "max_projectiles": 8 },
+        { "max_projectiles": 12 },
+        { "max_projectiles": 20 },
+        { "max_projectiles": 30 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 60 },
+        { "damage_knockback": 70 },
+        { "damage_knockback": 80 },
+        { "damage_knockback": 90 },
+        { "damage_knockback": 100 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 60 },
+        { "area": 70 },
+        { "area": 80 },
+        { "area": 100 },
+        { "area": 120 }
+      ]
+    }
+  }
+}

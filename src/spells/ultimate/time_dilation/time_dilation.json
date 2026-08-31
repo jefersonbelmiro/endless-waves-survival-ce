@@ -1,0 +1,50 @@
+{
+  "id": "time_dilation",
+  "label": "SPELL_TIME_DILATION_LABEL",
+  "description": "SPELL_TIME_DILATION_DESC",
+  "icon": "res://src/spells/ultimate/time_dilation/texture/time_dilation_icon.png",
+  "type": "skill",
+  "cast_type": "ultimate",
+  "cooldown": 5.0,
+  "duration": 3,
+  "sort_order": 11,
+  "__upgrades": [{ "duration": 4 }, { "duration": 5 }],
+  "upgrades_data": {
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 4.5 },
+        { "cooldown": 4.0 },
+        { "cooldown": 3.0 },
+        { "cooldown": 2.5 },
+        { "cooldown": 2.0 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 3.5 },
+        { "duration": 4.0 },
+        { "duration": 4.5 },
+        { "duration": 5.0 },
+        { "duration": 5.5 }
+      ]
+    },
+    "move_speed": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "move_speed": 100 },
+        { "move_speed": 150 },
+        { "move_speed": 200 },
+        { "move_speed": 250 },
+        { "move_speed": 300 }
+      ]
+    }
+  }
+}

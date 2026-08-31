@@ -1,0 +1,75 @@
+{
+  "id": "scorch",
+  "label": "SPELL_SCORCH_LABEL",
+  "description": "SPELL_SCORCH_DESC",
+  "icon": "res://src/spells/autocast/scorch/texture/scorch_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "damage_type": "magic",
+  "target_type": "aim_vector",
+  "damage": 2,
+  "cooldown": 4.0,
+  "duration": 2,
+  "area": 150,
+  "damage_knockback": 100,
+  "sort_order": 16,
+  "modifiers": {
+    "debuff_burn": {
+        "type": "debuff",
+        "class": "res://src/classes/debuff_modifier/burn_debuff_modifier.gd",
+        "damage": 1,
+        "modifier_duration": 5,
+        "description": "DEBUFF_BURN_DESC"
+    }
+  },
+  "upgrades_data": {
+    "damage": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage": 3 },
+        { "damage": 4 },
+        { "damage": 5 },
+        { "damage": 7 },
+        { "damage": 10 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 3.8 },
+        { "cooldown": 3.6 },
+        { "cooldown": 3.4 },
+        { "cooldown": 3.1 },
+        { "cooldown": 2.8 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 170 },
+        { "area": 190 },
+        { "area": 210 },
+        { "area": 240 },
+        { "area": 270 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 2.3 },
+        { "duration": 2.6 },
+        { "duration": 3.0 },
+        { "duration": 3.5 },
+        { "duration": 4.0 }
+      ]
+    }
+  }
+}

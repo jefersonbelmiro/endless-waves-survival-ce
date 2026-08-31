@@ -1,0 +1,30 @@
+{
+  "id": "centipede_boss",
+  "level": 1,
+  "stats": {
+    "move_speed": 50,
+    "max_health": 600,
+    "base_damage": 20,
+    "status_resistance": 0.8
+  },
+  "buff_per_level": {
+    "max_health": 0.8,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    {
+      "id": "context_steering",
+      "data": {
+        "steer_force": 3
+      }
+    },
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 150
+      }
+    }
+  ],
+  "sort_order": 12
+}

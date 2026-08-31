@@ -1,0 +1,77 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=1]
+[ext_resource path="res://src/enemies/target_base/target_base.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/enemies/bosses/jelly_boss/texture/jelly_boss6.png" type="Texture" id=3]
+[ext_resource path="res://src/enemies/bosses/jelly_boss/texture/jelly_boss5.png" type="Texture" id=4]
+[ext_resource path="res://src/enemies/bosses/jelly_boss/texture/jelly_boss4.png" type="Texture" id=5]
+[ext_resource path="res://src/enemies/bosses/jelly_boss/texture/jelly_boss1.png" type="Texture" id=6]
+[ext_resource path="res://src/enemies/bosses/jelly_boss/texture/jelly_boss3.png" type="Texture" id=7]
+[ext_resource path="res://src/enemies/bosses/jelly_boss/texture/jelly_boss2.png" type="Texture" id=8]
+[ext_resource path="res://src/enemies/bosses/jelly_boss/jelly_boss.gd" type="Script" id=9]
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/add_color = false
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/color_modifier = 0.666
+shader_param/add_border = false
+shader_param/border_color = Color( 1, 1, 1, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 1
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 20.0
+
+[node name="jelly_boss" groups=["bosses", "enemies", "targets"] instance=ExtResource( 2 )]
+collision_layer = 4096
+collision_mask = 262
+script = ExtResource( 9 )
+id = "jelly_boss"
+base_color = Color( 0.0862745, 0.352941, 0.298039, 1 )
+
+[node name="stats" parent="." index="0"]
+max_health = 150.0
+
+[node name="shadow" parent="." index="2"]
+position = Vector2( 1, 10 )
+scale = Vector2( 1.875, 1.4 )
+
+[node name="animated_sprite" parent="." index="3"]
+material = SubResource( 7 )
+position = Vector2( 1, -8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="collision_shape_2d" parent="." index="4"]
+position = Vector2( 0, -6 )
+shape = SubResource( 8 )
+disabled = false
+
+[node name="hurt_box" parent="." index="5"]
+position = Vector2( 0, -6 )
+
+[node name="collision_shape_2d" parent="hurt_box" index="1"]
+shape = SubResource( 5 )
+
+[node name="health_bar" parent="." index="6"]
+margin_left = -15.0
+margin_top = -38.0
+margin_right = 14.0
+margin_bottom = -34.0

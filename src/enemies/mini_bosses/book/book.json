@@ -1,0 +1,37 @@
+{
+  "id": "book",
+  "level": 1,
+  "stats": {
+    "move_speed": 20,
+    "max_health": 400,
+    "base_damage": 15,
+    "health_regen": 10,
+    "status_resistance": 0.4
+  },
+  "buff_per_level": {
+    "max_health": 0.4,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    {
+      "id": "context_steering",
+      "data": {
+        "keep_distance": 150,
+        "keep_looking_at_target": true
+      }
+    },
+    {
+      "id": "range_attack",
+      "data": {
+        "projectile_speed": 100,
+        "color": "#81007f",
+        "attack_range": 200,
+        "damage_knockback": 50
+      }
+    },
+    "melee_attack",
+    "knockback"
+  ],
+  "sort_order": 11
+}

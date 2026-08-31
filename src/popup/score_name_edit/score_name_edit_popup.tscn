@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=2]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/popup/score_name_edit/score_name_edit_popup.gd" type="Script" id=4]
+[ext_resource path="res://assets/components/simple_border_box_fg.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 5.0
+bg_color = Color( 0, 0, 0, 0 )
+
+[node name="score_name_edit_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 0.807843 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="container" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -40.0
+margin_right = 130.0
+margin_bottom = 60.0
+
+[node name="bg_border" type="NinePatchRect" parent="container"]
+modulate = Color( 0.419608, 0.243137, 0.458824, 0.168627 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="bg_color" type="NinePatchRect" parent="container"]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="content" type="VBoxContainer" parent="container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="label" type="Label" parent="container/content"]
+margin_top = 5.0
+margin_right = 250.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "SCORE_DISPLAY_NAME"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="control" type="Control" parent="container/content"]
+margin_top = 32.0
+margin_right = 250.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="line_edit" type="LineEdit" parent="container/content/control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -111.0
+margin_right = 111.0
+margin_bottom = 23.0
+size_flags_vertical = 0
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+max_length = 20
+
+[node name="actions" type="HBoxContainer" parent="container/content"]
+margin_top = 70.0
+margin_right = 250.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="confirm_button" parent="container/content/actions" instance=ExtResource( 3 )]
+margin_left = 43.0
+margin_right = 123.0
+margin_bottom = 20.0
+text_label = "CONFIRM"
+
+[node name="cancel_button" parent="container/content/actions" instance=ExtResource( 3 )]
+margin_left = 127.0
+margin_right = 207.0
+margin_bottom = 20.0
+text_label = "CANCEL"
+
+[connection signal="hide" from="." to="." method="_on_confirm_popup_hide"]
+[connection signal="text_changed" from="container/content/control/line_edit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="container/content/actions/confirm_button" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="container/content/actions/cancel_button" to="." method="_on_cancel_button_pressed"]

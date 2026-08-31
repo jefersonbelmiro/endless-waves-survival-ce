@@ -1,0 +1,20 @@
+{
+  "id": "bracer_of_damage",
+  "label": "ITEM_BRACER_OF_DAMAGE_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/bracer_of_damage/texture/bracer_of_damage_icon.png",
+  "cast_type": "passive",
+  "base_damage": "10%",
+  "sort_order": 1,
+  "upgrades": [
+    { "base_damage": "20%" },
+    { "base_damage": "30%" },
+    { "base_damage": "40%" },
+    { "base_damage": "50%" },
+    { "base_damage": "60%" },
+    { "base_damage": "70%" },
+    { "base_damage": "80%" },
+    { "base_damage": "90%" },
+    { "base_damage": "100%" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "red_caterpillar",
+  "level": 1,
+  "stats": {
+    "move_speed": 30,
+    "max_health": 10,
+    "base_damage": 2,
+    "attack_range": 150
+  },
+  "buff_per_level": {
+    "max_health": 0.2,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    {
+      "id": "chase",
+      "data": {
+        "targets": {
+          "player_unit": { "use_attack_range": false },
+          "player": { "use_attack_range": false }
+        }
+      }
+    },
+    "melee_attack",
+    "knockback"
+  ],
+  "sort_order": 0
+}

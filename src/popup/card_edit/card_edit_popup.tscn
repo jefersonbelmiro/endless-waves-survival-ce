@@ -1,0 +1,336 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=1]
+[ext_resource path="res://src/res/fonts/monogram_8.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/effects/bg_particles/bg_particles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/res/fonts/monogram_12.tres" type="DynamicFont" id=5]
+[ext_resource path="res://src/components/input_hint/input_hint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/components/panel_focus_container/panel_focus_container.gd" type="Script" id=7]
+[ext_resource path="res://src/spells/passive/book_of_cooldown/texture/book_of_cooldown_icon.png" type="Texture" id=8]
+[ext_resource path="res://src/components/input_icon/input_icon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/components/box_button/box_button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/components/grid/grid.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/popup/card_edit/card_edit_popup.gd" type="Script" id=12]
+[ext_resource path="res://assets/icons/visible.png" type="Texture" id=13]
+[ext_resource path="res://assets/icons/upgrade.png" type="Texture" id=14]
+[ext_resource path="res://assets/icons/unlocked.png" type="Texture" id=15]
+[ext_resource path="res://src/components/meta_bar/meta_bar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/components/tooltip/tooltip.tscn" type="PackedScene" id=18]
+
+[node name="card_edit_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 12 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="bg_particles" parent="." instance=ExtResource( 3 )]
+position = Vector2( 242, 208 )
+
+[node name="title" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 28.0
+text = "EDIT CARD"
+align = 1
+valign = 1
+
+[node name="meta_bar" parent="." instance=ExtResource( 16 )]
+anchor_right = 1.0
+margin_top = 18.0
+margin_right = -20.0
+margin_bottom = 14.0
+
+[node name="container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 35.0
+margin_right = -20.0
+margin_bottom = -10.0
+
+[node name="content" type="HBoxContainer" parent="container"]
+margin_right = 440.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 7 )
+panels = [ NodePath("avaliable"), NodePath("selected") ]
+panels_focus_containers = [ NodePath("avaliable/grid"), NodePath("selected/content/actions_container") ]
+
+[node name="avaliable" type="Control" parent="container/content"]
+margin_right = 276.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="bg" type="ColorRect" parent="container/content/avaliable"]
+modulate = Color( 0.0588235, 0.0352941, 0.0588235, 0.129412 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+
+[node name="bg_border" type="NinePatchRect" parent="container/content/avaliable"]
+modulate = Color( 0.117647, 0.0901961, 0.117647, 0.705882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="grid" parent="container/content/avaliable" instance=ExtResource( 11 )]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+item_size = 30
+
+[node name="label" type="Label" parent="container/content/avaliable"]
+margin_left = 3.0
+margin_top = -14.5
+margin_right = 43.0
+margin_bottom = 4.5
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "UPGRADES"
+
+[node name="selected" type="Control" parent="container/content"]
+margin_left = 280.0
+margin_right = 440.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 160, 140 )
+
+[node name="bg" type="ColorRect" parent="container/content/selected"]
+modulate = Color( 0.0588235, 0.0352941, 0.0588235, 0.129412 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+
+[node name="bg_border" type="NinePatchRect" parent="container/content/selected"]
+modulate = Color( 0.117647, 0.0901961, 0.117647, 0.705882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="content" type="VBoxContainer" parent="container/content/selected"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="header" type="HBoxContainer" parent="container/content/selected/content"]
+margin_right = 150.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="icon" type="TextureRect" parent="container/content/selected/content/header"]
+modulate = Color( 0.67451, 0.666667, 0.666667, 1 )
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="label_container" type="Control" parent="container/content/selected/content/header"]
+margin_left = 36.0
+margin_right = 150.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="label" type="Label" parent="container/content/selected/content/header/label_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 5 )
+text = "Light ball"
+valign = 1
+autowrap = true
+
+[node name="description_container" type="Control" parent="container/content/selected/content"]
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="description" type="RichTextLabel" parent="container/content/selected/content/description_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="details_container" type="Control" parent="container/content/selected/content"]
+margin_top = 130.0
+margin_right = 150.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 8 )
+size_flags_horizontal = 3
+
+[node name="details" type="RichTextLabel" parent="container/content/selected/content/details_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Unlock next level: 5 coins"
+text = "Unlock next level: 5 coins"
+fit_content_height = true
+scroll_active = false
+
+[node name="actions_container" type="HBoxContainer" parent="container/content/selected/content"]
+margin_top = 142.0
+margin_right = 150.0
+margin_bottom = 162.0
+
+[node name="visible_button" parent="container/content/selected/content/actions_container" instance=ExtResource( 10 )]
+margin_right = 20.0
+margin_bottom = 20.0
+hint_tooltip = "TOGGLE_VISIBILITY"
+toggle_mode = true
+icon_texture = ExtResource( 13 )
+icon_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="upgrade_button" parent="container/content/selected/content/actions_container" instance=ExtResource( 10 )]
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+icon_texture = ExtResource( 14 )
+icon_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="tooltip" parent="container/content/selected/content/actions_container/upgrade_button" instance=ExtResource( 18 )]
+
+[node name="downgrade_button" parent="container/content/selected/content/actions_container" instance=ExtResource( 10 )]
+margin_left = 48.0
+margin_right = 68.0
+margin_bottom = 20.0
+icon_texture = ExtResource( 14 )
+icon_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="fg" parent="container/content/selected/content/actions_container/downgrade_button" index="4"]
+flip_v = true
+
+[node name="unlock_button" parent="container/content/selected/content/actions_container" instance=ExtResource( 10 )]
+margin_left = 72.0
+margin_right = 92.0
+margin_bottom = 20.0
+icon_texture = ExtResource( 15 )
+
+[node name="tooltip" parent="container/content/selected/content/actions_container/unlock_button" instance=ExtResource( 18 )]
+
+[node name="actions_hint" type="HBoxContainer" parent="container"]
+margin_top = 171.0
+margin_right = 440.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 0, 20 )
+alignment = 1
+
+[node name="previous_panel_hint" parent="container/actions_hint" instance=ExtResource( 6 )]
+margin_left = 158.0
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 14 )
+sources = 5
+label = "PREVIOUS_PANEL"
+
+[node name="label" parent="container/actions_hint/previous_panel_hint/container" index="0"]
+margin_right = 39.0
+margin_bottom = 20.0
+
+[node name="icon_container" parent="container/actions_hint/previous_panel_hint/container" index="1"]
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 20.0
+
+[node name="input_icon" parent="container/actions_hint/previous_panel_hint/container/icon_container" index="0" instance=ExtResource( 9 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -5.0
+margin_right = 10.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 10, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_name = "ui_select_prev"
+
+[node name="next_panel_hint" parent="container/actions_hint" instance=ExtResource( 6 )]
+margin_left = 222.0
+margin_right = 282.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 14 )
+sources = 5
+label = "NEXT_PANEL"
+
+[node name="label" parent="container/actions_hint/next_panel_hint/container" index="0"]
+margin_right = 39.0
+margin_bottom = 20.0
+
+[node name="icon_container" parent="container/actions_hint/next_panel_hint/container" index="1"]
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 20.0
+
+[node name="input_icon" parent="container/actions_hint/next_panel_hint/container/icon_container" index="0" instance=ExtResource( 9 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -5.0
+margin_right = 10.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 10, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_name = "ui_select_next"
+
+[node name="actions" type="HBoxContainer" parent="container"]
+margin_top = 195.0
+margin_right = 440.0
+margin_bottom = 215.0
+alignment = 1
+
+[node name="cancel_button" parent="container/actions" instance=ExtResource( 4 )]
+margin_left = 138.0
+margin_right = 218.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text_label = "CANCEL"
+
+[node name="done_button" parent="container/actions" instance=ExtResource( 4 )]
+margin_left = 222.0
+margin_right = 302.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text_label = "DONE"
+
+[connection signal="hide" from="." to="." method="_on_card_edit_popup_hide"]
+[connection signal="pressed" from="container/content/selected/content/actions_container/visible_button" to="." method="_on_visible_button_pressed"]
+[connection signal="pressed" from="container/content/selected/content/actions_container/upgrade_button" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="container/content/selected/content/actions_container/downgrade_button" to="." method="_on_downgrade_button_pressed"]
+[connection signal="pressed" from="container/content/selected/content/actions_container/unlock_button" to="." method="_on_unlock_button_pressed"]
+[connection signal="pressed" from="container/actions/cancel_button" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="container/actions/done_button" to="." method="_on_done_button_pressed"]
+
+[editable path="container/content/selected/content/actions_container/downgrade_button"]
+[editable path="container/actions_hint/previous_panel_hint"]
+[editable path="container/actions_hint/next_panel_hint"]

@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/popup/objective_status/objective_status_popup.gd" type="Script" id=1]
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.448905, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 0.523916, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.00729927, 0.489051, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.588836, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 1 )
+
+[node name="objective_status_popup" type="Popup"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 2 )
+popup_exclusive = true
+script = ExtResource( 1 )
+
+[node name="bg_dark" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0392157, 0.0392157, 0.0392157, 0.45098 )
+
+[node name="bg" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.54902, 0.0823529, 0.560784, 0.152941 )
+
+[node name="container" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -20.0
+margin_right = 240.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 40 )
+mouse_filter = 2
+
+[node name="bg_container" type="HBoxContainer" parent="container"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_constants/separation = 0
+
+[node name="left" type="TextureRect" parent="container/bg_container"]
+margin_right = 240.0
+margin_bottom = 40.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 4 )
+expand = true
+
+[node name="right" type="TextureRect" parent="container/bg_container"]
+margin_left = 240.0
+margin_right = 480.0
+margin_bottom = 40.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 5 )
+expand = true
+
+[node name="content" type="VBoxContainer" parent="container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="label" type="Label" parent="container/content"]
+margin_right = 480.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+text = "LABEL"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="rows_container" type="Control" parent="container/content"]
+margin_top = 44.0
+margin_right = 480.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="rows" type="VBoxContainer" parent="container/content/rows_container"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_right = 100.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="actions" type="HBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -240.0
+margin_top = -40.0
+margin_right = 240.0
+alignment = 1
+
+[node name="menu_button" parent="actions" instance=ExtResource( 3 )]
+margin_left = 116.0
+margin_right = 196.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text_label = "MENU"
+
+[node name="restart_button" parent="actions" instance=ExtResource( 3 )]
+margin_left = 200.0
+margin_right = 280.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text_label = "RESTART"
+
+[node name="summary_button" parent="actions" instance=ExtResource( 3 )]
+margin_left = 284.0
+margin_right = 364.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text_label = "SUMMARY"
+
+[connection signal="hide" from="." to="." method="_on_objective_status_popup_hide"]
+[connection signal="resized" from="." to="." method="_on_objective_status_popup_resized"]
+[connection signal="pressed" from="actions/menu_button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="actions/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="actions/summary_button" to="." method="_on_summary_button_pressed"]

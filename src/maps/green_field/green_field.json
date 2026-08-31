@@ -1,0 +1,26 @@
+{
+  "uid": "map_green_field",
+  "id": "green_field",
+  "label": "GREEN_FIELD",
+  "levels": 3,
+  "sort_order": 0,
+  "objectives": [
+    {
+      "level": 1,
+      "type": "survive_time",
+      "value": "03:00"
+    },
+    {
+      "level": 2,
+      "type": "kill_enemies",
+      "id": "jelly_boss",
+      "value": 1
+    },
+    {
+      "level": 3,
+      "type": "kill_enemies",
+      "id": "jelly_boss",
+      "value": 1
+    }
+  ]
+}

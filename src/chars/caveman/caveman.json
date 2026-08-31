@@ -1,0 +1,16 @@
+{
+  "id": "caveman",
+  "label": "CAVEMAN",
+  "main_card": "club",
+  "sort_order": 6,
+  "stats": {
+    "max_health": 130,
+    "pick_area": 150,
+    "move_speed": 65,
+    "attack_speed": 20,
+    "attack_range": 80,
+    "base_damage": 16,
+    "magic_damage_factor": -0.9,
+    "physical_damage_factor": 0.45
+  }
+}

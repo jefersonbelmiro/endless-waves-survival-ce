@@ -1,0 +1,163 @@
+{
+  "uid": "map_skeletal_arena",
+  "id": "skeletal_arena",
+  "label": "SKELETAL_ARENA",
+  "levels": 3,
+  "sort_order": 2,
+  "objectives": [
+    {
+      "level": 1,
+      "type": "kill_enemies",
+      "value": 5000
+    },
+    {
+      "level": 2,
+      "type": "kill_enemies",
+      "id": "skeleton_boss",
+      "value": 1
+    },
+    {
+      "level": 3,
+      "type": "survive_time",
+      "value": "20:00"
+    }
+  ],
+  "spawn_data": {
+    "skeleton": {
+      "drops": {
+        "coin": { "proc_chance": 0.2 },
+        "experience": { "proc_chance": 0.8, "value": 10 },
+        "consumable": { "proc_chance": 0.01 }
+      }
+    },
+    "skeleton_bomb": {
+      "drops": {
+        "coin": { "proc_chance": 0.01 },
+        "experience": { "proc_chance": 0.8, "value": 20 },
+        "consumable": { "proc_chance": 0.01 }
+      }
+    },
+    "skeleton_king": {
+      "drops": {
+        "coin": { "proc_chance": 0.01 },
+        "experience": { "proc_chance": 0.8, "value": 50 },
+        "consumable": { "proc_chance": 0.01 }
+      }
+    },
+    "skeleton_king_range": {
+      "drops": {
+        "coin": { "proc_chance": 0.01 },
+        "experience": { "proc_chance": 0.8, "value": 70 },
+        "consumable": { "proc_chance": 0.01 }
+      }
+    },
+    "skeleton_boss": {
+      "drops": {
+        "coin": { "proc_chance": 1, "value": 50 },
+        "experience": { "proc_chance": 1, "value": 100 },
+        "consumable": { "proc_chance": 1 },
+        "chest": { "proc_chance": 0.05 }
+      }
+    }
+  },
+  "events": [
+    {
+      "type": "spawn",
+      "interval": 1,
+      "data": {
+        "spawn_mode": "map_bounds",
+        "spawns": [{ "id": "skeleton", "size": 2, "max_alive": 10 }]
+      }
+    },
+    {
+      "type": "spawn",
+      "start": "01:00",
+      "interval": 2,
+      "data": {
+        "spawn_mode": "map_bounds",
+        "spawns": [{ "id": "skeleton_bomb", "size": 1, "max_alive": 1 }]
+      }
+    },
+    {
+      "type": "spawn",
+      "start": "01:20",
+      "interval": 2,
+      "data": {
+        "spawn_mode": "map_bounds",
+        "spawns": [{ "id": "skeleton_king", "size": 1, "max_alive": 1 }]
+      }
+    },
+    {
+      "type": "spawn",
+      "start": "02:00",
+      "interval": 2,
+      "data": {
+        "spawn_mode": "map_bounds",
+        "spawns": [{ "id": "skeleton_king_range", "size": 1, "max_alive": 1 }]
+      }
+    },
+    {
+      "type": "spawn",
+      "start": "04:00",
+      "data": {
+        "spawn_mode": "map_bounds",
+        "spawns": [{ "id": "skeleton_boss", "size": 1 }]
+      }
+    },
+    {
+      "type": "data_increment",
+      "start": "01:00",
+      "interval": "00:20",
+      "data": { "id": "skeleton", "size": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "00:40",
+      "interval": "00:20",
+      "data": { "id": "skeleton", "max_alive": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "02:00",
+      "interval": "01:30",
+      "data": { "id": "skeleton_bomb", "max_alive": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "04:00",
+      "interval": "02:00",
+      "timeout": "08:10",
+      "data": { "id": "skeleton_king", "max_alive": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "03:00",
+      "timeout": "06:00",
+      "interval": "00:30",
+      "data": { "level": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "06:00",
+      "interval": "00:20",
+      "timeout": "10:00",
+      "data": { "level": 1 }
+    },
+    {
+      "type": "data_increment",
+      "start": "02:00",
+      "interval": "01:00",
+      "ticks": 3,
+      "data": {
+        "id": "skeleton",
+        "drops_proc_chance": { "coin": { "proc_chance": -0.05 } }
+      }
+    },
+    {
+      "type": "data_increment",
+      "start": "10:00",
+      "interval": "00:02",
+      "data": { "level": 5 }
+    }
+  ]
+}

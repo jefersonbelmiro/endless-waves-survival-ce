@@ -1,0 +1,15 @@
+{
+  "id": "consumable_collector_orb",
+  "uid": "consumable_collector_orb",
+  "label": "CONSUMABLE_COLLECTOR_ORB_LABEL",
+  "description": "CONSUMABLE_COLLECTOR_ORB_DESC",
+  "toast_used": "CONSUMABLE_COLLECTOR_ORB_TOAST_USED",
+  "icon": "res://src/consumables/collector_orb/texture/collector_orb_icon.png",
+  "class": "res://src/consumables/collector_orb/collector_orb_data.gd",
+  "type": "item",
+  "tier": 1,
+  "cost": 30,
+  "modifier_duration": 0,
+  "stack": false,
+  "sort_order": 5
+}

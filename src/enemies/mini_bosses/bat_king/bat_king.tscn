@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/enemies/mini_bosses/bat_king/texture/bat_king1.png" type="Texture" id=1]
+[ext_resource path="res://src/enemies/target_base/target_base.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/enemies/mini_bosses/bat_king/texture/bat_king4.png" type="Texture" id=3]
+[ext_resource path="res://src/enemies/mini_bosses/bat_king/texture/bat_king3.png" type="Texture" id=4]
+[ext_resource path="res://src/enemies/mini_bosses/bat_king/texture/bat_king2.png" type="Texture" id=5]
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=6]
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = ExtResource( 6 )
+shader_param/add_color = false
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/color_modifier = 0.666
+shader_param/add_border = false
+shader_param/border_color = Color( 1, 1, 1, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 1
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 16.0
+
+[node name="bat_king" groups=["enemies", "flyers", "mini_bosses", "targets"] instance=ExtResource( 2 )]
+id = "bat_king"
+base_color = Color( 0.701961, 0.152941, 0.498039, 1 )
+
+[node name="stats" parent="." index="0"]
+max_health = 250.0
+
+[node name="shadow" parent="." index="2"]
+position = Vector2( -4.17233e-07, 12 )
+scale = Vector2( 1.8125, 1.4 )
+
+[node name="animated_sprite" parent="." index="3"]
+material = SubResource( 7 )
+position = Vector2( 0, -8 )
+scale = Vector2( 1.4, 1.4 )
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="collision_shape_2d" parent="." index="4"]
+position = Vector2( 0, -7 )
+shape = SubResource( 6 )
+
+[node name="hurt_box" parent="." index="5"]
+position = Vector2( 0, -7 )
+
+[node name="collision_shape_2d" parent="hurt_box" index="1"]
+shape = SubResource( 5 )
+
+[node name="health_bar" parent="." index="6"]
+margin_left = -12.0
+margin_top = -28.0
+margin_right = 12.0
+margin_bottom = -24.0

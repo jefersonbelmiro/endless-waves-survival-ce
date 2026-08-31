@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/spells/autocast/arc_lightning/arc_lightning.gd" type="Script" id=1]
+[ext_resource path="res://src/spells/autocast/arc_lightning/sfx/arc_lightning_sfx.wav" type="AudioStream" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+
+[node name="arc_lightning" type="Node2D"]
+script = ExtResource( 1 )
+glow_color = Color( 0.611765, 0.992157, 1, 1 )
+
+[node name="outer_line_2d" type="Line2D" parent="."]
+material = SubResource( 1 )
+width = 4.0
+default_color = Color( 0.027451, 0.0588235, 1, 1 )
+
+[node name="inner_line_2d" type="Line2D" parent="."]
+material = SubResource( 2 )
+width = 2.0
+default_color = Color( 0.611765, 0.992157, 1, 1 )
+
+[node name="tween" type="Tween" parent="."]
+
+[node name="update_timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -35.0
+bus = "SFX"
+
+[connection signal="timeout" from="update_timer" to="." method="_on_update_timer_timeout"]

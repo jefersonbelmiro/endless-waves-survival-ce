@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=1]
+[ext_resource path="res://src/components/tabs/tabs.gd" type="Script" id=2]
+[ext_resource path="res://src/components/input_icon/input_icon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/components/simple_border_box_fg.png" type="Texture" id=4]
+
+[node name="tabs" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="bg_color" type="NinePatchRect" parent="."]
+modulate = Color( 0.117647, 0.0901961, 0.117647, 0.309804 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+texture = ExtResource( 4 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="border" type="NinePatchRect" parent="."]
+modulate = Color( 0.117647, 0.0901961, 0.117647, 0.705882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="ui_select_prev" parent="." instance=ExtResource( 3 )]
+margin_left = 3.0
+margin_top = 5.0
+margin_right = 13.0
+margin_bottom = 15.0
+action_name = "ui_select_prev"
+
+[node name="ui_select_next" parent="." instance=ExtResource( 3 )]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 25.0
+margin_bottom = 15.0
+action_name = "ui_select_next"
+
+[node name="container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="header" type="Control" parent="container"]
+margin_right = 480.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+
+[node name="content" type="HBoxContainer" parent="container/header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="content" type="Control" parent="container"]
+margin_top = 22.0
+margin_right = 480.0
+margin_bottom = 260.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="draw" from="container/header/content" to="." method="_on_content_draw" flags=3]

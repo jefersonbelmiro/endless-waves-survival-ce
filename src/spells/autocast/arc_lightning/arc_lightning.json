@@ -1,0 +1,55 @@
+{
+  "id": "arc_lightning",
+  "label": "SPELL_ARC_LIGHTNING_LABEL",
+  "description": "SPELL_ARC_LIGHTNING_DESC",
+  "icon": "res://src/spells/autocast/arc_lightning/texture/arc_lightning_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "damage_type": "magic",
+  "target_type": "closest_target",
+  "damage": 10,
+  "cooldown": 3.5,
+  "bounces": 1,
+  "max_projectiles": 1,
+  "bounce_distance": 120,
+  "damage_knockback": 20,
+  "sort_order": 8,
+  "upgrades_data": {
+    "damage": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage": 20 },
+        { "damage": 30 },
+        { "damage": 40 },
+        { "damage": 50 },
+        { "damage": 60 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 3.3 },
+        { "cooldown": 3.0 },
+        { "cooldown": 2.8 },
+        { "cooldown": 2.5 },
+        { "cooldown": 2.0 }
+      ]
+    },
+    "bounces": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "bounces": 2 },
+        { "bounces": 4 },
+        { "bounces": 6 },
+        { "bounces": 8 },
+        { "bounces": 10 }
+      ]
+    }
+  }
+}

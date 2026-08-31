@@ -1,0 +1,15 @@
+{
+  "id": "duplicator",
+  "label": "SPELL_DUPLICATOR_LABEL",
+  "description": "SPELL_DUPLICATOR_DESC",
+  "icon": "res://src/spells/passive/duplicator/texture/duplicator_icon.png",
+  "cast_type": "passive",
+  "sort_order": 15,
+  "max_projectiles": 1,
+  "upgrades": [
+    { "max_projectiles": 2 },
+    { "max_projectiles": 3 },
+    { "max_projectiles": 4 },
+    { "max_projectiles": 5 }
+  ]
+}

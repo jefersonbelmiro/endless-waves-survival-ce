@@ -1,0 +1,40 @@
+{
+  "id": "wrath_of_thunder",
+  "label": "SPELL_WRATH_OF_THUNDER_LABEL",
+  "description": "SPELL_WRATH_OF_THUNDER_DESC",
+  "icon": "res://src/spells/ultimate/wrath_of_thunder/texture/wrath_of_thunder_spell_icon.png",
+  "type": "skill",
+  "cast_type": "ultimate",
+  "cooldown": 10,
+  "cast_time": 0.3,
+  "target_type": "target_unit",
+  "damage_type": "magic",
+  "base_damage_factor": 0.5,
+  "sort_order": 11,
+  "upgrades_data": {
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 9 },
+        { "cooldown": 8 },
+        { "cooldown": 7 },
+        { "cooldown": 5 },
+        { "cooldown": 3 }
+      ]
+    },
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 0.7 },
+        { "base_damage_factor": 0.9 },
+        { "base_damage_factor": 1.2 },
+        { "base_damage_factor": 1.6 },
+        { "base_damage_factor": 2.0 }
+      ]
+    }
+  }
+}

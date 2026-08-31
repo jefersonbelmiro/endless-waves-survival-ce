@@ -1,0 +1,25 @@
+{
+  "id": "ghost_king",
+  "level": 1,
+  "stats": {
+    "move_speed": 40,
+    "max_health": 500,
+    "base_damage": 15
+  },
+  "buff_per_level": {
+    "max_health": 0.5,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    "chase",
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 100
+      }
+    },
+    "knockback"
+  ],
+  "sort_order": 10
+}

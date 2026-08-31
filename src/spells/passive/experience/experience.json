@@ -1,0 +1,20 @@
+{
+  "id": "experience",
+  "label": "EXPERIENCE",
+  "description": "",
+  "icon": "res://src/spells/passive/experience/texture/spell_experience_icon.png",
+  "cast_type": "passive",
+  "sort_order": 11,
+  "experience_factor": 0.4,
+  "upgrades": [
+    { "experience_factor": 0.8 },
+    { "experience_factor": 1.2 },
+    { "experience_factor": 1.6 },
+    { "experience_factor": 2.0 },
+    { "experience_factor": 2.4 },
+    { "experience_factor": 2.8 },
+    { "experience_factor": 3.2 },
+    { "experience_factor": 3.6 },
+    { "experience_factor": 4.0 }
+  ]
+}

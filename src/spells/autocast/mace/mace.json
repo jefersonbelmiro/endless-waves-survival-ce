@@ -1,0 +1,67 @@
+{
+  "id": "mace",
+  "label": "MACE_LABEL",
+  "description": "MACE_DESC",
+  "icon": "res://src/spells/autocast/mace/texture/mace_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "damage_type": "physical",
+  "damage": 10,
+  "cooldown": 2,
+  "duration": 3.0,
+  "damage_knockback": 100,
+  "area": 40,
+  "projectile_speed": 250,
+  "max_projectiles": 1,
+  "sort_order": 11,
+  "upgrades_data": {
+    "damage": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage": 12 },
+        { "damage": 15 },
+        { "damage": 20 },
+        { "damage": 25 },
+        { "damage": 30 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 1.9 },
+        { "cooldown": 1.8 },
+        { "cooldown": 1.7 },
+        { "cooldown": 1.6 },
+        { "cooldown": 1.5 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 125 },
+        { "damage_knockback": 150 },
+        { "damage_knockback": 200 },
+        { "damage_knockback": 250 },
+        { "damage_knockback": 300 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 3.5 },
+        { "duration": 4.0 },
+        { "duration": 4.5 },
+        { "duration": 6.0 },
+        { "duration": 7.5 }
+      ]
+    }
+  }
+}

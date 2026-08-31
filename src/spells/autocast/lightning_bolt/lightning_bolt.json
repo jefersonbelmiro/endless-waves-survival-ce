@@ -1,0 +1,66 @@
+{
+  "id": "lightning_bolt",
+  "label": "SPELL_LIGHTNING_BOLT_LABEL",
+  "description": "SPELL_LIGHTNING_BOLT_DESC",
+  "icon": "res://src/spells/autocast/lightning_bolt/texture/lightning_bolt_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "target_type": "random_target",
+  "damage_type": "magic",
+  "base_damage_factor": 1,
+  "cooldown": 3.0,
+  "max_projectiles": 1,
+  "damage_knockback": 0,
+  "area": 10,
+  "sort_order": 7,
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.2 },
+        { "base_damage_factor": 1.5 },
+        { "base_damage_factor": 2.0 },
+        { "base_damage_factor": 2.5 },
+        { "base_damage_factor": 3.0 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 2.8 },
+        { "cooldown": 2.6 },
+        { "cooldown": 2.4 },
+        { "cooldown": 2.2 },
+        { "cooldown": 2.0 }
+      ]
+    },
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 2 },
+        { "max_projectiles": 3 },
+        { "max_projectiles": 4 },
+        { "max_projectiles": 5 },
+        { "max_projectiles": 6 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 15 },
+        { "area": 20 },
+        { "area": 25 },
+        { "area": 30 },
+        { "area": 35 }
+      ]
+    }
+  }
+}

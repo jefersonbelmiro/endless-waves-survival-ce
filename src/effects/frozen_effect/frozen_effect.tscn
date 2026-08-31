@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/effects/frozen_effect/texture/frozen_effect.png" type="Texture" id=1]
+[ext_resource path="res://src/effects/frozen_effect/frozen_effect.gd" type="Script" id=2]
+
+[node name="frozen_effect" type="Sprite"]
+position = Vector2( 0, 3 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

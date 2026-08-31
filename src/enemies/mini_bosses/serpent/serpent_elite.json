@@ -1,0 +1,33 @@
+{
+  "id": "serpent_elite",
+  "level": 1,
+  "stats": {
+    "move_speed": 50,
+    "max_health": 1600,
+    "base_damage": 20,
+    "health_regen": 20,
+    "status_resistance": 1.00
+  },
+  "buff_per_level": {
+    "max_health": 0.4,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    {
+      "id": "context_steering",
+      "data": {
+        "steer_force": 5,
+        "look_ahead": 40,
+        "collision_mask": ["env", "map_bounds"]
+      }
+    },
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 150
+      }
+    }
+  ],
+  "sort_order": 12
+}

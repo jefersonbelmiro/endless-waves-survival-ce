@@ -1,0 +1,79 @@
+{
+  "id": "healing_tower",
+  "label": "CARD_HEALING_TOWER_LABEL",
+  "description": "CARD_HEALING_TOWER_DESC",
+  "require_description": "CARD_HEALING_TOWER_REQUIRE_DESC",
+  "icon": "res://src/spells/summon/healing_tower/texture/healing_tower_icon.png",
+  "cast_type": "summon",
+  "max_health": 30,
+  "damage": 10,
+  "area": 100,
+  "health_healing": 2,
+  "sort_order": 3,
+  "value_private_keys": ["explosion"],
+  "value_format_keys": {
+    "explosion_damage": { "tr": "EXPLOSION_DAMAGE" },
+    "health_healing": {
+      "format": "per_seconds"
+    }
+  },
+  "upgrades_data": {
+    "health_healing": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "health_healing": 4 },
+        { "health_healing": 6 },
+        { "health_healing": 8 },
+        { "health_healing": 13 },
+        { "health_healing": 20 }
+      ]
+    },
+    "explosion": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "label": "EXPLOSION",
+      "description": "CARD_UPGRADE_EXPLOSION_DESC",
+      "new_upgrade_description": "SPELL_SHIELD_EXPLOSION_UPGRADE_DESC",
+      "upgrade_description": "SPELL_SHIELD_EXPLOSION_UPGRADE_DESC",
+      "value": [
+        {
+          "explosion": true,
+          "explosion_damage": 10,
+          "damage_type": "magic",
+          "damage_knockback": 100
+        },
+        { "explosion_damage": 20 },
+        { "explosion_damage": 30 },
+        { "explosion_damage": 40 },
+        { "explosion_damage": 50 }
+      ]
+    },
+    "max_health": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_health": 60 },
+        { "max_health": 80 },
+        { "max_health": 100 },
+        { "max_health": 150 },
+        { "max_health": 200 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 110 },
+        { "area": 120 },
+        { "area": 130 },
+        { "area": 150 },
+        { "area": 180 }
+      ]
+    }
+  }
+}

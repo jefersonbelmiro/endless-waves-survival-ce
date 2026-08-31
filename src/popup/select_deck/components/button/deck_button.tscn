@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/res/fonts/monogram_8.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/components/box_button/box_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/components/deck_bg.png" type="Texture" id=4]
+
+[node name="deck_button" instance=ExtResource( 2 )]
+rect_min_size = Vector2( 40, 40 )
+
+[node name="fg" parent="." index="4"]
+texture = ExtResource( 4 )
+stretch_mode = 6
+
+[node name="label" parent="." index="6"]
+visible = true
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+clip_text = false

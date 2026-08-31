@@ -1,0 +1,20 @@
+{
+  "id": "ring_of_regeneration",
+  "label": "ITEM_RING_OF_REGENERATION_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/ring_of_regeneration/texture/ring_of_regeneration_icon.png",
+  "cast_type": "passive",
+  "health_regen": 0.5,
+  "sort_order": 7,
+  "upgrades": [
+    { "health_regen": 0.75 },
+    { "health_regen": 1 },
+    { "health_regen": 1.5 },
+    { "health_regen": 1.75 },
+    { "health_regen": 2 },
+    { "health_regen": 2.25 },
+    { "health_regen": 2.5 },
+    { "health_regen": 3 },
+    { "health_regen": 3.5 }
+  ]
+}

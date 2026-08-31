@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/components/hit_box_melee/hit_box_melee.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+resource_local_to_scene = true
+
+[node name="hit_box_melee" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource( 1 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true

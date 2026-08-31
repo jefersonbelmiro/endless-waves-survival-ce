@@ -1,0 +1,14 @@
+{
+  "id": "projectile_speed",
+  "label": "PROJECTILE_SPEED",
+  "icon": "res://src/spells/passive/projectile_speed/texture/projectile_speed_icon.png",
+  "cast_type": "passive",
+  "sort_order": 16,
+  "projectile_speed": 40,
+  "upgrades": [
+    { "projectile_speed": 80 },
+    { "projectile_speed": 120 },
+    { "projectile_speed": 160 },
+    { "projectile_speed": 200 }
+  ]
+}

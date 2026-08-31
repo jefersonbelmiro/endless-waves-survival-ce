@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/maps/map_base/map_base.gd" type="Script" id=1]
+[ext_resource path="res://src/systems/drop/drop_system.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/systems/objective_system/objective_system.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/systems/map_event_system/map_event_system.tscn" type="PackedScene" id=5]
+
+[node name="map_base" type="Node"]
+script = ExtResource( 1 )
+
+[node name="event_system" parent="." instance=ExtResource( 5 )]
+
+[node name="objective_system" parent="." instance=ExtResource( 4 )]
+
+[node name="drop_system" parent="." instance=ExtResource( 2 )]
+
+[node name="start_position" type="Position2D" parent="."]
+position = Vector2( 239, 121 )

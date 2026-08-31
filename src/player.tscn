@@ -1,0 +1,71 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/chars/mage/res/mage_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://src/player.gd" type="Script" id=3]
+[ext_resource path="res://src/components/camera/camera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/enemies/behaviours/container/behaviour_container.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=8]
+[ext_resource path="res://src/components/hurt_box/hurt_box.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/components/stats.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/components/casters_container/casters_container.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/res/white_and_border_shadermaterial.tres" type="Material" id=17]
+[ext_resource path="res://src/components/input_controller/input_controller.tscn" type="PackedScene" id=18]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 35.0143
+
+[sub_resource type="CircleShape2D" id=9]
+
+[node name="player" type="KinematicBody2D" groups=["player"]]
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="stats" parent="." instance=ExtResource( 15 )]
+
+[node name="casters_container" parent="." instance=ExtResource( 16 )]
+
+[node name="input_controller" parent="." instance=ExtResource( 18 )]
+
+[node name="behaviour_container" parent="." instance=ExtResource( 6 )]
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( 1.19209e-07, 10 )
+scale = Vector2( 1.1875, 1 )
+texture = ExtResource( 8 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+material = ExtResource( 17 )
+frames = ExtResource( 1 )
+animation = "idle"
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 6 )
+shape = SubResource( 8 )
+
+[node name="camera" parent="." instance=ExtResource( 5 )]
+
+[node name="pick_area" type="Area2D" parent="."]
+visible = false
+collision_mask = 0
+monitoring = false
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="pick_area"]
+shape = SubResource( 5 )
+
+[node name="hurt_box" parent="." instance=ExtResource( 14 )]
+visible = false
+collision_layer = 32
+sprite_path = NodePath("../animated_sprite")
+damage_text_color = Color( 0.992157, 0.14902, 0.129412, 1 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="hurt_box"]
+shape = SubResource( 9 )
+
+[connection signal="deaded" from="stats" to="." method="_on_stats_deaded"]
+[connection signal="health_changed" from="stats" to="." method="_on_stats_health_changed"]
+[connection signal="hitted" from="stats" to="." method="_on_stats_hitted"]
+[connection signal="modifiers_applied" from="stats" to="." method="_on_stats_modifiers_applied"]

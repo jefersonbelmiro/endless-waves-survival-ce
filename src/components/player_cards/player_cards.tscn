@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/components/deck_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/components/border_box_bg.png" type="Texture" id=2]
+[ext_resource path="res://src/popup/card_info/card_info_popup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/components/player_cards/player_cards.gd" type="Script" id=4]
+[ext_resource path="res://src/components/grid/grid.tscn" type="PackedScene" id=5]
+
+[node name="player_cards" type="Control"]
+margin_right = 150.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 150, 180 )
+focus_mode = 2
+script = ExtResource( 4 )
+
+[node name="bg_color" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+mouse_filter = 2
+color = Color( 0.145098, 0.0862745, 0.145098, 1 )
+
+[node name="bg" type="NinePatchRect" parent="."]
+visible = false
+modulate = Color( 0.419608, 0.243137, 0.458824, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="fg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+mouse_filter = 2
+expand = true
+stretch_mode = 7
+
+[node name="header" type="Control" parent="."]
+anchor_right = 1.0
+margin_bottom = 20.0
+
+[node name="icon" type="TextureRect" parent="header"]
+margin_top = 1.0
+margin_right = 20.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="label" type="Label" parent="header"]
+anchor_right = 1.0
+margin_left = 20.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 20 )
+text = "CARDS"
+valign = 1
+
+[node name="grid" parent="." instance=ExtResource( 5 )]
+margin_top = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+center = false
+
+[node name="card_info_popup" parent="." instance=ExtResource( 3 )]
+
+[connection signal="focus_entered" from="." to="." method="_on_player_cards_focus_entered"]
+[connection signal="upgrades_button_pressed" from="card_info_popup" to="." method="_on_card_info_popup_upgrades_button_pressed"]

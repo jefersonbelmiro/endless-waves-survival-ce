@@ -1,0 +1,20 @@
+{
+  "id": "observer_ward",
+  "label": "OBSERVER_WARD",
+  "description": "",
+  "icon": "res://src/spells/passive/observer_ward/texture/observer_ward_icon.png",
+  "cast_type": "passive",
+  "sort_order": 10,
+  "attack_range": 20,
+  "upgrades": [
+    { "attack_range": 40 },
+    { "attack_range": 60 },
+    { "attack_range": 80 },
+    { "attack_range": 100 },
+    { "attack_range": 120 },
+    { "attack_range": 140 },
+    { "attack_range": 160 },
+    { "attack_range": 180 },
+    { "attack_range": 200 }
+  ]
+}

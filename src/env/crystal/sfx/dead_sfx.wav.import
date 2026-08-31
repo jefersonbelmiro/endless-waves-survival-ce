@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dead_sfx.wav-8c2e712a31d59b4b0f993aacf051448f.sample"
+
+[deps]
+
+source_file="res://src/env/crystal/sfx/dead_sfx.wav"
+dest_files=[ "res://.import/dead_sfx.wav-8c2e712a31d59b4b0f993aacf051448f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

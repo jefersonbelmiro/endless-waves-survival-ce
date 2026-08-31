@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/systems/objective_system/objective_system.gd" type="Script" id=1]
+
+[node name="objective_system" type="Node"]
+script = ExtResource( 1 )

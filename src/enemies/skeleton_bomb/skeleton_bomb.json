@@ -1,0 +1,19 @@
+{
+  "id": "skeleton_bomb",
+  "level": 1,
+  "stats": {
+    "move_speed": 50,
+    "max_health": 10,
+    "base_damage": 10
+  },
+  "buff_per_level": {
+    "max_health": 0.2,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    "knockback",
+    "context_steering"
+  ],
+  "sort_order": 2
+}

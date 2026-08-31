@@ -1,0 +1,32 @@
+{
+  "id": "skeleton_king",
+  "level": 1,
+  "stats": {
+    "move_speed": 30,
+    "max_health": 180,
+    "base_damage": 15
+  },
+  "buff_per_level": {
+    "max_health": 0.4,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    "chase",
+    "knockback",
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 100
+      }
+    },
+    {
+      "id": "rush_attack",
+      "data": {
+        "attack_range": 100,
+        "proc_chance": 0.7
+      }
+    }
+  ],
+  "sort_order": 8
+}

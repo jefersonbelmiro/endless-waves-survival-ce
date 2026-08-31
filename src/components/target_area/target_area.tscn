@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/components/target_area/target_area.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 230, 120 )
+
+[node name="target_area" type="Area2D"]
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+script = ExtResource( 1 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 0 )
+shape = SubResource( 8 )

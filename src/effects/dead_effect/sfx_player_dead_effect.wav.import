@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_player_dead_effect.wav-e71f7f1570ba77c5448fb71b81d96724.sample"
+
+[deps]
+
+source_file="res://src/effects/dead_effect/sfx_player_dead_effect.wav"
+dest_files=[ "res://.import/sfx_player_dead_effect.wav-e71f7f1570ba77c5448fb71b81d96724.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

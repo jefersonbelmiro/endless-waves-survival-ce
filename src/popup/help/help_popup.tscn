@@ -1,0 +1,767 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://src/popup/help/help_popup.gd" type="Script" id=1]
+[ext_resource path="res://assets/input/scancode/16777231.png" type="Texture" id=2]
+[ext_resource path="res://assets/input/xbox_controller.png" type="Texture" id=3]
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/input/scancode/32.png" type="Texture" id=5]
+[ext_resource path="res://assets/input/scancode/83.png" type="Texture" id=6]
+[ext_resource path="res://assets/input/scancode/16777233.png" type="Texture" id=7]
+[ext_resource path="res://assets/input/scancode/16777232.png" type="Texture" id=8]
+[ext_resource path="res://assets/input/scancode/16777234.png" type="Texture" id=9]
+[ext_resource path="res://assets/input/scancode/65.png" type="Texture" id=10]
+[ext_resource path="res://assets/input/scancode/87.png" type="Texture" id=11]
+[ext_resource path="res://assets/input/scancode/68.png" type="Texture" id=12]
+[ext_resource path="res://assets/input/scancode/80.png" type="Texture" id=13]
+[ext_resource path="res://assets/input/scancode/16777217.png" type="Texture" id=14]
+[ext_resource path="res://assets/input/scancode/81.png" type="Texture" id=15]
+[ext_resource path="res://assets/input/scancode/66.png" type="Texture" id=16]
+[ext_resource path="res://assets/input/scancode/69.png" type="Texture" id=17]
+[ext_resource path="res://assets/input/scancode/16777221.png" type="Texture" id=18]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/components/tabs/tabs.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/input/scancode/82.png" type="Texture" id=21]
+[ext_resource path="res://assets/input/mouse/button_0.png" type="Texture" id=22]
+[ext_resource path="res://src/effects/bg_particles/bg_particles.tscn" type="PackedScene" id=23]
+
+[node name="help_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="bg_particles" parent="." instance=ExtResource( 23 )]
+
+[node name="tabs_container" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -40.0
+
+[node name="tabs" parent="tabs_container" instance=ExtResource( 20 )]
+
+[node name="CONTROLLER" type="Control" parent="tabs_container/tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="controller" type="Control" parent="tabs_container/tabs/CONTROLLER"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -230.0
+margin_top = -95.0
+margin_right = 230.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 456, 100 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/CONTROLLER/controller"]
+modulate = Color( 0.176471, 0.176471, 0.176471, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -106.0
+margin_top = -133.0
+margin_right = 94.0
+margin_bottom = -33.0
+rect_min_size = Vector2( 200, 100 )
+rect_pivot_offset = Vector2( 98, 55 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="move_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 173, 95 )
+points = PoolVector2Array( 2, -9, -34, -9 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="move_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 86.0
+margin_top = 77.0
+margin_right = 137.0
+margin_bottom = 91.0
+rect_pivot_offset = Vector2( 136, 35 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "MOVE"
+align = 2
+valign = 1
+
+[node name="select_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 190, 118 )
+points = PoolVector2Array( 2, -9, -38, -9 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="select_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 90.0
+margin_top = 100.0
+margin_right = 151.0
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( 132, 12 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "SELECT"
+align = 2
+valign = 1
+
+[node name="tab_prev_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 176, 75 )
+points = PoolVector2Array( 3, -8, -1, -15, -12, -15 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="tab_prev_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 90.0
+margin_top = 52.0
+margin_right = 162.0
+margin_bottom = 66.0
+rect_pivot_offset = Vector2( 53, 8 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "PREVIOUS_TAB"
+align = 2
+valign = 1
+
+[node name="ultimate_0_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 180, 59 )
+points = PoolVector2Array( 4, -3, -1, -15, -12, -15 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="ultimate_0_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 49.0
+margin_top = 36.0
+margin_right = 167.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 53, 8 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CONTROLLER_ULTIMATE_0"
+align = 2
+valign = 1
+
+[node name="tab_next_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 286, 72 )
+points = PoolVector2Array( -18, -8, -15, -15, -1, -22 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="ultimate_1_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 283, 59 )
+points = PoolVector2Array( -21, -3, -15, -15, 2, -23 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="ultimate_1_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 287.0
+margin_top = 28.0
+margin_right = 405.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( -29, 11 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CONTROLLER_ULTIMATE_1"
+valign = 1
+
+[node name="tab_next_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 287.0
+margin_top = 41.0
+margin_right = 343.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 11, 10 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "NEXT_TAB"
+valign = 1
+
+[node name="pause_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 227, 84 )
+points = PoolVector2Array( 7, -2, 7, -33 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="pause_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 211.0
+margin_top = 37.0
+margin_right = 260.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 11, 75 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "PAUSE"
+align = 1
+valign = 1
+
+[node name="upgrade_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 312, 100 )
+points = PoolVector2Array( -47, -24, -36, -24, -25, -30 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="upgrade_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 288.0
+margin_top = 58.0
+margin_right = 370.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( -69, 55 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "UPGRADES"
+valign = 1
+
+[node name="cancel_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 268, 93 )
+points = PoolVector2Array( 8, -4, 17, -4, 27, -10 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="cancel_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 296.0
+margin_top = 72.0
+margin_right = 387.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( -77, 41 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CANCEL_CLOSE"
+valign = 1
+
+[node name="confirm_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 253, 110 )
+points = PoolVector2Array( 11, -9, 22, -5, 51, -14 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="confirm_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 305.0
+margin_top = 85.0
+margin_right = 370.0
+margin_bottom = 99.0
+rect_pivot_offset = Vector2( -86, 28 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CONFIRM"
+valign = 1
+
+[node name="backpack_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 241, 88 )
+points = PoolVector2Array( 9, 6, 13, 19, 27, 27, 69, 24 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="backpack_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 312.0
+margin_top = 101.0
+margin_right = 383.0
+margin_bottom = 115.0
+rect_pivot_offset = Vector2( -93, 12 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "BACKPACK"
+valign = 1
+
+[node name="aim_line" type="Line2D" parent="tabs_container/tabs/CONTROLLER/controller"]
+position = Vector2( 234, 112 )
+points = PoolVector2Array( 9, 7, 9, 39 )
+width = 1.0
+default_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+
+[node name="aim_label" type="Label" parent="tabs_container/tabs/CONTROLLER/controller"]
+margin_left = 210.0
+margin_top = 151.0
+margin_right = 281.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( -93, 12 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CROSSHAIR"
+align = 1
+valign = 1
+
+[node name="keyboard" type="Control" parent="tabs_container/tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 200, 70 )
+
+[node name="rows" type="VBoxContainer" parent="tabs_container/tabs/keyboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 10.0
+margin_right = -20.0
+margin_bottom = -5.0
+
+[node name="row_1" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows"]
+margin_right = 420.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 13
+
+[node name="move_select" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_1"]
+margin_right = 164.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_1/move_select"]
+margin_top = 13.0
+margin_right = 66.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "MOVE_SELECT"
+align = 2
+valign = 1
+
+[node name="arrows" type="Control" parent="tabs_container/tabs/keyboard/rows/row_1/move_select"]
+margin_left = 70.0
+margin_right = 120.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 40 )
+
+[node name="up" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/arrows"]
+margin_left = 16.0
+margin_top = -1.0
+margin_right = 32.0
+margin_bottom = 15.0
+texture = ExtResource( 8 )
+
+[node name="right" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/arrows"]
+margin_left = 30.0
+margin_top = 14.0
+margin_right = 46.0
+margin_bottom = 30.0
+texture = ExtResource( 7 )
+
+[node name="down" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/arrows"]
+margin_left = 16.0
+margin_top = 14.0
+margin_right = 32.0
+margin_bottom = 30.0
+texture = ExtResource( 9 )
+
+[node name="left" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/arrows"]
+margin_left = 2.0
+margin_top = 14.0
+margin_right = 18.0
+margin_bottom = 30.0
+texture = ExtResource( 2 )
+
+[node name="awsd" type="Control" parent="tabs_container/tabs/keyboard/rows/row_1/move_select"]
+margin_left = 124.0
+margin_right = 164.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+
+[node name="up" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/awsd"]
+margin_left = 11.0
+margin_top = -1.0
+margin_right = 27.0
+margin_bottom = 15.0
+texture = ExtResource( 11 )
+
+[node name="right" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/awsd"]
+margin_left = 25.0
+margin_top = 14.0
+margin_right = 41.0
+margin_bottom = 30.0
+texture = ExtResource( 12 )
+
+[node name="down" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/awsd"]
+margin_left = 11.0
+margin_top = 14.0
+margin_right = 27.0
+margin_bottom = 30.0
+texture = ExtResource( 6 )
+
+[node name="left" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/move_select/awsd"]
+margin_left = -3.0
+margin_top = 14.0
+margin_right = 13.0
+margin_bottom = 30.0
+texture = ExtResource( 10 )
+
+[node name="crosshair" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_1"]
+visible = false
+margin_left = 177.0
+margin_right = 251.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_1/crosshair"]
+margin_top = 10.0
+margin_right = 54.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CROSSHAIR"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_1/crosshair"]
+margin_left = 58.0
+margin_right = 74.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_1/crosshair/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 22 )
+expand = true
+stretch_mode = 6
+
+[node name="row_2" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows"]
+margin_top = 44.0
+margin_right = 420.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 13
+
+[node name="dash" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_2"]
+margin_right = 116.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_2/dash"]
+margin_top = 10.0
+margin_right = 96.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "SPELL_DASH_LABEL"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_2/dash"]
+margin_left = 100.0
+margin_right = 116.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_2/dash/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="ultimate_0" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_2"]
+margin_left = 129.0
+margin_right = 263.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_2/ultimate_0"]
+margin_top = 10.0
+margin_right = 114.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "KEYBOARD_ULTIMATE_0"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_2/ultimate_0"]
+margin_left = 118.0
+margin_right = 134.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_2/ultimate_0/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+
+[node name="ultimate_1" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_2"]
+margin_left = 276.0
+margin_right = 410.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_2/ultimate_1"]
+margin_top = 10.0
+margin_right = 114.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "KEYBOARD_ULTIMATE_1"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_2/ultimate_1"]
+margin_left = 118.0
+margin_right = 134.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_2/ultimate_1/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 6
+
+[node name="row_3" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows"]
+margin_top = 88.0
+margin_right = 420.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 13
+
+[node name="upgrade" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_3"]
+margin_right = 68.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_3/upgrade"]
+margin_top = 10.0
+margin_right = 48.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "UPGRADES"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_3/upgrade"]
+margin_left = 52.0
+margin_right = 68.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_3/upgrade/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="backpack" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_3"]
+margin_left = 81.0
+margin_right = 149.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_3/backpack"]
+margin_top = 10.0
+margin_right = 48.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "BACKPACK"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_3/backpack"]
+margin_left = 52.0
+margin_right = 68.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_3/backpack/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 21 )
+expand = true
+stretch_mode = 6
+
+[node name="pause" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_3"]
+margin_left = 162.0
+margin_right = 232.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_3/pause"]
+margin_top = 10.0
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "PAUSE"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_3/pause"]
+margin_left = 34.0
+margin_right = 70.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_3/pause/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="texture_rect_2" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_3/pause/content"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="row_4" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows"]
+margin_top = 132.0
+margin_right = 420.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 13
+
+[node name="confirm" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4"]
+margin_right = 82.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_4/confirm"]
+margin_top = 10.0
+margin_right = 42.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CONFIRM"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4/confirm"]
+margin_left = 46.0
+margin_right = 82.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_4/confirm/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 6
+
+[node name="texture_rect_2" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_4/confirm/content"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="cancel" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4"]
+margin_left = 95.0
+margin_right = 187.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_4/cancel"]
+margin_top = 10.0
+margin_right = 72.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "CANCEL_CLOSE"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4/cancel"]
+margin_left = 76.0
+margin_right = 92.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_4/cancel/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="prev" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4"]
+margin_left = 200.0
+margin_right = 292.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_4/prev"]
+margin_top = 10.0
+margin_right = 72.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "PREVIOUS_TAB"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4/prev"]
+margin_left = 76.0
+margin_right = 92.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_4/prev/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+
+[node name="next" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4"]
+margin_left = 305.0
+margin_right = 373.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="label" type="Label" parent="tabs_container/tabs/keyboard/rows/row_4/next"]
+margin_top = 10.0
+margin_right = 48.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "NEXT_TAB"
+align = 2
+valign = 1
+
+[node name="content" type="HBoxContainer" parent="tabs_container/tabs/keyboard/rows/row_4/next"]
+margin_left = 52.0
+margin_right = 68.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="texture_rect_2" type="TextureRect" parent="tabs_container/tabs/keyboard/rows/row_4/next/content"]
+margin_right = 16.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 6
+
+[node name="actions" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_top = -29.0
+margin_right = 225.0
+alignment = 1
+
+[node name="back_button" parent="actions" instance=ExtResource( 19 )]
+margin_left = 185.0
+margin_right = 265.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text_label = "BACK"
+
+[connection signal="hide" from="." to="." method="_on_help_popup_hide"]
+[connection signal="pressed" from="actions/back_button" to="." method="_on_back_button_pressed"]

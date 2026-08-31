@@ -1,0 +1,16 @@
+{
+  "id": "consumable_potion_of_healing",
+  "uid": "consumable_potion_of_healing",
+  "label": "CONSUMABLE_POTION_OF_HEALING_LABEL",
+  "description": "CONSUMABLE_POTION_OF_HEALING_DESC",
+  "toast_used": "CONSUMABLE_POTION_OF_HEALING_TOAST_USED",
+  "toast_cant_use": "CONSUMABLE_POTION_OF_HEALING_TOAST_CANT_USE",
+  "icon": "res://src/consumables/potion_of_healing/texture/potion_of_healing_icon.png",
+  "class": "res://src/consumables/potion_of_healing/potion_of_healing_data.gd",
+  "type": "item",
+  "tier": 1,
+  "current_health": 10,
+  "cost": 20,
+  "stack": true,
+  "sort_order": 0
+}

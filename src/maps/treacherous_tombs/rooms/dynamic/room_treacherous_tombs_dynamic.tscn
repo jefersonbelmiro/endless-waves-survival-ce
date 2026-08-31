@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sfx/effects/sfx_portal.wav" type="AudioStream" id=1]
+[ext_resource path="res://src/maps/treacherous_tombs/res/treacherous_tombs_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://src/maps/treacherous_tombs/rooms/base/room_treacherous_tombs_base.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/maps/treacherous_tombs/rooms/dynamic/room_treacherous_tombs_dynamic.gd" type="Script" id=4]
+
+[node name="room_treacherous_tombs_dynamic" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
+
+[node name="tile_bounds" parent="." index="1"]
+tile_set = ExtResource( 2 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="tile_ground" parent="." index="2"]
+tile_set = ExtResource( 2 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="tile_wall_floor" type="TileMap" parent="." index="3"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+
+[node name="tile_walls" type="TileMap" parent="." index="4" groups=["walls"]]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+collision_layer = 2
+collision_mask = 20493
+format = 1
+
+[node name="open_sfx" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource( 1 )
+volume_db = -20.0

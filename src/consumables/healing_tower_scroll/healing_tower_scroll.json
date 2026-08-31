@@ -1,0 +1,15 @@
+{
+  "id": "consumable_healing_tower_scroll",
+  "uid": "consumable_healing_tower_scroll",
+  "label": "CONSUMABLE_HEALING_TOWER_SCROLL_LABEL",
+  "description": "CONSUMABLE_HEALING_TOWER_SCROLL_DESC",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/healing_tower_scroll/texture/healing_tower_scroll_icon.png",
+  "class": "res://src/classes/tower_scroll_data.gd",
+  "type": "summon",
+  "tier": 2,
+  "cost": 30,
+  "stack": true,
+  "stack_max": 10,
+  "sort_order": 10
+}

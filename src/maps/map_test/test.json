@@ -1,0 +1,110 @@
+{
+  "uid": "map_test",
+  "id": "test",
+  "label": "Map test",
+  "sort_order": -1,
+  "visible": "editor",
+  "objectives": [
+    {
+      "type": "survive_time",
+      "value": "00:05"
+    }
+  ],
+  "spawn_data": {
+    "jelly": {
+      "drops": {
+        "coin": { "proc_chance": 1.0 },
+        "experience": { "proc_chance": 1.0, "value": 10 },
+        "consumable": { "proc_chance": 1.0 }
+      }
+    },
+    "eye": {
+      "drops": {
+        "coin": { "proc_chance": 1.0 },
+        "experience": { "proc_chance": 1.0, "value": 10 },
+        "consumable": { "proc_chance": 1.0 }
+      },
+      "collision_layer": ["ghost"],
+      "collision_mask": ["ghost", "env"],
+      "behaviours": [
+        "chase",
+        {
+          "id": "melee_attack",
+          "data": {
+            "damage_knockback": 50
+          }
+        },
+        {
+          "id": "range_attack",
+          "data": {
+            "projectile_speed": 150,
+            "color": "#65142b",
+            "cooldown": 1,
+            "cooldown_range": 0.5,
+            "attack_range": 200,
+            "damage_knockback": 50
+          }
+        },
+        "knockback"
+      ]
+    },
+    "jelly_king": {
+      "drops": {
+        "coin": { "proc_chance": 1.0 },
+        "experience": { "proc_chance": 1.0, "value": 10 },
+        "consumable": { "proc_chance": 1.0 }
+      }
+    }
+  },
+  "events": [
+    {
+      "type": "spawn",
+      "interval": 1,
+      "data": {
+        "spawn_mode": "map_bounds",
+        "spawns": [
+          {
+            "id": "jelly",
+            "size": 1,
+            "max_alive": 10,
+            "data": {
+              "stats": {
+                "move_speed": 0,
+                "max_health": 90000000
+              },
+              "drops": {
+                "consumable": { "proc_chance": 1.0 }
+              }
+            }
+          },
+          {
+            "id": "book",
+            "size": 1,
+            "max_alive": 0
+          }
+        ]
+      }
+    },
+    {
+      "type": "spawn",
+      "start": "00:01",
+      "data": {
+        "spawn_mode": "map_bounds",
+        "spawns": [
+          {
+            "id": "jelly_boss",
+            "size": 1,
+            "max_alive": 0,
+            "data": { "level": 3 }
+          },
+          {
+            "id": "skeleton_boss",
+            "size": 1,
+            "max_alive": 0,
+            "data": { "level": 1 }
+          }
+        ]
+      }
+    }
+  ]
+}

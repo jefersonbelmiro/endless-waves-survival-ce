@@ -1,0 +1,87 @@
+{
+  "id": "ice_ball",
+  "label": "SPELL_ICE_BALL_LABEL",
+  "description": "SPELL_ICE_BALL_DESC",
+  "icon": "res://src/spells/autocast/ice_ball/texture/ice_ball_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "target_type": "random_target",
+  "damage_type": "magic",
+  "base_damage_factor": 0.5,
+  "cooldown": 2.5,
+  "max_projectiles": 1,
+  "damage_knockback": 0,
+  "projectile_speed": 200,
+  "area": 0,
+  "sort_order": 3,
+  "modifiers": {
+    "debuff_frozen": {
+      "type": "debuff",
+      "class": "res://src/classes/debuff_modifier/frozen_debuff_modifier.gd",
+      "modifier_duration": 4,
+      "move_speed": "-100%",
+      "proc_chance": 1.0,
+      "description": "DEBUFF_FROZEN_DESC"
+    }
+  },
+  "value_private_keys": ["find_target", "find_duration"],
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 0.6 },
+        { "base_damage_factor": 0.8 },
+        { "base_damage_factor": 1.0 },
+        { "base_damage_factor": 1.5 },
+        { "base_damage_factor": 2 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 2.2 },
+        { "cooldown": 2.0 },
+        { "cooldown": 1.8 },
+        { "cooldown": 1.6 },
+        { "cooldown": 1.4 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 50 },
+        { "area": 60 },
+        { "area": 70 },
+        { "area": 80 },
+        { "area": 100 }
+      ]
+    },
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 1 },
+        { "max_projectiles": 2 },
+        { "max_projectiles": 3 },
+        { "max_projectiles": 4 },
+        { "max_projectiles": 5 }
+      ]
+    },
+    "accurate": {
+      "active": true,
+      "unlock_index": 0,
+      "max_index": 0,
+      "label": "SPELL_ACCURATE_ICE_BALL_LABEL",
+      "description": "SPELL_ACCURATE_ICE_BALL_DESC",
+      "icon": "res://src/spells/autocast/ice_ball/texture/accurate_ice_ball_icon.png",
+      "value": [{ "find_target": true, "find_duration": 3 }]
+    }
+  }
+}

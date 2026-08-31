@@ -1,0 +1,99 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=1]
+[ext_resource path="res://src/enemies/target_base/target_base.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/npc/merchant/texture/idle/thief_idle2.png" type="Texture" id=3]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief1.png" type="Texture" id=4]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief8.png" type="Texture" id=5]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief2.png" type="Texture" id=6]
+[ext_resource path="res://src/npc/merchant/texture/idle/thief_idle1.png" type="Texture" id=7]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief3.png" type="Texture" id=8]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief5.png" type="Texture" id=9]
+[ext_resource path="res://src/npc/merchant/merchant.gd" type="Script" id=10]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief4.png" type="Texture" id=11]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief6.png" type="Texture" id=12]
+[ext_resource path="res://src/npc/merchant/texture/walk/thief7.png" type="Texture" id=13]
+[ext_resource path="res://src/components/input_icon/input_icon.tscn" type="PackedScene" id=14]
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/add_color = false
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/color_modifier = 0.666
+shader_param/add_border = false
+shader_param/border_color = Color( 1, 1, 1, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 1
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id=7]
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 11.0
+
+[node name="merchant" instance=ExtResource( 2 )]
+collision_layer = 1024
+collision_mask = 2
+script = ExtResource( 10 )
+id = "merchant"
+base_color = Color( 0.588235, 0.423529, 0.423529, 1 )
+
+[node name="stats" parent="." index="0"]
+max_health = 50.0
+
+[node name="shadow" parent="." index="2"]
+position = Vector2( 0, 8 )
+
+[node name="animated_sprite" parent="." index="3"]
+material = SubResource( 9 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 5 )
+animation = "idle"
+
+[node name="collision_shape_2d" parent="." index="4"]
+shape = SubResource( 8 )
+
+[node name="collision_shape_2d" parent="hurt_box" index="1"]
+shape = SubResource( 7 )
+
+[node name="health_bar" parent="." index="6"]
+margin_left = -8.0
+margin_top = -17.0
+margin_right = 8.0
+margin_bottom = -13.0
+
+[node name="action_area" type="Area2D" parent="." index="8"]
+collision_layer = 0
+monitorable = false
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="action_area" index="0"]
+shape = SubResource( 10 )
+
+[node name="input_icon" parent="." index="9" instance=ExtResource( 14 )]
+visible = false
+margin_left = -4.0
+margin_top = -21.0
+margin_right = 6.0
+margin_bottom = -11.0
+action_name = "ui_action_active"
+
+[connection signal="body_entered" from="action_area" to="." method="_on_action_area_body_entered"]
+[connection signal="body_exited" from="action_area" to="." method="_on_action_area_body_exited"]

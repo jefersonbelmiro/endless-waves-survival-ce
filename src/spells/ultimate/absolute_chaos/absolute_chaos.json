@@ -1,0 +1,63 @@
+{
+  "id": "absolute_chaos",
+  "label": "SPELL_ABSOLUTE_CHAOS_LABEL",
+  "description": "SPELL_ABSOLUTE_CHAOS_DESC",
+  "icon": "res://src/spells/ultimate/absolute_chaos/texture/absolute_chaos_spell_icon.png",
+  "type": "skill",
+  "cast_type": "ultimate",
+  "cooldown": 15,
+  "duration": 2,
+  "attack_speed": 20,
+  "move_speed": 20,
+  "sort_order": 10,
+  "upgrades_data": {
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 14 },
+        { "cooldown": 13 },
+        { "cooldown": 12 },
+        { "cooldown": 10 },
+        { "cooldown": 8 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 2.5 },
+        { "duration": 3.0 },
+        { "duration": 3.5 },
+        { "duration": 4.0 },
+        { "duration": 4.5 }
+      ]
+    },
+    "attack_speed": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "attack_speed": 30 },
+        { "attack_speed": 40 },
+        { "attack_speed": 50 },
+        { "attack_speed": 60 },
+        { "attack_speed": 70 }
+      ]
+    },
+    "move_speed": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "move_speed": 25 },
+        { "move_speed": 30 },
+        { "move_speed": 35 },
+        { "move_speed": 40 },
+        { "move_speed": 45 }
+      ]
+    }
+  }
+}

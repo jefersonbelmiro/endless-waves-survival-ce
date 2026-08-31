@@ -1,0 +1,20 @@
+{
+  "id": "spell_duration",
+  "label": "SPELL_DURATION",
+  "description": "SPELL_SPELL_DURATION_DESC",
+  "icon": "res://src/spells/passive/spell_duration/texture/spell_duration_icon.png",
+  "cast_type": "passive",
+  "sort_order": 16,
+  "spell_duration": 0.1,
+  "upgrades": [
+    { "spell_duration": 0.2 },
+    { "spell_duration": 0.3 },
+    { "spell_duration": 0.4 },
+    { "spell_duration": 0.5 },
+    { "spell_duration": 0.6 },
+    { "spell_duration": 0.7 },
+    { "spell_duration": 0.8 },
+    { "spell_duration": 0.9 },
+    { "spell_duration": 1.0 }
+  ]
+}

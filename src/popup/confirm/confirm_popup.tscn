@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=2]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/popup/confirm/confirm_popup.gd" type="Script" id=4]
+[ext_resource path="res://assets/components/simple_border_box_fg.png" type="Texture" id=5]
+
+[node name="confirm_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 0.807843 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="container" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -40.0
+margin_right = 130.0
+margin_bottom = 40.0
+
+[node name="bg_border" type="NinePatchRect" parent="container"]
+modulate = Color( 0.419608, 0.243137, 0.458824, 0.168627 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="bg_color" type="NinePatchRect" parent="container"]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="content" type="VBoxContainer" parent="container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 15.0
+margin_right = -5.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="label" type="RichTextLabel" parent="container/content"]
+margin_right = 250.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+bbcode_enabled = true
+
+[node name="actions" type="HBoxContainer" parent="container/content"]
+margin_top = 35.0
+margin_right = 250.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="confirm_button" parent="container/content/actions" instance=ExtResource( 3 )]
+margin_left = 43.0
+margin_right = 123.0
+margin_bottom = 20.0
+text_label = "YES"
+
+[node name="cancel_button" parent="container/content/actions" instance=ExtResource( 3 )]
+margin_left = 127.0
+margin_right = 207.0
+margin_bottom = 20.0
+text_label = "NO"
+
+[connection signal="hide" from="." to="." method="_on_confirm_popup_hide"]
+[connection signal="pressed" from="container/content/actions/confirm_button" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="container/content/actions/cancel_button" to="." method="_on_cancel_button_pressed"]

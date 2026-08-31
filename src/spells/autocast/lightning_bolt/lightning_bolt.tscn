@@ -1,0 +1,40 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt9.png" type="Texture" id=1]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt8.png" type="Texture" id=2]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt1.png" type="Texture" id=3]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt3.png" type="Texture" id=4]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt5.png" type="Texture" id=5]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt4.png" type="Texture" id=6]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt6.png" type="Texture" id=7]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt2.png" type="Texture" id=8]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt11.png" type="Texture" id=9]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt12.png" type="Texture" id=10]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/lightning_bolt.gd" type="Script" id=11]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt7.png" type="Texture" id=12]
+[ext_resource path="res://src/spells/autocast/lightning_bolt/texture/lightning_bolt10.png" type="Texture" id=13]
+[ext_resource path="res://src/effects/glow/glow.tscn" type="PackedScene" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "strike",
+"speed": 30.0
+} ]
+
+[node name="lightning_bolt" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3, -194 )
+scale = Vector2( 1, 1.5 )
+frames = SubResource( 1 )
+animation = "strike"
+
+[node name="glow" parent="." instance=ExtResource( 14 )]
+visible = false
+modulate = Color( 0.00392157, 0.415686, 1, 0.309804 )
+z_index = 5
+
+[connection signal="animation_finished" from="animated_sprite" to="." method="_on_animated_sprite_animation_finished"]

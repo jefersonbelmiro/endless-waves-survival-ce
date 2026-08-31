@@ -1,0 +1,16 @@
+{
+  "id": "eye_king",
+  "level": 1,
+  "stats": {
+    "move_speed": 40,
+    "max_health": 200,
+    "base_damage": 15
+  },
+  "buff_per_level": {
+    "max_health": 0.4,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": ["chase", "melee_attack", "knockback"],
+  "sort_order": 9
+}

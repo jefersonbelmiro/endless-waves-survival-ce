@@ -1,0 +1,15 @@
+{
+  "id": "book_of_cooldown",
+  "label": "ITEM_BOOK_OF_COOLDOWN_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/book_of_cooldown/texture/book_of_cooldown_icon.png",
+  "cast_type": "passive",
+  "cooldown_reduction": 0.10,
+  "sort_order": 9,
+  "upgrades": [
+    { "cooldown_reduction": 0.20 },
+    { "cooldown_reduction": 0.30 },
+    { "cooldown_reduction": 0.40 },
+    { "cooldown_reduction": 0.50 }
+  ]
+}

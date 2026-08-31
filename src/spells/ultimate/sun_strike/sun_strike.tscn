@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/spells/ultimate/sun_strike/texture/sun_strike1.png" type="Texture" id=1]
+[ext_resource path="res://src/spells/ultimate/sun_strike/texture/sun_strike3.png" type="Texture" id=2]
+[ext_resource path="res://src/spells/ultimate/sun_strike/texture/sun_strike2.png" type="Texture" id=3]
+[ext_resource path="res://src/spells/ultimate/sun_strike/texture/sun_strike4.png" type="Texture" id=4]
+[ext_resource path="res://src/spells/ultimate/sun_strike/sun_strike.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 20.0
+} ]
+
+[node name="sun_strike" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.32549 )
+position = Vector2( 1, -191 )
+frames = SubResource( 1 )
+
+[connection signal="animation_finished" from="animated_sprite" to="." method="_on_animated_sprite_animation_finished"]

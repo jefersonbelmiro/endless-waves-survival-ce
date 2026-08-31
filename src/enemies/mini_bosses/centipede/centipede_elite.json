@@ -1,0 +1,38 @@
+{
+  "id": "centipede_elite",
+  "level": 1,
+  "stats": {
+    "move_speed": 100,
+    "max_health": 2600,
+    "base_damage": 20,
+    "health_regen": 20,
+    "status_resistance": 1.00
+  },
+  "buff_per_level": {
+    "max_health": 0.4,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    {
+      "id": "context_steering",
+      "data": {
+        "steer_force": 3,
+        "look_ahead": 40,
+        "tick_rate": 15,
+        "visible_angle": 360,
+        "num_rays": 12,
+        "show_debug": false,
+        "collision_mask_exclude_host": false,
+        "collision_mask": ["env", "map_bounds", "boss"]
+      }
+    },
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 150
+      }
+    }
+  ],
+  "sort_order": 12
+}

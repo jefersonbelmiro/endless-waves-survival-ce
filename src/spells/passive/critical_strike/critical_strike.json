@@ -1,0 +1,20 @@
+{
+  "id": "critical_strike",
+  "label": "CRITICAL_STRIKE",
+  "description": "",
+  "icon": "res://src/spells/passive/critical_strike/texture/spell_critical_strike_icon.png",
+  "cast_type": "passive",
+  "sort_order": 13,
+  "critical_proc_chance": 0.1,
+  "upgrades": [
+    { "critical_proc_chance": 0.2 },
+    { "critical_proc_chance": 0.3 },
+    { "critical_proc_chance": 0.4 },
+    { "critical_proc_chance": 0.5 },
+    { "critical_proc_chance": 0.6 },
+    { "critical_proc_chance": 0.65 },
+    { "critical_proc_chance": 0.7 },
+    { "critical_proc_chance": 0.75 },
+    { "critical_proc_chance": 0.8 }
+  ]
+}

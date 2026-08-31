@@ -1,0 +1,36 @@
+{
+  "id": "skeleton_king_range",
+  "level": 1,
+  "stats": {
+    "move_speed": 20,
+    "max_health": 180,
+    "base_damage": 15
+  },
+  "buff_per_level": {
+    "max_health": 0.4,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    {
+      "id": "context_steering",
+      "data": {
+        "keep_distance": 150
+      }
+    },
+    {
+      "id": "range_attack",
+      "data": {
+        "attack_range": 200,
+        "cooldown": 2.0,
+        "cooldown_range": 1.0,
+        "proc_chance": 0.7,
+        "projectile": "bone",
+        "damage_knockback": 100
+      }
+    },
+    "melee_attack",
+    "knockback"
+  ],
+  "sort_order": 8
+}

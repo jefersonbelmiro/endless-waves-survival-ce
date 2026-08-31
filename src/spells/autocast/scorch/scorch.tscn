@@ -1,0 +1,124 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/components/ball_8x8.png" type="Texture" id=1]
+[ext_resource path="res://assets/components/ball_16x16.png" type="Texture" id=2]
+[ext_resource path="res://src/spells/autocast/scorch/scorch.gd" type="Script" id=3]
+[ext_resource path="res://src/spells/autocast/scorch/sfx/scorch_sfx.wav" type="AudioStream" id=4]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.703125, 1 )
+colors = PoolColorArray( 0.881836, 0.117119, 0.117119, 1, 0.941406, 0.657531, 0.0551605, 1, 0.0615234, 0.0549816, 0.0180244, 0.0980392 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=11]
+_data = [ Vector2( 0, 0 ), 0.0, 0.336841, 0, 0, Vector2( 0.247813, 0.346591 ), 1.50533, 1.50533, 0, 0, Vector2( 0.708455, 0.911364 ), 1.49673, 1.49673, 0, 0, Vector2( 1, 0.690909 ), -3.11819, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 0.01
+flag_disable_z = true
+gravity = Vector3( 200, 0, 0 )
+initial_velocity = 10.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 33.0
+scale = 5.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.659375, 1 )
+colors = PoolColorArray( 0.235294, 0.0392157, 0.0392157, 0.317647, 0.743164, 0.0464478, 0.0464478, 0.243137, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0 ), 0.0, 0.336841, 0, 0, Vector2( 0.57726, 0.454545 ), 1.01341, 1.01341, 0, 0, Vector2( 0.997085, 0.845455 ), -3.23367, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 1
+emission_sphere_radius = 14.61
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 16.72
+gravity = Vector3( 200, 0, 0 )
+initial_velocity = 107.43
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 100.0
+scale = 3.0
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 137, 20 )
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 46.8188
+
+[node name="scorch" type="Node2D"]
+show_behind_parent = true
+scale = Vector2( 0.25, 0.25 )
+z_index = 300
+script = ExtResource( 3 )
+
+[node name="anchor" type="Node2D" parent="."]
+position = Vector2( 50, 0 )
+
+[node name="bg" type="Particles2D" parent="anchor"]
+modulate = Color( 1, 1, 1, 0.431373 )
+emitting = false
+amount = 32
+lifetime = 2.0
+speed_scale = 2.0
+process_material = SubResource( 5 )
+texture = ExtResource( 2 )
+
+[node name="fg" type="Particles2D" parent="anchor"]
+modulate = Color( 1, 1, 1, 0.431373 )
+emitting = false
+amount = 32
+speed_scale = 2.0
+process_material = SubResource( 8 )
+texture = ExtResource( 1 )
+
+[node name="collision_anchor" type="Node2D" parent="."]
+position = Vector2( 50, 0 )
+
+[node name="area_2d" type="Area2D" parent="collision_anchor"]
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+
+[node name="body" type="CollisionShape2D" parent="collision_anchor/area_2d"]
+position = Vector2( 137, 0 )
+shape = SubResource( 14 )
+disabled = true
+
+[node name="head" type="CollisionShape2D" parent="collision_anchor/area_2d"]
+position = Vector2( 320, 0 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="timeout_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+pitch_scale = 0.86
+autoplay = true
+bus = "SFX"
+
+[connection signal="area_entered" from="collision_anchor/area_2d" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="collision_anchor/area_2d" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="timeout_timer" to="." method="_on_timeout_timer_timeout"]

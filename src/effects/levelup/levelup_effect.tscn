@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/effects/levelup/levelup_effect.gd" type="Script" id=1]
+[ext_resource path="res://src/effects/levelup/texture/levelup_effect.png" type="Texture" id=2]
+[ext_resource path="res://assets/sfx/effects/sfx_sounds_fanfare2.wav" type="AudioStream" id=3]
+
+[node name="levelup_effect" type="NinePatchRect"]
+modulate = Color( 0.976471, 0.760784, 0.168627, 1 )
+margin_left = -20.0
+margin_top = -100.0
+margin_right = 20.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.7, 1 )
+rect_pivot_offset = Vector2( 20, 57 )
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+script = ExtResource( 1 )
+
+[node name="levelup_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -8.0
+bus = "SFX"

@@ -1,0 +1,15 @@
+{
+  "id": "consumable_ice_tower_scroll",
+  "uid": "consumable_ice_tower_scroll",
+  "label": "CONSUMABLE_ICE_TOWER_SCROLL_LABEL",
+  "description": "CONSUMABLE_ICE_TOWER_SCROLL_DESC",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/ice_tower_scroll/texture/ice_tower_scroll_icon.png",
+  "class": "res://src/classes/tower_scroll_data.gd",
+  "type": "summon",
+  "tier": 2,
+  "cost": 30,
+  "stack": true,
+  "stack_max": 10,
+  "sort_order": 8
+}

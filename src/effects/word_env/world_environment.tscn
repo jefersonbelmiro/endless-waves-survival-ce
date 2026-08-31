@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 0.1
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 2.0
+glow_bicubic_upscale = true
+
+[node name="world_environment" type="WorldEnvironment"]
+environment = SubResource( 1 )

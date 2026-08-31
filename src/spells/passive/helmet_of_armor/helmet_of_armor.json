@@ -1,0 +1,20 @@
+{
+  "id": "helmet_of_armor",
+  "label": "ITEM_HELMET_OF_ARMOR_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/helmet_of_armor/texture/helmet_of_armor_icon.png",
+  "cast_type": "passive",
+  "defense": 20,
+  "sort_order": 2,
+  "upgrades": [
+    { "defense": 30 },
+    { "defense": 40 },
+    { "defense": 50 },
+    { "defense": 60 },
+    { "defense": 70 },
+    { "defense": 80 },
+    { "defense": 90 },
+    { "defense": 100 },
+    { "defense": 110 }
+  ]
+}

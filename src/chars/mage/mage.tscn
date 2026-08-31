@@ -1,0 +1,50 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://src/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/chars/mage/texture/idle/mage-idle2.png" type="Texture" id=2]
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=3]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk6.png" type="Texture" id=4]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk2.png" type="Texture" id=5]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk7.png" type="Texture" id=6]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk3.png" type="Texture" id=7]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk5.png" type="Texture" id=8]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk4.png" type="Texture" id=9]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk8.png" type="Texture" id=10]
+[ext_resource path="res://src/chars/mage/texture/idle/mage-idle3.png" type="Texture" id=11]
+[ext_resource path="res://src/chars/mage/texture/idle/mage-idle1.png" type="Texture" id=12]
+[ext_resource path="res://src/chars/mage/texture/walk/player-walk1.png" type="Texture" id=13]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/add_color = false
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/color_modifier = 0.666
+shader_param/add_border = false
+shader_param/border_color = Color( 1, 1, 1, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 1
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="SpriteFrames" id=2]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 2 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+} ]
+
+[node name="mage" instance=ExtResource( 1 )]
+id = "mage"
+color = Color( 0.56, 0.37, 0.66, 1 )
+
+[node name="animated_sprite" parent="." index="5"]
+material = SubResource( 1 )
+frames = SubResource( 2 )

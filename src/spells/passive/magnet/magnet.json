@@ -1,0 +1,20 @@
+{
+  "id": "magnet",
+  "label": "ITEM_MAGNET_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/magnet/texture/magnet_icon.png",
+  "cast_type": "passive",
+  "pick_area": "20%",
+  "sort_order": 8,
+  "upgrades": [
+    { "pick_area": "30%" },
+    { "pick_area": "40%" },
+    { "pick_area": "50%" },
+    { "pick_area": "70%" },
+    { "pick_area": "90%" },
+    { "pick_area": "110%" },
+    { "pick_area": "130%" },
+    { "pick_area": "150%" },
+    { "pick_area": "200%" }
+  ]
+}

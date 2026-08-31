@@ -1,0 +1,92 @@
+{
+  "id": "proximity_mines",
+  "label": "SPELL_PROXIMITY_MINES_LABEL",
+  "description": "SPELL_PROXIMITY_MINES_DESC",
+  "icon": "res://src/spells/autocast/proximity_mines/texture/spell_proximity_mines_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "target_type": "aim_vector",
+  "damage_type": "physical",
+  "base_damage_factor": 1,
+  "cooldown": 2.5,
+  "duration": 8,
+  "cast_time": 0.4,
+  "damage_knockback": 200,
+  "area": 50,
+  "projectile_speed": 200,
+  "sort_order": 9,
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.2 },
+        { "base_damage_factor": 1.5 },
+        { "base_damage_factor": 2.0 },
+        { "base_damage_factor": 2.5 },
+        { "base_damage_factor": 3.0 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 2.3 },
+        { "cooldown": 2.1 },
+        { "cooldown": 1.9 },
+        { "cooldown": 1.7 },
+        { "cooldown": 1.5 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 225 },
+        { "damage_knockback": 250 },
+        { "damage_knockback": 300 },
+        { "damage_knockback": 350 },
+        { "damage_knockback": 400 }
+      ]
+    },
+    "projectile_speed": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "projectile_speed": 210 },
+        { "projectile_speed": 220 },
+        { "projectile_speed": 230 },
+        { "projectile_speed": 240 },
+        { "projectile_speed": 250 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 60 },
+        { "area": 70 },
+        { "area": 80 },
+        { "area": 90 },
+        { "area": 100 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 10 },
+        { "duration": 12 },
+        { "duration": 14 },
+        { "duration": 17 },
+        { "duration": 20 }
+      ]
+    }
+  }
+}

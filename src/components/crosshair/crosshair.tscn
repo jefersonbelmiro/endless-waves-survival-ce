@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/input/crosshair/crosshair1.png" type="Texture" id=1]
+[ext_resource path="res://src/components/crosshair/crosshair.gd" type="Script" id=2]
+[ext_resource path="res://src/components/crosshair/res/crosshair_shader.tres" type="Material" id=3]
+
+[node name="crosshair" type="CanvasLayer"]
+layer = 100
+visible = false
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+material = ExtResource( 3 )
+texture = ExtResource( 1 )

@@ -1,0 +1,74 @@
+{
+  "id": "earthshock",
+  "label": "EARTHSHOCK_LABEL",
+  "description": "EARTHSHOCK_DESC",
+  "icon": "res://src/spells/autocast/earthshock/texture/earthshock_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "damage_type": "physical",
+  "damage": 5,
+  "damage_knockback": 50,
+  "cooldown": 2.0,
+  "cast_time": 0.2,
+  "area": 90,
+  "sort_order": 12,
+  "modifiers": {
+    "debuff_slow": {
+      "type": "debuff",
+      "modifier_duration": 4,
+      "move_speed": "-50%",
+      "proc_chance": 1.0,
+      "description": "EARTHSHOCK_SLOWDOWN_DESC"
+    }
+  },
+  "upgrades_data": {
+    "damage": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage": 8 },
+        { "damage": 10 },
+        { "damage": 12 },
+        { "damage": 15 },
+        { "damage": 20 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 1.8 },
+        { "cooldown": 1.6 },
+        { "cooldown": 1.4 },
+        { "cooldown": 1.2 },
+        { "cooldown": 1.0 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 100 },
+        { "area": 110 },
+        { "area": 120 },
+        { "area": 130 },
+        { "area": 140 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 60 },
+        { "damage_knockback": 70 },
+        { "damage_knockback": 80 },
+        { "damage_knockback": 90 },
+        { "damage_knockback": 100 }
+      ]
+    }
+  }
+}

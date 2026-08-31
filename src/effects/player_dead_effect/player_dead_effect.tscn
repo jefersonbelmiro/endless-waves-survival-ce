@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/effects/player_dead_effect/player_dead_effect.gd" type="Script" id=1]
+[ext_resource path="res://src/chars/mage/texture/idle/mage-idle2.png" type="Texture" id=2]
+[ext_resource path="res://src/effects/player_dead_effect/sfx_player_dead_effect.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="player_dead_effect" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="camera_2d" type="Camera2D" parent="."]
+current = true
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="shadow" type="Sprite" parent="animated_sprite"]
+modulate = Color( 1, 1, 1, 0.309804 )
+position = Vector2( 0, 10 )
+texture = ExtResource( 4 )
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+bus = "SFX"

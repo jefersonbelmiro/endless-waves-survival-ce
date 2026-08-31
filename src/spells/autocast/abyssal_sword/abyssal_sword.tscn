@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/spells/autocast/abyssal_sword/texture/abyssal_sword_attack2.png" type="Texture" id=2]
+[ext_resource path="res://src/spells/autocast/abyssal_sword/abyssal_sword.gd" type="Script" id=3]
+[ext_resource path="res://src/spells/autocast/abyssal_sword/texture/abyssal_sword_attack3.png" type="Texture" id=4]
+[ext_resource path="res://src/spells/autocast/abyssal_sword/texture/abyssal_sword_slash.png" type="Texture" id=5]
+[ext_resource path="res://src/spells/autocast/abyssal_sword/texture/abyssal_sword_attack4.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "attack",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "slash",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 20.0
+
+[node name="abyssal_sword" type="Node2D"]
+z_index = 10
+script = ExtResource( 3 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+rotation = -0.785398
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 1 )
+animation = "attack"
+flip_h = true
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true

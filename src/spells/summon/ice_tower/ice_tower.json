@@ -1,0 +1,100 @@
+{
+  "id": "ice_tower",
+  "label": "CARD_ICE_TOWER_LABEL",
+  "description": "CARD_ICE_TOWER_DESC",
+  "require_description": "CARD_ICE_TOWER_REQUIRE_DESC",
+  "icon": "res://src/spells/summon/ice_tower/texture/ice_tower_icon.png",
+  "cast_type": "summon",
+  "target_type": "closest_target",
+  "max_health": 30,
+  "attack_range": 100,
+  "damage_type": "magic",
+  "damage": 10,
+  "cooldown": 2.5,
+  "max_projectiles": 1,
+  "damage_knockback": 0,
+  "projectile_speed": 200,
+  "area": 0,
+  "sort_order": 3,
+  "modifiers": {
+    "debuff_frozen": {
+      "type": "debuff",
+      "modifier_duration": 4,
+      "move_speed": "-100%",
+      "proc_chance": 1.0,
+      "description": "DEBUFF_FROZEN_DESC"
+    }
+  },
+  "value_private_keys": ["find_target", "find_duration"],
+  "upgrades_data": {
+    "damage": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage": 15 },
+        { "damage": 20 },
+        { "damage": 25 },
+        { "damage": 35 },
+        { "damage": 45 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 2.2 },
+        { "cooldown": 2.0 },
+        { "cooldown": 1.8 },
+        { "cooldown": 1.6 },
+        { "cooldown": 1.4 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 50 },
+        { "area": 60 },
+        { "area": 70 },
+        { "area": 80 },
+        { "area": 100 }
+      ]
+    },
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 1 },
+        { "max_projectiles": 2 },
+        { "max_projectiles": 3 },
+        { "max_projectiles": 4 },
+        { "max_projectiles": 5 }
+      ]
+    },
+    "accurate": {
+      "active": true,
+      "unlock_index": 0,
+      "max_index": 0,
+      "label": "SPELL_ACCURATE_ICE_BALL_LABEL",
+      "description": "SPELL_ACCURATE_ICE_BALL_DESC",
+      "icon": "res://src/spells/autocast/ice_ball/texture/accurate_ice_ball_icon.png",
+      "value": [{ "find_target": true, "find_duration": 3 }]
+    },
+    "max_health": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_health": 60 },
+        { "max_health": 80 },
+        { "max_health": 100 },
+        { "max_health": 150 },
+        { "max_health": 200 }
+      ]
+    }
+  }
+}

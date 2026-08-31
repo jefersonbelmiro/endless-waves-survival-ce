@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/components/soft_collision/soft_collision.gd" type="Script" id=1]
+
+[node name="soft_collision" type="Area2D"]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource( 1 )
+
+[node name="cooldown_timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

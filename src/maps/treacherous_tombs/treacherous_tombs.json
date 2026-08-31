@@ -1,0 +1,11 @@
+{
+  "uid": "map_treacherous_tombs",
+  "id": "treacherous_tombs",
+  "label": "TREACHEROUS_TOMBS",
+  "sort_order": 5,
+  "objectives": [
+    {
+      "type": "find_exit"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Godot editor and import cache
+.godot/
+.import/
+
+# Exported builds
+/build/*
+!/build/.gdignore
+/android
+
+# Logs
+/logs/
+
+# Secrets (do not commit)
+certs/
+firebase.json
+export_presets.cfg
+
+# Local machine-specific addon config (contains personal paths/app id)
+addons/steam_api/settings.tres
+
+# Legacy publish-only assets that must not be versioned
+publish/store/steam/keys/

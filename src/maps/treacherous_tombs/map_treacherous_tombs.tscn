@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/maps/map_base/map_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/maps/treacherous_tombs/map_treacherous_tombs.gd" type="Script" id=4]
+
+[node name="map_treacherous_tombs" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="start_position" parent="." index="3"]
+position = Vector2( 240, 130 )
+
+[node name="transition_overlayer" type="CanvasLayer" parent="." index="4"]
+
+[node name="bg" type="ColorRect" parent="transition_overlayer" index="0"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )

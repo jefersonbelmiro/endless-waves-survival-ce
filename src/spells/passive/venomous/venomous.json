@@ -1,0 +1,19 @@
+{
+  "id": "venomous",
+  "label": "SPELL_VENOMOUS_LABEL",
+  "description": "SPELL_VENOMOUS_DESC",
+  "icon": "res://src/spells/passive/venomous/texture/venomous_icon.png",
+  "class": "res://src/spells/passive/venomous/venomous_data.gd",
+  "cast_type": "passive",
+  "proc_chance": 0.05,
+  "sort_order": 14,
+  "upgrades": [
+    { "proc_chance": 0.10 },
+    { "proc_chance": 0.15 },
+    { "proc_chance": 0.20 },
+    { "proc_chance": 0.25 },
+    { "proc_chance": 0.40 },
+    { "proc_chance": 0.50 },
+    { "proc_chance": 0.60 }
+  ]
+}

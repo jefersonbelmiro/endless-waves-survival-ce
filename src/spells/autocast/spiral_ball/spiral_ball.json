@@ -1,0 +1,128 @@
+{
+  "id": "spiral_ball",
+  "label": "SPELL_SPIRAL_BALL_LABEL",
+  "description": "SPELL_SPIRAL_BALL_DESC",
+  "icon": "res://src/spells/autocast/spiral_ball/texture/spiral_ball_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "damage_type": "magic",
+  "base_damage_factor": 0.5,
+  "cooldown": 5,
+  "max_projectiles": 1,
+  "duration": 3,
+  "damage_knockback": 0,
+  "area": 35,
+  "projectile_speed": 200,
+  "sort_order": 2,
+  "value_private_keys": ["explosion"],
+  "value_format_keys": {
+    "explosion_base_damage_factor": {
+      "format": "percent",
+      "format_placeholder": "BASE_DAMAGE_FACTOR_PLACEHOLDER",
+      "tr": "EXPLOSION_DAMAGE"
+    }
+  },
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 0.7 },
+        { "base_damage_factor": 0.9 },
+        { "base_damage_factor": 1.2 },
+        { "base_damage_factor": 1.5 },
+        { "base_damage_factor": 2.0 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 4.5 },
+        { "cooldown": 4.0 },
+        { "cooldown": 3.5 },
+        { "cooldown": 3.0 },
+        { "cooldown": 2.5 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 225 },
+        { "damage_knockback": 250 },
+        { "damage_knockback": 300 },
+        { "damage_knockback": 350 },
+        { "damage_knockback": 400 }
+      ]
+    },
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 2 },
+        { "max_projectiles": 3 },
+        { "max_projectiles": 4 },
+        { "max_projectiles": 5 },
+        { "max_projectiles": 6 }
+      ]
+    },
+    "projectile_speed": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "projectile_speed": 210 },
+        { "projectile_speed": 220 },
+        { "projectile_speed": 230 },
+        { "projectile_speed": 240 },
+        { "projectile_speed": 250 }
+      ]
+    },
+    "duration": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "duration": 3.5 },
+        { "duration": 4.0 },
+        { "duration": 4.5 },
+        { "duration": 5.0 },
+        { "duration": 5.5 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 40 },
+        { "area": 45 },
+        { "area": 50 },
+        { "area": 55 },
+        { "area": 60 }
+      ]
+    },
+    "explosion": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "label": "EXPLOSION",
+      "icon": "res://src/spells/autocast/spiral_ball/texture/spiral_ball_explosion_icon.png",
+      "description": "SPELL_SPIRAL_BALL_EXPLOSION_DESC",
+      "new_upgrade_description": "SPELL_SPIRAL_BALL_EXPLOSION_UPGRADE_DESC",
+      "upgrade_description": "SPELL_SPIRAL_BALL_EXPLOSION_UPGRADE_DESC",
+      "value": [
+        { "explosion": true, "explosion_base_damage_factor": 1.0 },
+        { "explosion_base_damage_factor": 2.0 },
+        { "explosion_base_damage_factor": 3.0 },
+        { "explosion_base_damage_factor": 4.0 },
+        { "explosion_base_damage_factor": 5.0 }
+      ]
+    }
+  }
+}

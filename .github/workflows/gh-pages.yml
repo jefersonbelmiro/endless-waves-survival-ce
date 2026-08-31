@@ -1,0 +1,51 @@
+# Workflow to publish the Godot HTML5 build to GitHub Pages.
+#
+# The project's `export_presets.cfg` is gitignored (it can contain secrets), so
+# this workflow restores it from the scrubbed `export_presets.cfg.example`
+# before exporting. The `web` preset does not require any credentials.
+
+name: "Publish to GitHub Pages"
+
+env:
+  GODOT_VERSION: 3.5.3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    container:
+      image: barichello/godot-ci:3.5.3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore export presets from example
+        run: cp export_presets.cfg.example export_presets.cfg
+
+      - name: Move HTML5 templates into position
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+
+      - name: Create staging directory
+        run: mkdir -v -p build/html
+
+      - name: Build
+        run: godot -v --export "web" build/html/index.html
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/html
+          force_orphan: true
+          user_name: "github-ci[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Publish to gh-pages"

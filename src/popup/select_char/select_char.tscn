@@ -1,0 +1,302 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/components/border_box_bg.png" type="Texture" id=4]
+[ext_resource path="res://src/chars/mage/res/mage_spriteframes.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://src/popup/select_deck/select_deck_popup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/components/panel_focus_container/panel_focus_container.gd" type="Script" id=7]
+[ext_resource path="res://src/popup/card_info/card_info_popup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/effects/bg_particles/bg_particles.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/popup/select_char/select_char.gd" type="Script" id=10]
+[ext_resource path="res://src/res/fonts/monogram_8.tres" type="DynamicFont" id=11]
+[ext_resource path="res://src/components/box_button/box_button.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/components/deck_bg.png" type="Texture" id=13]
+[ext_resource path="res://src/components/input_hint/input_hint.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/components/input_icon/input_icon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/components/simple_border_box.png" type="Texture" id=16]
+[ext_resource path="res://src/components/grid/grid.tscn" type="PackedScene" id=17]
+
+[node name="select_char_popup" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 10 )
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 0.0901961, 0.0509804, 0.137255, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="bg_particles" parent="." instance=ExtResource( 9 )]
+
+[node name="title" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 28.0
+text = "CHARACTER"
+align = 1
+valign = 1
+
+[node name="container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 35.0
+margin_right = -20.0
+margin_bottom = -10.0
+
+[node name="content" type="HBoxContainer" parent="container"]
+margin_right = 440.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource( 7 )
+panels = [ NodePath("chars"), NodePath("selected") ]
+panels_focus_containers = [ NodePath(""), NodePath("selected/content/scroll_container/margin_container/content/actions_container") ]
+
+[node name="chars" type="Control" parent="container/content"]
+margin_right = 276.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 276, 0 )
+size_flags_vertical = 3
+
+[node name="bg" type="ColorRect" parent="container/content/chars"]
+modulate = Color( 0.0588235, 0.0352941, 0.0588235, 0.129412 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+
+[node name="bg_border" type="NinePatchRect" parent="container/content/chars"]
+modulate = Color( 0.0588235, 0.0352941, 0.0588235, 0.341176 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="grid" parent="container/content/chars" instance=ExtResource( 17 )]
+
+[node name="selected" type="Control" parent="container/content"]
+margin_left = 280.0
+margin_right = 440.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 160, 140 )
+
+[node name="bg" type="ColorRect" parent="container/content/selected"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+
+[node name="bg_border" type="NinePatchRect" parent="container/content/selected"]
+modulate = Color( 0.117647, 0.0901961, 0.117647, 0.705882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="content" type="VBoxContainer" parent="container/content/selected"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -3.0
+custom_constants/separation = 0
+
+[node name="header" type="HBoxContainer" parent="container/content/selected/content"]
+margin_right = 152.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 14 )
+
+[node name="label_container" type="Control" parent="container/content/selected/content/header"]
+margin_right = 116.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="label" type="Label" parent="container/content/selected/content/header/label_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Deck name"
+valign = 1
+autowrap = true
+
+[node name="icon_container" type="Control" parent="container/content/selected/content/header"]
+margin_left = 120.0
+margin_right = 152.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 32, 2 )
+
+[node name="sprite" type="AnimatedSprite" parent="container/content/selected/content/header/icon_container"]
+position = Vector2( 18, 19 )
+frames = ExtResource( 5 )
+animation = "idle"
+
+[node name="bg" type="NinePatchRect" parent="container/content/selected/content/header/icon_container"]
+visible = false
+modulate = Color( 0.545098, 0.360784, 0.545098, 0.188235 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="scroll_container" type="ScrollContainer" parent="container/content/selected/content"]
+margin_top = 14.0
+margin_right = 152.0
+margin_bottom = 159.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="margin_container" type="MarginContainer" parent="container/content/selected/content/scroll_container"]
+margin_right = 152.0
+margin_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+
+[node name="content" type="VBoxContainer" parent="container/content/selected/content/scroll_container/margin_container"]
+margin_left = 2.0
+margin_right = 152.0
+margin_bottom = 143.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="description_container" type="Control" parent="container/content/selected/content/scroll_container/margin_container/content"]
+margin_right = 150.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="label" type="RichTextLabel" parent="container/content/selected/content/scroll_container/margin_container/content/description_container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode_enabled = true
+
+[node name="actions_container" type="HBoxContainer" parent="container/content/selected/content/scroll_container/margin_container/content"]
+margin_top = 123.0
+margin_right = 150.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="main_card_button" parent="container/content/selected/content/scroll_container/margin_container/content/actions_container" instance=ExtResource( 12 )]
+unique_name_in_owner = true
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="deck_button" parent="container/content/selected/content/scroll_container/margin_container/content/actions_container" instance=ExtResource( 12 )]
+unique_name_in_owner = true
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+icon_texture = ExtResource( 13 )
+
+[node name="actions_hint" type="HBoxContainer" parent="container"]
+margin_top = 171.0
+margin_right = 440.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 0, 20 )
+alignment = 1
+
+[node name="previous_panel_hint" parent="container/actions_hint" instance=ExtResource( 14 )]
+margin_left = 158.0
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 14 )
+sources = 5
+label = "PREVIOUS_PANEL"
+
+[node name="label" parent="container/actions_hint/previous_panel_hint/container" index="0"]
+margin_right = 39.0
+margin_bottom = 20.0
+
+[node name="icon_container" parent="container/actions_hint/previous_panel_hint/container" index="1"]
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 20.0
+
+[node name="input_icon" parent="container/actions_hint/previous_panel_hint/container/icon_container" index="0" instance=ExtResource( 15 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -5.0
+margin_right = 10.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 10, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_name = "ui_select_prev"
+
+[node name="next_panel_hint" parent="container/actions_hint" instance=ExtResource( 14 )]
+margin_left = 222.0
+margin_right = 282.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 14 )
+sources = 5
+label = "NEXT_PANEL"
+
+[node name="label" parent="container/actions_hint/next_panel_hint/container" index="0"]
+margin_right = 39.0
+margin_bottom = 20.0
+
+[node name="icon_container" parent="container/actions_hint/next_panel_hint/container" index="1"]
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 20.0
+
+[node name="input_icon" parent="container/actions_hint/next_panel_hint/container/icon_container" index="0" instance=ExtResource( 15 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -5.0
+margin_right = 10.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 10, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_name = "ui_select_next"
+
+[node name="actions" type="HBoxContainer" parent="container"]
+margin_top = 195.0
+margin_right = 440.0
+margin_bottom = 215.0
+alignment = 1
+
+[node name="done_button" parent="container/actions" instance=ExtResource( 3 )]
+margin_left = 180.0
+margin_right = 260.0
+margin_bottom = 20.0
+text_label = "DONE"
+
+[node name="card_info_popup" parent="." instance=ExtResource( 8 )]
+
+[node name="select_deck_popup" parent="." instance=ExtResource( 6 )]
+
+[connection signal="hide" from="." to="." method="_on_select_char_popup_hide"]
+[connection signal="pressed" from="container/content/selected/content/scroll_container/margin_container/content/actions_container/main_card_button" to="." method="_on_main_card_button_pressed"]
+[connection signal="pressed" from="container/content/selected/content/scroll_container/margin_container/content/actions_container/deck_button" to="." method="_on_deck_button_pressed"]
+[connection signal="pressed" from="container/actions/done_button" to="." method="_on_done_button_pressed"]
+[connection signal="upgrades_button_pressed" from="card_info_popup" to="." method="_on_card_info_popup_upgrades_button_pressed"]
+[connection signal="hide" from="select_deck_popup" to="." method="_on_select_deck_popup_hide"]
+
+[editable path="container/actions_hint/previous_panel_hint"]
+[editable path="container/actions_hint/next_panel_hint"]

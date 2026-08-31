@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/effects/glow/glow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/effects/trail_particles/trail_particles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/enemies/projectiles/ball/ball_projectile.gd" type="Script" id=3]
+[ext_resource path="res://src/enemies/projectiles/ball/texture/ball_projectile.png" type="Texture" id=4]
+[ext_resource path="res://src/effects/trail/trail.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+// sprite options
+uniform bool add_color = false;
+uniform vec4 color: hint_color = vec4(1.0);
+uniform float color_modifier: hint_range(0, 1) = 1.0;
+
+// border options
+uniform bool add_border = false;
+uniform vec4 border_color : hint_color = vec4(1.0);
+uniform float border_width : hint_range(0, 10) = 1.0;
+uniform int border_pattern : hint_range(0, 2) = 0; // diamond, circle, square
+uniform bool border_inside = false;
+uniform bool border_add_margins = true; // only useful when border_inside is false
+
+void vertex() {
+	if (add_border && border_add_margins) {
+		VERTEX += (UV * 2.0 - 1.0) * border_width;
+	}
+}
+
+bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
+	for (float i = -ceil(border_width); i <= ceil(border_width); i++) {
+		float x = abs(i) > border_width ? border_width * sign(i) : i;
+		float offset;
+		
+		if (border_pattern == 0) {
+			offset = border_width - abs(x);
+		} else if (border_pattern == 1) {
+			offset = floor(sqrt(pow(border_width + 0.5, 2) - x * x));
+		} else if (border_pattern == 2) {
+			offset = border_width;
+		}
+		
+		for (float j = -ceil(offset); j <= ceil(offset); j++) {
+			float y = abs(j) > offset ? offset * sign(j) : j;
+			vec2 xy = uv + texture_pixel_size * vec2(x, y);
+			
+			if ((xy != clamp(xy, vec2(0.0), vec2(1.0)) || texture(texture, xy).a == 0.0) == border_inside) {
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
+
+void fragment() {
+	vec2 uv = UV;
+	
+	if (add_border && border_add_margins) {
+		vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(border_width * 2.0));
+		
+		uv = (uv - texture_pixel_size * border_width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+		
+		if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+			COLOR.a = 0.0;
+		} else {
+			COLOR = texture(TEXTURE, uv);
+		}
+	} else {
+		COLOR = texture(TEXTURE, uv);
+	}
+	if (add_color) {
+		COLOR = vec4(mix(COLOR.rgb, color.rgb, color_modifier), COLOR.a);
+	}
+	if (add_border && (COLOR.a > 0.0) == border_inside && hasContraryNeighbour(uv, TEXTURE_PIXEL_SIZE, TEXTURE)) {
+		COLOR.rgb = border_inside ? mix(COLOR.rgb, border_color.rgb, border_color.a) : border_color.rgb;
+		COLOR.a += (1.0 - COLOR.a) * border_color.a;
+	}
+
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = SubResource( 5 )
+shader_param/add_color = true
+shader_param/color = Color( 0.847059, 0.607843, 0.607843, 1 )
+shader_param/color_modifier = 0.666
+shader_param/add_border = true
+shader_param/border_color = Color( 1, 1, 1, 1 )
+shader_param/border_width = 3.0
+shader_param/border_pattern = 1
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.0
+
+[node name="ball_projectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 34
+script = ExtResource( 3 )
+
+[node name="trail" parent="." instance=ExtResource( 5 )]
+
+[node name="trail_particles" parent="." instance=ExtResource( 2 )]
+emitting = false
+
+[node name="sprite" type="Sprite" parent="."]
+material = SubResource( 4 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 4 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="glow" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[connection signal="area_entered" from="." to="." method="_on_projectile_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_projectile_body_entered"]

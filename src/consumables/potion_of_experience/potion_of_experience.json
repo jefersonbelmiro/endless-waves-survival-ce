@@ -1,0 +1,17 @@
+{
+  "id": "consumable_potion_of_experience",
+  "uid": "consumable_potion_of_experience",
+  "label": "CONSUMABLE_POTION_OF_EXPERIENCE_LABEL",
+  "description": "CONSUMABLE_POTION_OF_EXPERIENCE_DESC",
+  "toast_used": "CONSUMABLE_POTION_OF_EXPERIENCE_TOAST_USED",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/potion_of_experience/texture/potion_of_experience_icon.png",
+  "type": "item",
+  "tier": 1,
+  "experience_factor": 0.3,
+  "cost": 60,
+  "modifier_duration": 30,
+  "stack": true,
+  "stack_max": 10,
+  "sort_order": 6
+}

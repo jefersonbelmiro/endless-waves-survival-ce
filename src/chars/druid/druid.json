@@ -1,0 +1,16 @@
+{
+  "id": "druid",
+  "label": "DRUID",
+  "main_card": "boomerang",
+  "sort_order": 5,
+  "stats": {
+    "max_health": 50,
+    "pick_area": 150,
+    "move_speed": 75,
+    "attack_speed": 30,
+    "attack_range": 80,
+    "base_damage": 10,
+    "health_regen": 2.5,
+    "status_resistance": 0.8
+  }
+}

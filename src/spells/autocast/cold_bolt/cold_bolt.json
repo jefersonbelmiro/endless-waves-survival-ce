@@ -1,0 +1,66 @@
+{
+  "id": "cold_bolt",
+  "label": "SPELL_COLD_BOLT_LABEL",
+  "description": "SPELL_COLD_BOLT_DESC",
+  "icon": "res://src/spells/autocast/cold_bolt/texture/cold_bolt_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "target_type": "closest_target",
+  "damage_type": "magic",
+  "base_damage_factor": 1.0,
+  "cooldown": 4,
+  "max_projectiles": 1,
+  "damage_knockback": 20,
+  "projectile_speed": 300,
+  "sort_order": 5,
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.4 },
+        { "base_damage_factor": 1.8 },
+        { "base_damage_factor": 2.2 },
+        { "base_damage_factor": 2.5 },
+        { "base_damage_factor": 3.0 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 3.6 },
+        { "cooldown": 3.2 },
+        { "cooldown": 2.8 },
+        { "cooldown": 2.4 },
+        { "cooldown": 2.0 }
+      ]
+    },
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 2 },
+        { "max_projectiles": 4 },
+        { "max_projectiles": 8 },
+        { "max_projectiles": 10 },
+        { "max_projectiles": 12 }
+      ]
+    },
+    "projectile_speed": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "projectile_speed": 340 },
+        { "projectile_speed": 380 },
+        { "projectile_speed": 420 },
+        { "projectile_speed": 460 },
+        { "projectile_speed": 500 }
+      ]
+    }
+  }
+}

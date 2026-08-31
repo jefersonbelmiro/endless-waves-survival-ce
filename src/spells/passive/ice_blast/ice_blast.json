@@ -1,0 +1,15 @@
+{
+  "id": "ice_blast",
+  "label": "SPELL_ICE_BLAST_LABEL",
+  "description": "SPELL_ICE_BLAST_DESC",
+  "icon": "res://src/spells/passive/ice_blast/texture/ice_blast_icon.png",
+  "class": "res://src/spells/passive/ice_blast/ice_blast_data.gd",
+  "cast_type": "passive",
+  "proc_chance": 0.3,
+  "area": 80,
+  "damage": 20,
+  "damage_knockback": 10,
+  "damage_type": "magic",
+  "sort_order": 14,
+  "upgrades": [{ "proc_chance": 0.6 }, { "proc_chance": 1.0 }]
+}

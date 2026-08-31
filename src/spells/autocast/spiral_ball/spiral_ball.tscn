@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/effects/trail/trail.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/effects/trail_particles/trail_particles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/effects/glow.png" type="Texture" id=3]
+[ext_resource path="res://assets/spells/light_ball.png" type="Texture" id=4]
+[ext_resource path="res://src/spells/autocast/spiral_ball/spiral_ball.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 5.09902
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+
+[node name="spiral_ball" type="Position2D"]
+modulate = Color( 0.117647, 0.737255, 0.45098, 1 )
+script = ExtResource( 5 )
+
+[node name="pivot" type="Position2D" parent="."]
+position = Vector2( 0, -35 )
+
+[node name="hit_box" type="Area2D" parent="pivot"]
+collision_layer = 8
+collision_mask = 66
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="pivot/hit_box"]
+shape = SubResource( 1 )
+
+[node name="Trail" parent="pivot" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.592157 )
+
+[node name="trail_particles" parent="pivot" instance=ExtResource( 2 )]
+emitting = false
+amount = 20
+
+[node name="sprite" type="Sprite" parent="pivot"]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="glow" type="Sprite" parent="pivot"]
+visible = false
+modulate = Color( 1, 1, 1, 0.180392 )
+material = SubResource( 2 )
+texture = ExtResource( 3 )
+
+[connection signal="area_entered" from="pivot/hit_box" to="." method="_on_hit_box_area_entered"]

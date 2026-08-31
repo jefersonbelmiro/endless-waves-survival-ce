@@ -1,0 +1,20 @@
+{
+  "id": "rogue",
+  "label": "ROGUE",
+  "main_card": "dagger",
+  "sort_order": 2,
+  "stats": {
+    "max_health": 25,
+    "pick_area": 120,
+    "move_speed": 100,
+    "attack_speed": 35,
+    "attack_range": 100,
+    "base_damage": 15,
+    "lifesteal_proc_chance": 0.1,
+    "lifesteal_factor": 0.15,
+    "critical_proc_chance": 0.2,
+    "critical_factor": 2.5,
+    "evasion": 0.2,
+    "health_regen": 1
+  }
+}

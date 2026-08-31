@@ -1,0 +1,24 @@
+{
+  "uid": "map_desert",
+  "id": "desert",
+  "label": "DESERT",
+  "levels": 3,
+  "sort_order": 6,
+  "objectives": [
+    {
+      "level": 1,
+      "type": "kill_enemies",
+      "value": 10000
+    },
+    {
+      "level": 2,
+      "type": "survive_time",
+      "value": "15:00"
+    },
+    {
+      "level": 3,
+      "type": "survive_time",
+      "value": "30:00"
+    }
+  ]
+}

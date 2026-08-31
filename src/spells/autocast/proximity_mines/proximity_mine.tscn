@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/spells/autocast/proximity_mines/proximity_mine.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.0
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/proximity_mine.png-2ca62dca0e956e0ce0494d853cb352c2.stex"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="proximity_mine" type="Area2D"]
+collision_layer = 0
+collision_mask = 322
+script = ExtResource( 1 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 6 )
+shape = SubResource( 1 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 6 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 2 )
+
+[node name="explosion_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_mine_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_mine_body_entered"]
+[connection signal="timeout" from="explosion_timer" to="." method="_on_explosion_timer_timeout"]

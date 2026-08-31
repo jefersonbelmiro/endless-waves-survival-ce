@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/enemies/bosses/centipede_boss/texture/centipede_boss_head.png" type="Texture" id=1]
+[ext_resource path="res://src/components/stats.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/components/hurt_box/hurt_box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/components/progress_bar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/enemies/bosses/centipede_boss/centipede_boss.gd" type="Script" id=6]
+[ext_resource path="res://src/enemies/bosses/centipede_boss/res/part_collision_shape.tres" type="Shape2D" id=8]
+[ext_resource path="res://src/res/white_and_border_shadermaterial.tres" type="Material" id=9]
+[ext_resource path="res://src/enemies/behaviours/container/behaviour_container.tscn" type="PackedScene" id=10]
+
+[sub_resource type="SpriteFrames" id=4]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=5]
+resource_local_to_scene = true
+radius = 15.0
+
+[node name="centipede_boss" type="KinematicBody2D" groups=["bosses", "enemies", "targets"]]
+collision_layer = 4096
+collision_mask = 4359
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+base_color = Color( 0.362228, 0.362228, 0.480469, 1 )
+
+[node name="stats" parent="." instance=ExtResource( 2 )]
+max_health = 5000.0
+
+[node name="behaviour_container" parent="." instance=ExtResource( 10 )]
+
+[node name="increase_body_timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+material = ExtResource( 9 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 4 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+shape = SubResource( 5 )
+
+[node name="hurt_box" parent="." instance=ExtResource( 4 )]
+visible = false
+collision_layer = 64
+sprite_path = NodePath("../animated_sprite")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="hurt_box"]
+shape = ExtResource( 8 )
+
+[node name="health_bar" parent="." instance=ExtResource( 5 )]
+visible = false
+margin_left = -9.0
+margin_top = -30.0
+margin_right = 11.0
+margin_bottom = -26.0
+
+[node name="health_bar_hide_timer" type="Timer" parent="health_bar"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="deaded" from="stats" to="." method="_on_stats_deaded"]
+[connection signal="hitted" from="stats" to="." method="_on_stats_hitted"]
+[connection signal="modifier_added" from="stats" to="." method="_on_stats_modifier_added"]
+[connection signal="modifier_removed" from="stats" to="." method="_on_stats_modifier_removed"]
+[connection signal="timeout" from="increase_body_timer" to="." method="_on_increase_body_timer_timeout"]
+[connection signal="timeout" from="health_bar/health_bar_hide_timer" to="." method="_on_health_bar_hide_timer_timeout"]

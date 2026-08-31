@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/enemies/target_base/target_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/enemies/eye/texture/eye4.png" type="Texture" id=2]
+[ext_resource path="res://src/enemies/eye/texture/eye2.png" type="Texture" id=3]
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=4]
+[ext_resource path="res://src/enemies/eye/texture/eye1.png" type="Texture" id=5]
+[ext_resource path="res://src/enemies/eye/texture/eye3.png" type="Texture" id=6]
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/add_color = false
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/color_modifier = 0.666
+shader_param/add_border = false
+shader_param/border_color = Color( 1, 1, 1, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 1
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id=5]
+
+[node name="eye" groups=["enemies", "flyers", "targets"] instance=ExtResource( 1 )]
+id = "eye"
+base_color = Color( 0.478431, 0.188235, 0.270588, 1 )
+sync_animation_with_move_speed = false
+
+[node name="shadow" parent="." index="2"]
+position = Vector2( 0, 13 )
+
+[node name="animated_sprite" parent="." index="3"]
+material = SubResource( 7 )
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="collision_shape_2d" parent="." index="4"]
+visible = true
+shape = SubResource( 6 )
+
+[node name="hurt_box" parent="." index="5"]
+visible = true
+
+[node name="collision_shape_2d" parent="hurt_box" index="1"]
+shape = SubResource( 5 )
+
+[node name="health_bar" parent="." index="6"]
+margin_top = -19.0
+margin_bottom = -15.0

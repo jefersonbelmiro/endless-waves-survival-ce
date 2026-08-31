@@ -1,0 +1,18 @@
+{
+  "id": "consumable_potion_of_cooldown",
+  "uid": "consumable_potion_of_cooldown",
+  "label": "CONSUMABLE_POTION_OF_COOLDOWN_LABEL",
+  "description": "CONSUMABLE_POTION_OF_COOLDOWN_DESC",
+  "toast_used": "CONSUMABLE_POTION_OF_COOLDOWN_TOAST_USED",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/potion_of_cooldown/texture/potion_of_cooldown_icon.png",
+  "class": "res://src/classes/consumable_data.gd",
+  "type": "item",
+  "tier": 1,
+  "cooldown_reduction": 0.03,
+  "cost": 30,
+  "modifier_duration": 10,
+  "stack": true,
+  "stack_max": 10,
+  "sort_order": 4
+}

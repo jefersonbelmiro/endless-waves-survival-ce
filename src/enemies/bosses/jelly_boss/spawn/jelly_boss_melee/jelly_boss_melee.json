@@ -1,0 +1,39 @@
+{
+  "id": "jelly_boss_melee",
+  "level": 1,
+  "stats": {
+    "move_speed": 30,
+    "max_health": 300,
+    "base_damage": 15
+  },
+  "buff_per_level": {
+    "max_health": 0.2,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    "chase",
+    "knockback",
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 100
+      }
+    },
+    {
+      "id": "rush_attack",
+      "data": {
+        "attack_range": 300,
+        "move_speed": 150,
+        "proc_chance": 0.6,
+        "duration": 1.3,
+        "collision_layer": "boss",
+        "collision_mask": [
+          "env",
+          "map_bounds"
+        ]
+      }
+    }
+  ],
+  "sort_order": 6
+}

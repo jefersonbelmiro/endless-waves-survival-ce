@@ -1,0 +1,69 @@
+{
+  "id": "arrow_tower",
+  "label": "CARD_ARROW_TOWER_LABEL",
+  "description": "CARD_ARROW_TOWER_DESC",
+  "require_description": "CARD_ARROW_TOWER_REQUIRE_DESC",
+  "icon": "res://src/spells/summon/arrow_tower/texture/arrow_tower_icon.png",
+  "cast_type": "summon",
+  "target_type": "closest_target",
+  "max_health": 30,
+  "attack_range": 130,
+  "damage_type": "physical",
+  "damage": 12,
+  "cooldown": 1.5,
+  "max_projectiles": 1,
+  "spread": 0,
+  "projectile_speed": 350,
+  "damage_knockback": 30,
+  "sort_order": 10,
+  "upgrades_data": {
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 3 },
+        { "max_projectiles": 6 },
+        { "max_projectiles": 10 },
+        { "max_projectiles": 15 },
+        { "max_projectiles": 20 }
+      ]
+    },
+    "damage": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage": 17 },
+        { "damage": 22 },
+        { "damage": 30 },
+        { "damage": 40 },
+        { "damage": 50 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 10 },
+        { "damage_knockback": 20 },
+        { "damage_knockback": 30 },
+        { "damage_knockback": 40 },
+        { "damage_knockback": 50 }
+      ]
+    },
+    "max_health": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_health": 60 },
+        { "max_health": 80 },
+        { "max_health": 100 },
+        { "max_health": 150 },
+        { "max_health": 200 }
+      ]
+    }
+  }
+}

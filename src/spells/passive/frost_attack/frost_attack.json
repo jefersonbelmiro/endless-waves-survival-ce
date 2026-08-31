@@ -1,0 +1,20 @@
+{
+  "id": "frost_attack",
+  "label": "SPELL_FROST_ATTACK_LABEL",
+  "description": "SPELL_FROST_ATTACK_DESC",
+  "icon": "res://src/spells/passive/frost_attack/texture/frost_attack_icon.png",
+  "class": "res://src/spells/passive/frost_attack/frost_attack_data.gd",
+  "cast_type": "passive",
+  "proc_chance": 0.03,
+  "modifier_duration": 1,
+  "sort_order": 14,
+  "upgrades": [
+    { "proc_chance": 0.06 },
+    { "proc_chance": 0.10 },
+    { "proc_chance": 0.15 },
+    { "proc_chance": 0.20 },
+    { "proc_chance": 0.30 },
+    { "proc_chance": 0.40 },
+    { "proc_chance": 0.50 }
+  ]
+}

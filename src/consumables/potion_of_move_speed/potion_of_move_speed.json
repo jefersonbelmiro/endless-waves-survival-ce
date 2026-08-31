@@ -1,0 +1,18 @@
+{
+  "id": "consumable_potion_of_move_speed",
+  "uid": "consumable_potion_of_move_speed",
+  "label": "CONSUMABLE_POTION_OF_MOVE_SPEED_LABEL",
+  "description": "CONSUMABLE_POTION_OF_MOVE_SPEED_DESC",
+  "toast_used": "CONSUMABLE_POTION_OF_MOVE_SPEED_TOAST_USED",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/potion_of_move_speed/texture/potion_of_move_speed_icon.png",
+  "class": "res://src/classes/consumable_data.gd",
+  "type": "item",
+  "tier": 1,
+  "move_speed": 10,
+  "cost": 20,
+  "modifier_duration": 10,
+  "stack": true,
+  "stack_max": 10,
+  "sort_order": 2
+}

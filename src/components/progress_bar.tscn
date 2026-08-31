@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.909804, 0.231373, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.160784, 0.152941, 0.152941, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_right = 1.0
+
+[node name="progress_bar" type="ProgressBar"]
+margin_right = 79.0
+margin_bottom = 14.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+percent_visible = false

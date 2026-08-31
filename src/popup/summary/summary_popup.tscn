@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/res/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/components/solid_button/solid_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/popup/summary/summary_popup.gd" type="Script" id=3]
+[ext_resource path="res://assets/spells/book_bg.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxLine" id=1]
+color = Color( 0, 0, 0, 0.207843 )
+thickness = 2
+
+[node name="summary_popup" type="Popup"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.819608 )
+
+[node name="container" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -130.0
+margin_right = 240.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 240, 130 )
+
+[node name="book" type="TextureRect" parent="container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="content" type="HBoxContainer" parent="container"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -216.0
+margin_top = -116.0
+margin_right = 216.0
+margin_bottom = 105.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="left_container" type="VBoxContainer" parent="container/content"]
+margin_right = 206.0
+margin_bottom = 221.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="summary_label" type="Label" parent="container/content/left_container"]
+margin_right = 206.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.769531, 0.706406, 0.706406, 1 )
+text = "SUMMARY"
+valign = 1
+
+[node name="h_separator" type="HSeparator" parent="container/content/left_container"]
+margin_top = 17.0
+margin_right = 206.0
+margin_bottom = 21.0
+custom_styles/separator = SubResource( 1 )
+
+[node name="summary_container" type="VBoxContainer" parent="container/content/left_container"]
+margin_top = 25.0
+margin_right = 206.0
+margin_bottom = 221.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="right_container" type="VBoxContainer" parent="container/content"]
+margin_left = 226.0
+margin_right = 432.0
+margin_bottom = 221.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="damages_label" type="Label" parent="container/content/right_container"]
+margin_right = 206.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.67451, 0.666667, 0.666667, 1 )
+text = "DAMAGE_PER_SKILL"
+
+[node name="h_separator" type="HSeparator" parent="container/content/right_container"]
+margin_top = 17.0
+margin_right = 206.0
+margin_bottom = 21.0
+custom_styles/separator = SubResource( 1 )
+
+[node name="scroll_container" type="ScrollContainer" parent="container/content/right_container"]
+margin_top = 25.0
+margin_right = 206.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="card_container" type="VBoxContainer" parent="container/content/right_container/scroll_container"]
+margin_right = 206.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="h_box_container" type="HBoxContainer" parent="container/content/right_container"]
+margin_top = 201.0
+margin_right = 206.0
+margin_bottom = 221.0
+alignment = 2
+
+[node name="close_button" parent="container/content/right_container/h_box_container" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+margin_left = 126.0
+margin_right = 206.0
+margin_bottom = 20.0
+text_label = "CLOSE"
+
+[connection signal="hide" from="." to="." method="_on_summary_popup_hide"]
+[connection signal="pressed" from="container/content/right_container/h_box_container/close_button" to="." method="_on_close_button_pressed"]

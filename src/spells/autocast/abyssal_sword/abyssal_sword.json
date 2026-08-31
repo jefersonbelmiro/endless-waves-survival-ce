@@ -1,0 +1,53 @@
+{
+  "id": "abyssal_sword",
+  "label": "ABYSSAL_SWORD_LABEL",
+  "description": "ABYSSAL_SWORD_DESC",
+  "icon": "res://src/spells/autocast/abyssal_sword/texture/abyssal_sword_icon.png",
+  "type": "weapon",
+  "cast_type": "autocast",
+  "target_type": "aim_vector",
+  "damage_type": "physical",
+  "base_damage_factor": 1.5,
+  "damage_knockback": 60,
+  "cast_time": 0.2,
+  "area": 90,
+  "sort_order": 12,
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.8 },
+        { "base_damage_factor": 2.1 },
+        { "base_damage_factor": 2.6 },
+        { "base_damage_factor": 3.2 },
+        { "base_damage_factor": 4.0 }
+      ]
+    },
+    "damage_knockback": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "damage_knockback": 80 },
+        { "damage_knockback": 90 },
+        { "damage_knockback": 100 },
+        { "damage_knockback": 150 },
+        { "damage_knockback": 200 }
+      ]
+    },
+    "area": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "area": 100 },
+        { "area": 110 },
+        { "area": 120 },
+        { "area": 130 },
+        { "area": 140 }
+      ]
+    }
+  }
+}

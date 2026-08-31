@@ -1,0 +1,16 @@
+{
+  "id": "black_bat",
+  "level": 1,
+  "stats": {
+    "move_speed": 150,
+    "max_health": 4,
+    "base_damage": 1
+  },
+  "buff_per_level": {
+    "max_health": 0.1,
+    "move_speed": 0.01,
+    "base_damage": 0.01
+  },
+  "behaviours": ["seek", "melee_attack", "knockback"],
+  "sort_order": 1
+}

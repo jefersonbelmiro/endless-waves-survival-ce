@@ -1,0 +1,32 @@
+{
+  "id": "jelly_king",
+  "level": 1,
+  "stats": {
+    "move_speed": 30,
+    "max_health": 100,
+    "base_damage": 15
+  },
+  "buff_per_level": {
+    "max_health": 0.4,
+    "move_speed": 0.02,
+    "base_damage": 0.01
+  },
+  "behaviours": [
+    "chase",
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 100
+      }
+    },
+    {
+      "id": "rush_attack",
+      "data": {
+        "attack_range": 100,
+        "proc_chance": 0.6
+      }
+    },
+    "knockback"
+  ],
+  "sort_order": 6
+}

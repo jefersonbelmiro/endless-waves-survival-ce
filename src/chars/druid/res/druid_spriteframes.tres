@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=2]
+
+[ext_resource path="res://src/chars/druid/texture/idle/druid_idle2.png" type="Texture" id=1]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk1.png" type="Texture" id=2]
+[ext_resource path="res://src/chars/druid/texture/idle/druid_idle3.png" type="Texture" id=3]
+[ext_resource path="res://src/chars/druid/texture/idle/druid_idle1.png" type="Texture" id=4]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk6.png" type="Texture" id=5]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk8.png" type="Texture" id=6]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk2.png" type="Texture" id=7]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk7.png" type="Texture" id=8]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk5.png" type="Texture" id=9]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk3.png" type="Texture" id=10]
+[ext_resource path="res://src/chars/druid/texture/walk/druid_walk4.png" type="Texture" id=11]
+
+[resource]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+} ]

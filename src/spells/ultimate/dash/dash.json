@@ -1,0 +1,98 @@
+{
+  "id": "dash",
+  "label": "SPELL_DASH_LABEL",
+  "description": "SPELL_DASH_DESC",
+  "icon": "res://src/spells/ultimate/dash/texture/dash_spell_icon.png",
+  "type": "skill",
+  "cast_type": "ultimate",
+  "cooldown": 8,
+  "duration": 0.2,
+  "move_speed": 500,
+  "sort_order": 11,
+  "damage_knockback": 0,
+  "base_damage_factor": 0,
+  "value_private_keys": ["explosion"],
+  "value_format_keys": {
+    "explosion_base_damage_factor": {
+      "format": "percent",
+      "format_placeholder": "BASE_DAMAGE_FACTOR_PLACEHOLDER",
+      "tr": "EXPLOSION_DAMAGE"
+    }
+  },
+  "upgrades_data": {
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 7 },
+        { "cooldown": 6 },
+        { "cooldown": 5 },
+        { "cooldown": 4 },
+        { "cooldown": 3 }
+      ]
+    },
+    "duration": {
+      "active": false,
+      "unlock_index": -1,
+      "max_index": -1,
+      "value": [
+        { "duration": 0.3 },
+        { "duration": 0.4 },
+        { "duration": 0.5 },
+        { "duration": 0.6 },
+        { "duration": 0.7 }
+      ]
+    },
+    "move_speed": {
+      "active": false,
+      "unlock_index": -1,
+      "max_index": -1,
+      "value": [
+        { "move_speed": 550 },
+        { "move_speed": 600 },
+        { "move_speed": 650 },
+        { "move_speed": 700 },
+        { "move_speed": 750 }
+      ]
+    },
+    "passing_through": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "label": "SPELL_DASH_PASSING_THROUGH_LABEL",
+      "icon": "res://assets/icons/upgrades/damage.png",
+      "description": "SPELL_DASH_PASSING_THROUGH_DESC",
+      "new_upgrade_description": "SPELL_DASH_PASSING_THROUGH_LABEL",
+      "upgrade_description": "SPELL_DASH_PASSING_THROUGH_LABEL",
+      "value": [
+        { "base_damage_factor": 1.0, "damage_type": "physical" },
+        { "base_damage_factor": 1.5 },
+        { "base_damage_factor": 2.0 },
+        { "base_damage_factor": 3.0 },
+        { "base_damage_factor": 4.0 }
+      ]
+    },
+    "explosion": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "label": "EXPLOSION",
+      "description": "SPELL_DASH_EXPLOSION_DESC",
+      "new_upgrade_description": "SPELL_DASH_EXPLOSION_UPGRADE_DESC",
+      "upgrade_description": "SPELL_DASH_EXPLOSION_UPGRADE_DESC",
+      "value": [
+        {
+          "explosion": true,
+          "explosion_base_damage_factor": 1.0,
+          "explosion_area": 80,
+          "damage_type": "physical"
+        },
+        { "explosion_base_damage_factor": 2.0 },
+        { "explosion_base_damage_factor": 3.0 },
+        { "explosion_base_damage_factor": 4.0 },
+        { "explosion_base_damage_factor": 5.0 }
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://src/spells/summon/tower_base/tower_summon_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/res/white_and_border_shader.tres" type="Shader" id=2]
+[ext_resource path="res://src/spells/summon/ice_tower/ice_tower.gd" type="Script" id=4]
+[ext_resource path="res://src/env/crystal/texture/crysta_shadowl1.png" type="Texture" id=5]
+[ext_resource path="res://src/spells/summon/ice_tower/texture/ice_tower5.png" type="Texture" id=11]
+[ext_resource path="res://src/spells/summon/ice_tower/texture/ice_tower4.png" type="Texture" id=13]
+[ext_resource path="res://src/spells/summon/ice_tower/texture/ice_tower6.png" type="Texture" id=14]
+[ext_resource path="res://src/spells/summon/ice_tower/texture/ice_tower1.png" type="Texture" id=15]
+[ext_resource path="res://src/spells/summon/ice_tower/texture/ice_tower3.png" type="Texture" id=16]
+[ext_resource path="res://src/spells/summon/ice_tower/texture/ice_tower2.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/add_color = false
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/color_modifier = 0.666
+shader_param/add_border = false
+shader_param/border_color = Color( 1, 1, 1, 1 )
+shader_param/border_width = 1.0
+shader_param/border_pattern = 1
+shader_param/border_inside = false
+shader_param/border_add_margins = false
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 5.0
+
+[sub_resource type="StyleBoxFlat" id=9]
+resource_local_to_scene = true
+bg_color = Color( 0.909804, 0.231373, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+resource_local_to_scene = true
+bg_color = Color( 0.160784, 0.152941, 0.152941, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_right = 1.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 6.0
+
+[node name="ice_tower" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+id = "ice_tower"
+base_color = Color( 0.188766, 0.372593, 0.542969, 1 )
+
+[node name="shadow" parent="." index="2"]
+position = Vector2( 0, -8 )
+scale = Vector2( 0.482452, 0.474468 )
+z_as_relative = false
+frames = SubResource( 7 )
+offset = Vector2( 0, 0 )
+
+[node name="sprite" parent="." index="3"]
+material = SubResource( 8 )
+position = Vector2( 0.5, -2 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 2 )
+offset = Vector2( 0, 0 )
+
+[node name="collision_shape_2d" parent="." index="4"]
+visible = true
+shape = SubResource( 3 )
+
+[node name="health_bar" parent="." index="5"]
+margin_left = -8.0
+margin_top = -17.0
+margin_right = 8.0
+margin_bottom = -13.0
+custom_styles/fg = SubResource( 9 )
+custom_styles/bg = SubResource( 10 )
+
+[node name="collision_shape_2d" parent="hurt_box" index="1"]
+shape = SubResource( 6 )

@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/components/hurt_box/hurt_box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/components/progress_bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/components/stats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/res/white_and_border_shadermaterial.tres" type="Material" id=4]
+[ext_resource path="res://src/spells/summon/tower_base/tower_summon_base.gd" type="Script" id=5]
+[ext_resource path="res://src/enemies/behaviours/container/behaviour_container.tscn" type="PackedScene" id=6]
+
+[node name="tower_summon_base" type="KinematicBody2D" groups=["player_unit", "summons"]]
+collision_layer = 8192
+collision_mask = 8196
+script = ExtResource( 5 )
+
+[node name="stats" parent="." instance=ExtResource( 3 )]
+max_health = 1000.0
+
+[node name="behaviour_container" parent="." instance=ExtResource( 6 )]
+
+[node name="shadow" type="AnimatedSprite" parent="."]
+position = Vector2( -2.38419e-07, 6 )
+scale = Vector2( 0.472619, 0.538988 )
+offset = Vector2( 0, -25 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+material = ExtResource( 4 )
+scale = Vector2( 0.8, 0.8 )
+offset = Vector2( 0, -13 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+visible = false
+
+[node name="health_bar" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = -11.0
+margin_top = -38.0
+margin_right = 10.0
+margin_bottom = -34.0
+
+[node name="health_bar_hide_timer" type="Timer" parent="health_bar"]
+wait_time = 5.0
+one_shot = true
+
+[node name="hurt_box" parent="." instance=ExtResource( 1 )]
+visible = false
+collision_layer = 32
+sprite_path = NodePath("../sprite")
+damage_text_color = Color( 0.992157, 0.14902, 0.129412, 1 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="hurt_box"]
+
+[connection signal="deaded" from="stats" to="." method="_on_stats_deaded"]
+[connection signal="health_changed" from="stats" to="." method="_on_stats_health_changed"]
+[connection signal="timeout" from="health_bar/health_bar_hide_timer" to="." method="_on_health_bar_hide_timer_timeout"]

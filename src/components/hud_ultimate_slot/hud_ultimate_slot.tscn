@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/components/hud_ultimate_slot/hud_ultimate_slot.gd" type="Script" id=1]
+[ext_resource path="res://src/components/hud_slot/hud_slot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/components/input_icon/input_icon.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 12 )
+
+[node name="hud_ultimate_slot" instance=ExtResource( 2 )]
+rect_min_size = Vector2( 24, 24 )
+script = ExtResource( 1 )
+card_id = ""
+action_name = ""
+
+[node name="texture_rect" parent="." index="0"]
+mouse_filter = 2
+
+[node name="cooldown" parent="." index="1"]
+mouse_filter = 2
+
+[node name="input_icon" parent="." index="3" instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -8.0
+margin_top = -3.0
+margin_right = 2.0
+margin_bottom = 7.0
+mouse_filter = 2
+
+[node name="touch_screen_button" type="TouchScreenButton" parent="." index="4"]
+shape = SubResource( 1 )
+
+[connection signal="value_changed" from="cooldown" to="." method="_on_cooldown_value_changed"]
+[connection signal="pressed" from="touch_screen_button" to="." method="_on_touch_screen_button_pressed"]

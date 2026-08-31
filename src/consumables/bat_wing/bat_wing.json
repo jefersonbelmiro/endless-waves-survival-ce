@@ -1,0 +1,18 @@
+{
+  "id": "consumable_bat_wing",
+  "uid": "consumable_bat_wing",
+  "label": "CONSUMABLE_BAT_WING_LABEL",
+  "description": "CONSUMABLE_BAT_WING_DESC",
+  "toast_used": "CONSUMABLE_BAT_WING_TOAST_USED",
+  "toast_cant_use": "CONSUMABLE_MAX_STACK_TOAST_CANT_USE",
+  "icon": "res://src/consumables/bat_wing/texture/bat_wing_icon.png",
+  "class": "res://src/consumables/bat_wing/bat_wing_data.gd",
+  "type": "item",
+  "tier": 3,
+  "modifier_duration": 30,
+  "lifesteal_proc_chance": 0.2,
+  "cost": 100,
+  "stack": true,
+  "stack_max": 3,
+  "sort_order": 7
+}

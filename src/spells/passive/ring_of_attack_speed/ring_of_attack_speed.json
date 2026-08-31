@@ -1,0 +1,20 @@
+{
+  "id": "ring_of_attack_speed",
+  "label": "ITEM_RING_OF_ATTACK_SPEED_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/ring_of_attack_speed/texture/ring_of_attack_speed_icon.png",
+  "cast_type": "passive",
+  "attack_speed": 10,
+  "sort_order": 4,
+  "upgrades": [
+    { "attack_speed": 20 },
+    { "attack_speed": 30 },
+    { "attack_speed": 40 },
+    { "attack_speed": 50 },
+    { "attack_speed": 60 },
+    { "attack_speed": 70 },
+    { "attack_speed": 80 },
+    { "attack_speed": 90 },
+    { "attack_speed": 100 }
+  ]
+}

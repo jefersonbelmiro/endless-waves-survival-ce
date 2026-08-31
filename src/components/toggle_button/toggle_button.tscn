@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/components/selected-box.png" type="Texture" id=3]
+[ext_resource path="res://src/components/toggle_button/toggle_button.gd" type="Script" id=4]
+[ext_resource path="res://src/res/fonts/monogram_8.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/components/border_box_bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/components/border_box_fg.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="toggle_button" type="Control"]
+margin_right = 36.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 36, 18 )
+script = ExtResource( 4 )
+
+[node name="state_bg" type="NinePatchRect" parent="."]
+modulate = Color( 0.407843, 0.223529, 0.407843, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -18.0
+texture = ExtResource( 7 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="bg" type="NinePatchRect" parent="."]
+modulate = Color( 0.494118, 0.270588, 0.498039, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+custom_styles/focus = SubResource( 1 )
+toggle_mode = true
+flat = true
+
+[node name="bg_pressed" type="ColorRect" parent="."]
+modulate = Color( 0.15, -0.022549, 0.173529, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+mouse_filter = 2
+
+[node name="selected" type="NinePatchRect" parent="."]
+visible = false
+modulate = Color( 0.369608, 0.193137, 0.408824, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -5.0
+custom_fonts/font = ExtResource( 5 )
+text = "ON"
+align = 2
+valign = 1
+
+[connection signal="button_down" from="button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="button" to="." method="_on_button_button_up"]
+[connection signal="focus_entered" from="button" to="." method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="button" to="." method="_on_button_focus_exited"]
+[connection signal="toggled" from="button" to="." method="_on_button_toggled"]

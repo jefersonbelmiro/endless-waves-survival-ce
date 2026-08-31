@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/effects/sound_effect/sound_effect.gd" type="Script" id=1]
+
+[node name="sound_effect" type="AudioStreamPlayer"]
+pause_mode = 2
+volume_db = -20.0
+autoplay = true
+bus = "SFX"
+script = ExtResource( 1 )
+
+[connection signal="finished" from="." to="." method="_on_sound_effect_finished"]

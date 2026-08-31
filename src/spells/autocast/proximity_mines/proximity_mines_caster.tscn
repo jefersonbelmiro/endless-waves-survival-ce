@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/spells/autocast/proximity_mines/proximity_mines_caster.gd" type="Script" id=1]
+
+[node name="proximity_mines" type="Node"]
+script = ExtResource( 1 )

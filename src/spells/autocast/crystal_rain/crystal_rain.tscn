@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/spells/autocast/crystal_rain/crystal_rain.gd" type="Script" id=2]
+[ext_resource path="res://src/spells/autocast/crystal_rain/texture/crystal_rain1.png" type="Texture" id=3]
+[ext_resource path="res://src/spells/autocast/crystal_rain/texture/crystal_rain2.png" type="Texture" id=5]
+[ext_resource path="res://src/spells/autocast/crystal_rain/texture/crystal_rain4.png" type="Texture" id=6]
+[ext_resource path="res://src/spells/autocast/crystal_rain/texture/crystal_rain3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sfx/effects/sfx_explosion_soft.wav" type="AudioStream" id=8]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "impact",
+"speed": 25.0
+} ]
+
+[node name="crystal_rain" type="Node2D"]
+script = ExtResource( 2 )
+hit_effect_color = Color( 0.211765, 0.396078, 0.556863, 1 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -9 )
+scale = Vector2( 0.5, 0.8 )
+frames = SubResource( 2 )
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -35.0
+bus = "SFX"
+
+[connection signal="finished" from="sfx" to="." method="_on_sfx_finished"]

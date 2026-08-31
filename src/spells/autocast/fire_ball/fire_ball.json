@@ -1,0 +1,78 @@
+{
+  "id": "fire_ball",
+  "label": "SPELL_FIRE_BALL_LABEL",
+  "description": "SPELL_FIRE_BALL_DESC",
+  "icon": "res://src/spells/autocast/fire_ball/texture/fire_ball_spell_icon.png",
+  "type": "skill",
+  "cast_type": "autocast",
+  "damage_type": "magic",
+  "target_type": "random_direction",
+  "base_damage_factor": 1,
+  "cooldown": 2,
+  "cast_time": 0.3,
+  "max_projectiles": 1,
+  "damage_knockback": 80,
+  "projectile_speed": 300,
+  "scale_factor": 0,
+  "sort_order": 1,
+  "modifiers": {
+    "debuff_burn": {
+      "type": "debuff",
+      "class": "res://src/classes/debuff_modifier/burn_debuff_modifier.gd",
+      "damage": 1,
+      "modifier_duration": 5,
+      "description": "DEBUFF_BURN_DESC"
+    }
+  },
+  "upgrades_data": {
+    "base_damage_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "base_damage_factor": 1.3 },
+        { "base_damage_factor": 1.6 },
+        { "base_damage_factor": 2.0 },
+        { "base_damage_factor": 2.5 },
+        { "base_damage_factor": 3.0 }
+      ]
+    },
+    "cooldown": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "cooldown": 1.9 },
+        { "cooldown": 1.8 },
+        { "cooldown": 1.7 },
+        { "cooldown": 1.6 },
+        { "cooldown": 1.5 }
+      ]
+    },
+    "max_projectiles": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "value": [
+        { "max_projectiles": 2 },
+        { "max_projectiles": 3 },
+        { "max_projectiles": 4 },
+        { "max_projectiles": 5 },
+        { "max_projectiles": 6 }
+      ]
+    },
+    "scale_factor": {
+      "active": true,
+      "unlock_index": 4,
+      "max_index": 4,
+      "edit_description": "SCALE_FACTOR_DESC",
+      "value": [
+        { "scale_factor": 0.1 },
+        { "scale_factor": 0.2 },
+        { "scale_factor": 0.3 },
+        { "scale_factor": 0.4 },
+        { "scale_factor": 0.5 }
+      ]
+    }
+  }
+}

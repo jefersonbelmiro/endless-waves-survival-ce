@@ -1,0 +1,21 @@
+{
+  "id": "platemail_of_health",
+  "label": "ITEM_PLATEMAIL_OF_HEALTH_LABEL",
+  "description": "",
+  "icon": "res://src/spells/passive/platemail_of_health/texture/platemail_of_health_icon.png",
+  "class": "res://src/spells/passive/platemail_of_health/platemail_of_health_data.gd",
+  "cast_type": "passive",
+  "max_health": 10,
+  "sort_order": 3,
+  "upgrades": [
+    { "max_health": 15 },
+    { "max_health": 20 },
+    { "max_health": 25 },
+    { "max_health": 30 },
+    { "max_health": 35 },
+    { "max_health": 40 },
+    { "max_health": 50 },
+    { "max_health": 60 },
+    { "max_health": 70 }
+  ]
+}

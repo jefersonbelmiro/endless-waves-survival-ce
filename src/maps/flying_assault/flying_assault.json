@@ -1,0 +1,24 @@
+{
+  "uid": "map_flying_assault",
+  "id": "flying_assault",
+  "label": "FLYING_ASSAULT",
+  "levels": 3,
+  "sort_order": 1,
+  "objectives": [
+    {
+      "level": 1,
+      "type": "kill_enemies",
+      "value": 500
+    },
+    {
+      "level": 2,
+      "type": "kill_enemies",
+      "value": 2000
+    },
+    {
+      "level": 3,
+      "type": "kill_enemies",
+      "value": 5000
+    }
+  ]
+}

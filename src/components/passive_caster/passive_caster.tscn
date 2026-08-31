@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/components/passive_caster/passive_caster.gd" type="Script" id=1]
+
+[node name="passive_caster" type="Node"]
+script = ExtResource( 1 )

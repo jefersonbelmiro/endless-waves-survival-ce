@@ -1,0 +1,11 @@
+{
+  "id": "fateful_strike",
+  "label": "SPELL_FATEFUL_STRIKE_LABEL",
+  "description": "SPELL_FATEFUL_STRIKE_DESC",
+  "icon": "res://src/spells/passive/fateful_strike/texture/fateful_strike_icon.png",
+  "class": "res://src/spells/passive/fateful_strike/fateful_strike_data.gd",
+  "cast_type": "passive",
+  "critical_proc_chance": 0.3,
+  "sort_order": 14,
+  "upgrades": [{ "critical_proc_chance": 0.6 }, { "critical_proc_chance": 1.0 }]
+}

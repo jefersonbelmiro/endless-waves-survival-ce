@@ -1,0 +1,28 @@
+{
+  "id": "reaper_boss",
+  "level": 1,
+  "stats": {
+    "move_speed": 70,
+    "max_health": 20000,
+    "base_damage": 15,
+    "status_resistance": 1.0,
+    "attack_speed": 80,
+    "health_regen": 10
+  },
+  "buff_per_level": {
+    "max_health": 1.0,
+    "move_speed": 0.04,
+    "base_damage": 0.02
+  },
+  "behaviours": [
+    "seek",
+    "knockback",
+    {
+      "id": "melee_attack",
+      "data": {
+        "damage_knockback": 100
+      }
+    }
+  ],
+  "sort_order": 8
+}

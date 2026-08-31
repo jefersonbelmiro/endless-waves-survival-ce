@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/systems/map_event_system/map_event_system.gd" type="Script" id=1]
+
+[node name="map_event_system" type="Node"]
+script = ExtResource( 1 )

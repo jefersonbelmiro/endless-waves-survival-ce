@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/components/bad_words_filter/bad_words_filter.gd" type="Script" id=1]
+
+[node name="bad_words_filter" type="Node"]
+script = ExtResource( 1 )
