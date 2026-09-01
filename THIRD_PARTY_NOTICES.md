@@ -33,6 +33,41 @@ re-obtain them under their own terms if you want.
 - `Underclocked (underunderclocked mix).wav` - unknown
 - `DubStepDropBoom.wav`, `DynamicFight_1/2/3.wav` - unknown
 
+## Icons
+
+The skill, trait, item and upgrade icons come from the "Raven Fantasy Icons"
+pack by Clockwork Raven Studios, included with the author's permission.
+
+Caio (Clockwork Raven) allowed these icons to be part of this open source
+repository, with one condition: anyone who downloads the project needs to know
+these icons are not free to use.
+
+These icons are NOT covered by the MIT License. You can look at them here, but
+you cannot use them in your own project unless you get your own license from
+Clockwork Raven.
+
+- Store: https://clockworkraven.itch.io/raven-fantasy-icons
+- Patreon: https://www.patreon.com/clockworkravenstudios
+
+Only the individual icons used in the game are included (one png per skill,
+trait, item and upgrade). The full pack is not part of this repository.
+
+Where they live:
+
+- skill/card icons: `src/spells/**/*_icon.png`
+- trait icons: `src/traits/**/*_icon.png`
+- item icons: `src/consumables/**/*_icon.png`
+- upgrade icons: `assets/icons/upgrades/*.png`
+
+## Art
+
+Main menu background and store logos by Inkpendude
+(inkpendude@gmail.com).
+
+I don't have the license for these on hand and I'm still confirming it with
+the author. For now, do not redistribute or reuse them without Inkpendude's
+permission.
+
 ## Disclaimer
 
 I don't remember where every file came from, and some of these assets may be

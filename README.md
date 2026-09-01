@@ -150,7 +150,7 @@ Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and the
 ## Credits
 
 - Game by Jeferson Belmiro.
-- Main menu background by Inkpendude.
+- Main menu background and store logos by Inkpendude.
 - Main menu music by ComposerOfEmotions.
 - Steam integration via
   [godot-steam-api](https://github.com/samsface/godot-steam-api) by Sam Murray
