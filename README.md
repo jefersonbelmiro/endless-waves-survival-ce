@@ -86,6 +86,7 @@ honestly I didn't have the knowledge either.
   - [Online leaderboard (Firebase)](#online-leaderboard-firebase)
   - [Export presets](#export-presets)
 - [Project structure](#project-structure)
+- [Audio](#audio)
 - [Controls](#controls)
 - [Contributing](#contributing)
 - [Credits](#credits)
@@ -172,6 +173,26 @@ publish/store/steam/    Store capsules and logos
 publish/store/screenshots/ Store screenshots
 ```
 
+## Audio
+
+The original music and sound effects were removed for licensing reasons. The
+shipped `.wav` files are silent placeholders that keep the same filenames, so
+the game runs fine but has no sound.
+
+To add your own audio:
+
+- Replace the placeholder `.wav` files (keeping the same names), or update the
+  paths in `src/autoload/sfx.gd` (SFX) and
+  `src/components/music_player/music_player.gd` (music playlist).
+- SFX live in `assets/sfx/effects/` (plus spell/effect files under
+  `src/spells/**/sfx/`, `src/env/**/sfx/` and `src/popup/**/`).
+- Music lives in `assets/sfx/musics/` (and `assets/sfx/musics/playlist/`); each
+  track has `start_offset`/`loop_offset` in `music_player.gd`.
+- The `SFX` and `Music` buses are defined in `default_bus_layout.tres`.
+
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the original sources
+and licenses (some were CC0 and are safe to re-download).
+
 ## Controls
 
 | Action        | Keyboard     |
@@ -212,6 +233,5 @@ The code is licensed under the [MIT License](LICENSE).
 Audio and art assets are not covered by that license. See
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for details.
 
-Note: the shipped audio files are silent placeholders. The original music and
-SFX were removed for licensing reasons, so you'll need to add your own if you
-want sound.
+The shipped audio files are silent placeholders; see [Audio](#audio) to add
+your own sound.
