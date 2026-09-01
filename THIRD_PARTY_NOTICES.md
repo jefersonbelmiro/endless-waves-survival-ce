@@ -62,11 +62,7 @@ Where they live:
 ## Art
 
 Main menu background and store logos by Inkpendude
-(inkpendude@gmail.com).
-
-I don't have the license for these on hand and I'm still confirming it with
-the author. For now, do not redistribute or reuse them without Inkpendude's
-permission.
+(https://inkpendude.carrd.co).
 
 ## Disclaimer
 

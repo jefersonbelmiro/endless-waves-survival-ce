@@ -7,7 +7,7 @@
 name: "Publish to GitHub Pages"
 
 env:
-  GODOT_VERSION: 3.5.3
+  GODOT_VERSION: 3.5.2
 
 on:
   push:
@@ -15,12 +15,15 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
 
     container:
-      image: barichello/godot-ci:3.5.3
+      image: barichello/godot-ci:3.5.2
 
     steps:
       - name: Checkout

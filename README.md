@@ -52,8 +52,12 @@ Built with Godot 3.5.
 [![itch.io](https://img.shields.io/badge/itch.io-Play-FF2449?logo=itchdotio)](https://jefersonbelmiro.itch.io/endless-waves-survival)
 [![CrazyGames](https://img.shields.io/badge/CrazyGames-Play-5B4DFF)](https://www.crazygames.com/game/endless-waves-survival)
 [![App Store](https://img.shields.io/badge/App_Store-Discontinued-0D96F6?logo=appstore)](https://apps.apple.com/app/endless-waves-survival/id1624568956)
+[![Web build](https://img.shields.io/badge/Web-Play_online-2ea44f?logo=github)](https://jefersonbelmiro.github.io/endless-waves-survival-ce/)
 
 The iOS version is discontinued. I didn't renew the Apple Developer subscription.
+
+A playable web build of the Community Edition is auto-deployed to GitHub Pages
+on every push to `main`.
 
 ## Why I open sourced this
 
@@ -85,6 +89,7 @@ honestly I didn't have the knowledge either.
 - [Configuration](#configuration)
   - [Online leaderboard (Firebase)](#online-leaderboard-firebase)
   - [Export presets](#export-presets)
+- [Deployment](#deployment)
 - [Project structure](#project-structure)
 - [Audio](#audio)
 - [Controls](#controls)
@@ -155,6 +160,14 @@ cp export_presets.cfg.example export_presets.cfg
 ```
 
 Replace the `__PLACEHOLDER__` values with your own credentials.
+
+## Deployment
+
+The web build is published to GitHub Pages automatically. Pushing to `main`
+runs [`.github/workflows/gh-pages.yml`](.github/workflows/gh-pages.yml), which
+exports the Godot HTML5 build and deploys it to the `gh-pages` branch. The
+live build is at
+https://jefersonbelmiro.github.io/endless-waves-survival-ce/.
 
 ## Project structure
 
