@@ -1,7 +1,7 @@
 # Endless Waves Survival
 
 <p align="center">
-  <img src="publish/store/steam/616x353.png" alt="Endless Waves Survival" />
+  <img src="publish/store/steam/616x353.png" width="100%" alt="Endless Waves Survival" />
 </p>
 
 A survival game about fighting an endless wave of enemies. You level up, grab
@@ -19,29 +19,29 @@ Built with Godot 3.5.
 
 <table>
   <tr>
-    <td><a href="publish/store/screenshots/out3.png"><img src="publish/store/screenshots/out3.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out18.png"><img src="publish/store/screenshots/out18.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out20.png"><img src="publish/store/screenshots/out20.png" alt="Screenshot" width="280"></a></td>
+    <td><img src="publish/store/screenshots/out3.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out18.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out20.png" alt="Screenshot" width="280"></td>
   </tr>
   <tr>
-    <td><a href="publish/store/screenshots/out22.png"><img src="publish/store/screenshots/out22.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out26.png"><img src="publish/store/screenshots/out26.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out54.png"><img src="publish/store/screenshots/out54.png" alt="Screenshot" width="280"></a></td>
+    <td><img src="publish/store/screenshots/out22.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out26.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out54.png" alt="Screenshot" width="280"></td>
   </tr>
   <tr>
-    <td><a href="publish/store/screenshots/out56.png"><img src="publish/store/screenshots/out56.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out398.png"><img src="publish/store/screenshots/out398.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out526.png"><img src="publish/store/screenshots/out526.png" alt="Screenshot" width="280"></a></td>
+    <td><img src="publish/store/screenshots/out56.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out398.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out526.png" alt="Screenshot" width="280"></td>
   </tr>
   <tr>
-    <td><a href="publish/store/screenshots/out793.png"><img src="publish/store/screenshots/out793.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out1202.png"><img src="publish/store/screenshots/out1202.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out1491.png"><img src="publish/store/screenshots/out1491.png" alt="Screenshot" width="280"></a></td>
+    <td><img src="publish/store/screenshots/out793.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out1202.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out1491.png" alt="Screenshot" width="280"></td>
   </tr>
   <tr>
-    <td><a href="publish/store/screenshots/out1933.png"><img src="publish/store/screenshots/out1933.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out2163.png"><img src="publish/store/screenshots/out2163.png" alt="Screenshot" width="280"></a></td>
-    <td><a href="publish/store/screenshots/out3313.png"><img src="publish/store/screenshots/out3313.png" alt="Screenshot" width="280"></a></td>
+    <td><img src="publish/store/screenshots/out1933.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out2163.png" alt="Screenshot" width="280"></td>
+    <td><img src="publish/store/screenshots/out3313.png" alt="Screenshot" width="280"></td>
   </tr>
 </table>
 
