@@ -45,15 +45,6 @@ Built with Godot 3.5.
   </tr>
 </table>
 
-## Credits
-
-Icons by [Clockwork Raven](https://clockworkraven.itch.io/raven-fantasy-icons)
-and main menu background / store logos by
-[Inkpendude](mailto:inkpendude@gmail.com).
-
-Both have their own licenses. See
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the details and links.
-
 ## Where to play
 
 [![Steam](https://img.shields.io/badge/Steam-Endless%20Waves%20Survival-1b2838?logo=steam)](https://store.steampowered.com/app/1989560/)
@@ -202,14 +193,17 @@ Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and the
 ## Credits
 
 - Game by Jeferson Belmiro.
-- Icons by Clockwork Raven (Raven Fantasy Icons).
-- Main menu background and store logos by Inkpendude.
+- Icons by [Clockwork Raven](https://clockworkraven.itch.io/raven-fantasy-icons)
+  (Raven Fantasy Icons).
+- Main menu background and store logos by
+  [Inkpendude](mailto:inkpendude@gmail.com).
 - Main menu music by ComposerOfEmotions.
 - Steam integration via
   [godot-steam-api](https://github.com/samsface/godot-steam-api) by Sam Murray
   (MIT).
-- See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for full audio and art
-  attribution and links.
+- Icons and art have their own licenses. See
+  [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for full audio and art
+  attribution, details and links.
 
 ## License
 
