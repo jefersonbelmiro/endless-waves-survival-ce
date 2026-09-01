@@ -217,7 +217,7 @@ Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and the
 - Icons by [Clockwork Raven](https://clockworkraven.itch.io/raven-fantasy-icons)
   (Raven Fantasy Icons).
 - Main menu background and store logos by
-  [Inkpendude](mailto:inkpendude@gmail.com).
+  [Inkpendude](https://inkpendude.carrd.co).
 - Main menu music by ComposerOfEmotions.
 - Steam integration via
   [godot-steam-api](https://github.com/samsface/godot-steam-api) by Sam Murray
